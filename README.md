@@ -1,6 +1,7 @@
 <div align="center">
-  <img alt="Logo" src="assets/logo.svg" width="100" />
+  <img alt="Logo" src="https://user-images.githubusercontent.com/20312973/236111171-de691162-822d-44c2-a2f8-7840799f52f8.png" width="100" />
 </div>
+
 
 ## 🚨 Forking this repo (please read!)
 
