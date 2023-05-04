@@ -1,13 +1,13 @@
 ---
 date: '2'
-title: 'Github Profile Readme'
-cover: './demo.png'
-github: 'https://github.com/anmol098/anmol098'
-external: 'https://github.com/anmol098'
+title: 'Placeholder Title'
+cover: './placeholderImage.png'
+github: ''
+external: ''
 tech:
   - Markdown
   - Github Actions
 showInProjects: true
 ---
 
-You found a secret! anmol098/anmol098 is a ✨special ✨ repository that you can use to add a README.md to your GitHub profile.
+Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.

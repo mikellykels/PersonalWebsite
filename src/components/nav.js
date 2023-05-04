@@ -294,9 +294,9 @@ class Nav extends Component {
               {isMounted && (
                 <CSSTransition classNames={fadeDownClass} timeout={timeout}>
                   <div style={{ transitionDelay: `${isHome ? navLinks.length * 100 : 0}ms` }}>
-                    <StyledResumeButton href="/resume" rel="nofollow noopener noreferrer">
+                    {/* <StyledResumeButton href="/resume" rel="nofollow noopener noreferrer">
                       Resume
-                    </StyledResumeButton>
+                    </StyledResumeButton> */}
                   </div>
                 </CSSTransition>
               )}

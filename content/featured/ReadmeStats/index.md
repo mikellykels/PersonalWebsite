@@ -1,9 +1,9 @@
 ---
 date: '3'
-title: 'Profile Readme Stats'
-cover: './stats.png'
-github: 'https://github.com/anmol098/waka-readme-stats'
-external: 'https://github.com/marketplace/actions/profile-readme-development-stats/'
+title: 'Placeholder Title'
+cover: './placeholderImage.png'
+github: ''
+external: ''
 tech:
   - Python
   - Intellij PyCharm
@@ -11,7 +11,4 @@ tech:
 showInProjects: true
 ---
 
-Are you an early 🐤 or a night 🦉?
-When are you most productive during the day?
-What are languages you code in?
-Let's check out in your profile readme!.
+Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.

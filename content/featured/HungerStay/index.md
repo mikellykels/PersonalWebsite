@@ -1,9 +1,9 @@
 ---
 date: '1'
-title: 'HungerStay'
-cover: './Hungerstay.png'
+title: 'Placeholder Title'
+cover: './placeholderImage.png'
 github: ''
-external: 'https://www.figma.com/proto/S0F2VpuHWHCuYLVO0XpXR1/HungerStay-Web?node-id=2%3A42&scaling=min-zoom'
+external: ''
 tech:
   - Vue.js
   - Flutter
@@ -12,4 +12,4 @@ tech:
 showInProjects: true
 ---
 
-HungerStay is a contactless food ordering app available for mobile. Users can scan the HungerStay QR and place an order by viewing the restaurant menu. The project includes mobile and web app for users and a CRM dashboard for restaurants Successfully sold it to some restaurants but failed to optimize the sales process in time and also COVID outbreak & big brands like paytm & zomato emerging as a competition.
+Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
