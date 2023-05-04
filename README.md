@@ -2,7 +2,6 @@
   <img alt="Logo" src="https://user-images.githubusercontent.com/20312973/236111171-de691162-822d-44c2-a2f8-7840799f52f8.png" width="100" />
 </div>
 
-
 ## 🚨 Forking this repo (please read!)
 
 Many people have contacted me asking me if they can use this code for their own website, and the answer to that question is usually **yes, with attribution**.
@@ -66,4 +65,4 @@ Yes, you can fork this repo. Please give proper credit by linking back to [britt
 | Light Slate    | ![#a8b2d1](https://via.placeholder.com/10/a8b2d1?text=+) `#a8b2d1` |
 | Lightest Slate | ![#ccd6f6](https://via.placeholder.com/10/ccd6f6?text=+) `#ccd6f6` |
 | White          | ![#e6f1ff](https://via.placeholder.com/10/e6f1ff?text=+) `#e6f1ff` |
-| Purple         | ![#9F80FF](https://via.placeholder.com/10/64ffda?text=+) `#9F80FF` |
+| Purple         | ![#9F80FF](https://via.placeholder.com/10/9F80FF?text=+) `#9F80FF` |
