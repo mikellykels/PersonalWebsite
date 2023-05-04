@@ -1,8 +1,6 @@
 ---
-title: 'Connect With me as a true JS Developer'
-buttonText: 'npx anmol'
+title: 'Contact me'
+buttonText: 'placeholder'
 ---
 
-👇just hit this in your terminal with npm installed👇
-
-I am currently looking for new opportunities, my inbox is always open. Whether you have a question or just want to say hi, I will try my best to get back to you!
+Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.

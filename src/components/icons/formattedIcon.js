@@ -9,7 +9,6 @@ import {
   IconGitHub,
   IconInstagram,
   IconLinkedin,
-  IconLoader,
   IconLocation,
   IconLogo,
   IconPlayStore,
@@ -17,6 +16,8 @@ import {
   IconTwitter,
   IconZap,
 } from '@components/icons';
+import reactAnimation from '../../assets/animation_lh8hvtvn.json';
+import { Animations } from './animations.tsx';
 
 const FormattedIcon = ({ name }) => {
   switch (name) {
@@ -37,7 +38,7 @@ const FormattedIcon = ({ name }) => {
     case 'Linkedin':
       return <IconLinkedin />;
     case 'Loader':
-      return <IconLoader />;
+      return <Animations animation={reactAnimation} />;
     case 'Location':
       return <IconLocation />;
     case 'Logo':

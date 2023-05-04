@@ -1,27 +1,13 @@
 import React from 'react';
+import { createSvgIcon } from '@mui/material/utils';
 
-const IconLogo = () => (
-  <svg id="logo" xmlns="http://www.w3.org/2000/svg" role="img" viewBox="0 0 84 96">
-    <title>Logo</title>
-    <g transform="translate(-8.000000, -2.000000)">
-      <g transform="translate(11.000000, 5.000000)">
-        <g transform="translate(20.000000, 20.000000)">
-          <path
-            d="M 4.941 43.188 L 0 41.175 L 16.714 0 L 23.058 0 L 39.528 41.175 L 34.221 43.31 L 29.463 31.11 L 9.699 31.11 L 4.941 43.188 Z M 19.581 5.734 L 11.529 26.23 L 27.572 26.23 L 19.581 5.734 Z"
-            fill="currentColor"
-          />
-        </g>
-        <polygon
-          id="Shape"
-          stroke="currentColor"
-          strokeWidth="5"
-          strokeLinecap="round"
-          strokeLinejoin="round"
-          points="39 0 0 22 0 67 39 90 78 68 78 23"
-        />
-      </g>
-    </g>
-  </svg>
+const IconLogo = createSvgIcon(
+  <path
+    id="iconLogo"
+    d="M80.9974 47.9324H70.8531V26.644L61.6151 21.3336V31.8097L44 42.0525L26.3849 31.8983V21.3336L17.1469 26.644V47.9324H7.00257V28.736L44 7.47283L80.9974 28.736V47.9324ZM70.8531 54.315H80.9974V58.8099H70.8531V54.315ZM44 92.5272L7.00257 71.264V65.1925H17.1469V73.356L26.3849 78.6664V42.5154L44 52.6407L61.6151 42.5154V78.6664L70.8531 73.356V65.1925H80.9974V71.264L44 92.5272ZM17.1469 58.8099H7.00257V54.315H17.1469V58.8099ZM44 2.34409e-06L0.5 25.0005V74.9995L44 100L87.5 74.9995V25.0005L44 2.34409e-06Z"
+    fill="#9F80FF"
+  />,
+  'Logo',
 );
 
 export default IconLogo;

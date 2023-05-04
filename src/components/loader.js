@@ -2,9 +2,10 @@ import React, { useState, useEffect } from 'react';
 import Helmet from 'react-helmet';
 import PropTypes from 'prop-types';
 import anime from 'animejs';
-import { IconLoader } from '@components/icons';
 import styled from 'styled-components';
 import { theme, mixins } from '@styles';
+import reactAnimation from '../assets/animation_lh8hvtvn.json';
+import { Animations } from './icons/animations';
 const { colors } = theme;
 
 const StyledContainer = styled.div`
@@ -31,7 +32,7 @@ const StyledLogo = styled.div`
     margin: 0 auto;
     fill: none;
     user-select: none;
-    #B {
+    #iconLogo {
       opacity: 0;
     }
   }
@@ -52,7 +53,7 @@ const Loader = ({ finishLoading }) => {
         strokeDashoffset: [anime.setDashoffset, 0],
       })
       .add({
-        targets: '#logo #B',
+        targets: '#logo #iconLogo',
         duration: 700,
         easing: 'easeInOutQuart',
         opacity: 1,
@@ -85,9 +86,8 @@ const Loader = ({ finishLoading }) => {
   return (
     <StyledContainer className="loader">
       <Helmet bodyAttributes={{ class: `hidden` }} />
-
       <StyledLogo isMounted={isMounted}>
-        <IconLoader />
+        <Animations animation={reactAnimation} />
       </StyledLogo>
     </StyledContainer>
   );

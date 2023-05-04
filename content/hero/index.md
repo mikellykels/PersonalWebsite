@@ -1,8 +1,8 @@
 ---
 title: 'Hi, my name is'
-name: 'Anmol Singh'
-subtitle: 'I build things on web.'
+name: 'Mikaela Carino'
+subtitle: 'Software Engineer and Game Programmer.'
 buttonText: 'Get In Touch'
 ---
 
-I'm a software engineer based in Banglore, India specializing in building (and occasionally designing) exceptional websites, applications, and everything in between.
+Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.

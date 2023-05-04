@@ -6,6 +6,7 @@ import { CSSTransition, TransitionGroup } from 'react-transition-group';
 import { throttle } from '@utils';
 import { navLinks, navHeight } from '@config';
 import { Menu } from '@components';
+// import ReactLogo from '../assets/logo.svg';
 import { IconLogo } from '@components/icons';
 import styled from 'styled-components';
 import { theme, mixins, media } from '@styles';
@@ -45,7 +46,7 @@ const StyledLogo = styled.div`
   ${mixins.flexCenter};
   a {
     display: block;
-    color: ${colors.green};
+    color: ${colors.purple};
     width: 42px;
     height: 42px;
     &:hover,
@@ -84,7 +85,7 @@ const StyledHamburgerBox = styled.div`
   height: 24px;
 `;
 const StyledHamburgerInner = styled.div`
-  background-color: ${colors.green};
+  background-color: ${colors.purple};
   position: absolute;
   width: ${theme.hamburgerWidth}px;
   height: 2px;
@@ -103,7 +104,7 @@ const StyledHamburgerInner = styled.div`
   &:after {
     content: '';
     display: block;
-    background-color: ${colors.green};
+    background-color: ${colors.purple};
     position: absolute;
     left: auto;
     right: 0;
@@ -146,7 +147,7 @@ const StyledListItem = styled.li`
   &:before {
     content: '0' counter(item) '.';
     text-align: right;
-    color: ${colors.green};
+    color: ${colors.purple};
     font-size: ${fontSizes.xs};
   }
 `;
@@ -248,11 +249,11 @@ class Nav extends Component {
                 <StyledLogo tabindex="-1">
                   {isHome ? (
                     <a href="/" aria-label="home">
-                      <IconLogo />
+                      <IconLogo id="logo" sx={{ fontSize: 40 }} viewBox="0 0 88 100" />
                     </a>
                   ) : (
                     <Link to="/" aria-label="home">
-                      <IconLogo />
+                      <IconLogo sx={{ fontSize: 40 }} viewBox="0 0 88 100" />
                     </Link>
                   )}
                 </StyledLogo>
@@ -293,9 +294,7 @@ class Nav extends Component {
               {isMounted && (
                 <CSSTransition classNames={fadeDownClass} timeout={timeout}>
                   <div style={{ transitionDelay: `${isHome ? navLinks.length * 100 : 0}ms` }}>
-                    <StyledResumeButton
-                      href="/resume"
-                      rel="nofollow noopener noreferrer">
+                    <StyledResumeButton href="/resume" rel="nofollow noopener noreferrer">
                       Resume
                     </StyledResumeButton>
                   </div>

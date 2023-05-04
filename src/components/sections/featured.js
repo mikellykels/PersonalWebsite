@@ -27,7 +27,7 @@ const StyledContent = styled.div`
 const StyledLabel = styled.h4`
   font-size: ${fontSizes.smish};
   font-weight: normal;
-  color: ${colors.green};
+  color: ${colors.purple};
   font-family: ${fonts.SFMono};
   margin-top: 10px;
   padding-top: 0;
@@ -127,7 +127,7 @@ const StyledImgContainer = styled.a`
   grid-row: 1 / -1;
   position: relative;
   z-index: 1;
-  background-color: ${colors.green};
+  background-color: ${colors.purple};
   border-radius: ${theme.radius + 1}px;
   transition: ${theme.transition};
   ${media.tablet`height: 100%;`};
@@ -216,7 +216,7 @@ const Featured = ({ data }) => {
 
   return (
     <StyledContainer id="projects">
-      <Heading ref={revealTitle}>Some Things I&apos;ve Built</Heading>
+      <Heading ref={revealTitle}>Projects</Heading>
 
       <div>
         {featuredProjects &&

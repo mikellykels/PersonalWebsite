@@ -64,7 +64,7 @@ const NavListItem = styled.li`
   &:before {
     display: block;
     content: '0' counter(item) '.';
-    color: ${colors.green};
+    color: ${colors.purple};
     font-size: ${fontSizes.sm};
     margin-bottom: 5px;
   }
@@ -102,11 +102,11 @@ const Menu = ({ menuOpen, toggleMenu }) => {
         <NavLinks>
           <NavList>
             {navLinks &&
-            navLinks.map(({ url, name }, i) => (
-              <NavListItem key={i}>
-                <NavLink to={url}>{name}</NavLink>
-              </NavListItem>
-            ))}
+              navLinks.map(({ url, name }, i) => (
+                <NavListItem key={i}>
+                  <NavLink to={url}>{name}</NavLink>
+                </NavListItem>
+              ))}
           </NavList>
           <ResumeLink href="/resume" rel="nofollow noopener noreferrer">
             Resume

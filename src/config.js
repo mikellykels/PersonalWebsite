@@ -1,41 +1,27 @@
 module.exports = {
-  siteTitle: 'Anmol Pratap Singh | Software Engineer',
-  siteDescription:
-    'Anmol Singh is a software engineer based in Banglore, India who specializes in building (and occasionally designing) exceptional websites, applications, and everything in between.',
-  siteKeywords:
-    'Anmol Singh, Anmol, singh, anmol098, software engineer, back-end engineer, web developer, javascript, indian',
-  siteUrl: 'https://anmolsingh.me',
+  siteTitle: 'Mikaela Carino | Software Engineer',
+  siteDescription: 'Site description',
+  siteKeywords: 'keywords',
+  siteUrl: 'https://mikaelacarino.com',
   siteLanguage: 'en_US',
-  googleAnalyticsID: 'UA-127188467-2',
-  googleVerification: 'zWJzGMVk8J4FpXsLNpt7CB17SPaa2_ti9YfdGwnGr00',
-  name: 'Anmol Pratap Singh',
-  location: 'Banglore, India',
-  email: 'hi@anmolsingh.me',
-  github: 'https://github.com/anmol098',
-  twitterHandle: '@misteranmol',
+  // googleAnalyticsID: 'UA-127188467-2',
+  // googleVerification: 'zWJzGMVk8J4FpXsLNpt7CB17SPaa2_ti9YfdGwnGr00',
+  name: 'Mikaela Carino',
+  location: 'California, USA',
+  email: 'mikaela.carino@gmail.com',
+  github: 'https://github.com/mikellykels',
+  twitterHandle: '@mikellykels',
   socialMedia: [
     {
       name: 'GitHub',
-      url: 'https://github.com/anmol098',
+      url: 'https://github.com/mikellykels',
     },
     {
       name: 'Linkedin',
-      url: 'https://www.linkedin.com/in/anmol098',
-    },
-    {
-      name: 'Npm',
-      url: 'npx anmol',
-    },
-    {
-      name: 'Instagram',
-      url: 'https://www.instagram.com/misteranmol',
-    },
-    {
-      name: 'Twitter',
-      url: 'https://twitter.com/misteranmol',
+      url: 'https://www.linkedin.com/in/mikaelacarino',
     },
   ],
-  lastUpdated: '16-Sep-2022',
+  lastUpdated: 'DATE',
 
   navLinks: [
     {
@@ -43,12 +29,16 @@ module.exports = {
       url: '/#about',
     },
     {
+      name: 'Projects',
+      url: '/#projects',
+    },
+    {
       name: 'Experience',
       url: '/#jobs',
     },
     {
-      name: 'Work',
-      url: '/#projects',
+      name: 'Education',
+      url: '/#education',
     },
     {
       name: 'Contact',
@@ -59,7 +49,7 @@ module.exports = {
   navHeight: 100,
 
   colors: {
-    green: '#64ffda',
+    purple: '#9F80FF',
     navy: '#0a192f',
     darkNavy: '#020c1b',
   },

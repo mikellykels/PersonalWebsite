@@ -17,7 +17,7 @@ const StyledContainer = styled(Section)`
 `;
 const StyledHeading = styled(Heading)`
   display: block;
-  color: ${colors.green};
+  color: ${colors.purple};
   font-size: ${fontSizes.md};
   font-family: ${fonts.SFMono};
   font-weight: normal;
@@ -49,7 +49,7 @@ const Contact = ({ data }) => {
   const { title, buttonText } = frontmatter;
   const revealContainer = useRef(null);
   useEffect(() => sr.reveal(revealContainer.current, srConfig()), []);
-  const ht = html.split('\n')
+  const ht = html.split('\n');
 
   return (
     <StyledContainer id="contact" ref={revealContainer}>
@@ -57,13 +57,13 @@ const Contact = ({ data }) => {
 
       <StyledTitle>{title}</StyledTitle>
 
-      <div dangerouslySetInnerHTML={{ __html: ht[0] }}/>
+      <div dangerouslySetInnerHTML={{ __html: ht[0] }} />
 
       <StyledEmailLink href={`#`} target="_blank" rel="nofollow noopener noreferrer">
         {buttonText}
       </StyledEmailLink>
-      <StyledTitle/>
-      <div dangerouslySetInnerHTML={{ __html: ht[1] }}/>
+      <StyledTitle />
+      <div dangerouslySetInnerHTML={{ __html: ht[1] }} />
     </StyledContainer>
   );
 };
