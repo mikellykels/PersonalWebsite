@@ -1,14 +1,16 @@
 ---
-date: '1'
+date: '2022-07-01'
 title: 'Placeholder Title'
-cover: './placeholderImage.png'
 github: ''
 external: ''
 tech:
-  - Vue.js
-  - Flutter
-  - Node.js
-  - MySql
+  - NodeJs
+  - HTML-CSS
+  - MongoDb
+  - VanillaJs
+  - Ngnix
+  - LocalTunnel
+company: 'Company Name'
 showInProjects: true
 ---
 

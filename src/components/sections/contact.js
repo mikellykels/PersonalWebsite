@@ -59,7 +59,7 @@ const Contact = ({ data }) => {
 
       <div dangerouslySetInnerHTML={{ __html: ht[0] }} />
 
-      <StyledEmailLink href={`#`} target="_blank" rel="nofollow noopener noreferrer">
+      <StyledEmailLink href={`mailto:${email}`} target="_blank" rel="nofollow noopener noreferrer">
         {buttonText}
       </StyledEmailLink>
       <StyledTitle />

@@ -4,6 +4,16 @@ import Img from 'gatsby-image';
 import sr from '@utils/sr';
 import { srConfig } from '@config';
 import { FormattedIcon } from '@components/icons';
+import {
+  Button,
+  Dialog,
+  DialogActions,
+  DialogContent,
+  DialogContentText,
+  DialogTitle,
+} from '@mui/material';
+import Slide from '@mui/material/Slide';
+import { TransitionProps } from '@mui/material/transitions';
 import styled from 'styled-components';
 import { theme, mixins, media, Section, Heading } from '@styles';
 const { colors, fontSizes, fonts } = theme;
@@ -203,9 +213,179 @@ const StyledProject = styled.div`
     }
   }
 `;
+const StyledTabs = styled.div`
+  display: flex;
+  align-items: flex-start;
+  position: relative;
+  ${media.thone`
+    display: block;
+  `};
+`;
+const StyledTabList = styled.ul`
+  display: block;
+  position: relative;
+  width: max-content;
+  z-index: 3;
+  padding: 0;
+  margin: 0;
+  list-style: none;
+
+  ${media.thone`
+    display: flex;
+    overflow-x: scroll;
+    margin-bottom: 30px;
+    width: calc(100% + 100px);
+    margin-left: -50px;
+  `};
+  ${media.phablet`
+    width: calc(100% + 50px);
+    margin-left: -25px;
+  `};
+
+  li {
+    &:first-of-type {
+      ${media.thone`
+        margin-left: 50px;
+      `};
+      ${media.phablet`
+        margin-left: 25px;
+      `};
+    }
+    &:last-of-type {
+      ${media.thone`
+        padding-right: 50px;
+      `};
+      ${media.phablet`
+        padding-right: 25px;
+      `};
+    }
+  }
+`;
+const StyledTabButton = styled.button`
+  ${mixins.link};
+  display: flex;
+  align-items: center;
+  width: 100%;
+  background-color: transparent;
+  height: ${theme.tabHeight}px;
+  padding: 0 20px 2px;
+  transition: ${theme.transition};
+  border-left: 2px solid ${colors.lightestNavy};
+  text-align: left;
+  white-space: nowrap;
+  font-family: ${fonts.SFMono};
+  font-size: ${fontSizes.smish};
+  color: ${props => (props.isActive ? colors.purple : colors.slate)};
+  ${media.tablet`padding: 0 15px 2px;`};
+  ${media.thone`
+    ${mixins.flexCenter};
+    padding: 0 15px;
+    text-align: center;
+    border-left: 0;
+    border-bottom: 2px solid ${colors.lightestNavy};
+    min-width: 120px;
+  `};
+  &:hover,
+  &:focus {
+    background-color: ${colors.lightNavy};
+  }
+`;
+const StyledHighlight = styled.span`
+  display: block;
+  background: ${colors.purple};
+  width: 2px;
+  height: ${theme.tabHeight}px;
+  border-radius: ${theme.borderRadius};
+  position: absolute;
+  top: 0;
+  left: 0;
+  transition: transform 0.25s cubic-bezier(0.645, 0.045, 0.355, 1);
+  transition-delay: 0.1s;
+  z-index: 10;
+  transform: translateY(
+    ${props => (props.activeTabId > 0 ? props.activeTabId * theme.tabHeight : 0)}px
+  );
+  ${media.thone`
+    width: 100%;
+    max-width: ${theme.tabWidth}px;
+    height: 2px;
+    top: auto;
+    bottom: 0;
+    transform: translateX(
+      ${props => (props.activeTabId > 0 ? props.activeTabId * theme.tabWidth : 0)}px
+    );
+    margin-left: 50px;
+  `};
+  ${media.phablet`
+    margin-left: 25px;
+  `};
+`;
+const StyledDialogContent = styled.div`
+  position: relative;
+  width: 100%;
+  height: auto;
+  padding-top: 12px;
+  padding-left: 30px;
+  ${media.tablet`padding-left: 20px;`};
+  ${media.thone`padding-left: 0;`};
+
+  ul {
+    ${mixins.fancyList};
+  }
+  a {
+    ${mixins.inlineLink};
+  }
+`;
+const StyledDialogTitle = styled(DialogTitle)`
+  color: ${colors.lightestSlate};
+  font-size: ${fontSizes.xxl};
+  font-weight: 500;
+  margin-bottom: 5px;
+`;
+const StyledJobDetails = styled.h5`
+  font-family: ${fonts.SFMono};
+  font-size: ${fontSizes.smish};
+  font-weight: normal;
+  letter-spacing: 0.05em;
+  color: ${colors.lightSlate};
+  margin-bottom: 30px;
+  svg {
+    width: 15px;
+  }
+`;
+const StyledCompany = styled.span`
+  color: ${colors.purple};
+`;
+const StyledDialog = styled(Dialog)`
+  .MuiDialog-paper {
+    background-color: ${colors.lightestNavy};
+  }
+  .MuiDialogTitle-root {
+    color: ${colors.lightSlate};
+  }
+  .MuiDialogContentText-root {
+    color: ${colors.lightestSlate};
+  }
+`;
+
+const Transition = React.forwardRef(function Transition(props, ref) {
+  return <Slide direction="up" ref={ref} {...props} />;
+});
 
 const Featured = ({ data }) => {
   const featuredProjects = data.filter(({ node }) => node);
+  const [open, setOpen] = React.useState(false);
+  const [activeTabId, setActiveTabId] = React.useState(0);
+  const [tabFocus, setTabFocus] = React.useState(null);
+  const tabs = useRef([]);
+
+  const handleClickOpen = () => {
+    setOpen(true);
+  };
+
+  const handleClose = () => {
+    setOpen(false);
+  };
 
   const revealTitle = useRef(null);
   const revealProjects = useRef([]);
@@ -213,6 +393,21 @@ const Featured = ({ data }) => {
     sr.reveal(revealTitle.current, srConfig());
     revealProjects.current.forEach((ref, i) => sr.reveal(ref, srConfig(i * 100)));
   }, []);
+
+  const onKeyPressed = e => {
+    if (e.keyCode === 38 || e.keyCode === 40) {
+      e.preventDefault();
+      if (e.keyCode === 40) {
+        // Move down
+        setTabFocus(tabFocus + 1);
+      } else if (e.keyCode === 38) {
+        // Move up
+        setTabFocus(tabFocus - 1);
+      }
+    }
+  };
+
+  const tabTitles = ['Details', 'Videos', 'Images'];
 
   return (
     <StyledContainer id="projects">
@@ -270,11 +465,29 @@ const Featured = ({ data }) => {
                     )}
                   </StyledLinkWrapper>
                 </StyledContent>
-
+                <StyledDialog
+                  fullWidth
+                  maxWidth
+                  onClose={handleClose}
+                  open={open}
+                  scroll="paper"
+                  TransitionComponent={Transition}>
+                  <StyledDialogTitle>Project Title</StyledDialogTitle>
+                  <StyledJobDetails>
+                    <span>Project subtitle</span>
+                  </StyledJobDetails>
+                  <StyledDialogContent>
+                    {/* <div dangerouslySetInnerHTML={{ __html: html }} /> */}
+                  </StyledDialogContent>
+                  <DialogActions>
+                    <Button onClick={handleClose}>Close</Button>
+                  </DialogActions>
+                </StyledDialog>
                 <StyledImgContainer
-                  href={external ? external : github ? github : '#'}
-                  target="_blank"
-                  rel="nofollow noopener noreferrer">
+                  // href={external ? external : github ? github : '#'}
+                  onClick={handleClickOpen}
+                  rel="nofollow noopener noreferrer"
+                  target="_blank">
                   <StyledFeaturedImg fluid={cover.childImageSharp.fluid} alt={title} />
                 </StyledImgContainer>
               </StyledProject>

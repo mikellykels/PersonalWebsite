@@ -1,12 +1,18 @@
 ---
-date: '2'
+date: '2022-03-22'
 title: 'Placeholder Title'
-cover: './placeholderImage.png'
 github: ''
 external: ''
 tech:
-  - Markdown
+  - NodeJs
+  - HTML-CSS
+  - MongoDb
+  - Git
   - Github Actions
+  - Firebase
+  - Nodegit
+  - redis
+company: 'Placeholder Company'
 showInProjects: true
 ---
 

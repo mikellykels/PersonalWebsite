@@ -1,12 +1,22 @@
 ---
-date: '2022-06-06'
-title: 'Software Engineer'
-company: 'Sentry'
-location: 'San Francisco, CA'
-range: 'June 2022 - Present'
-url: 'https://sentry.io/'
+date: '1'
+title: ''
+company: 'Coding Dojo'
+location: 'Online'
+range: ''
+url: 'https://www.codingdojo.com/'
 ---
 
-- Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
-- Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
-- Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
+- Frontend and Backend Web Development
+  - HTML/CSS
+  - JQuery
+  - Python
+  - Flask
+  - SQL
+  - API's and AJAX
+  - Django
+  - JavaScript
+  - Node.js
+  - MongoDB
+  - Express
+  - Angular

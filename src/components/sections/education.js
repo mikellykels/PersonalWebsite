@@ -132,6 +132,9 @@ const StyledTabContent = styled.div`
   a {
     ${mixins.inlineLink};
   }
+  p {
+    font-size: 18px;
+  }
 `;
 const StyledJobTitle = styled.h4`
   color: ${colors.lightestSlate};
@@ -223,7 +226,7 @@ const Education = ({ data }) => {
         {data &&
           data.map(({ node }, i) => {
             const { frontmatter, html } = node;
-            const { title, url, company, range } = frontmatter;
+            const { title, url, company, range, location } = frontmatter;
             return (
               <StyledTabContent
                 key={i}
@@ -236,14 +239,19 @@ const Education = ({ data }) => {
                 <StyledJobTitle>
                   <span>{title}</span>
                   <StyledCompany>
-                    <span>&nbsp;@&nbsp;</span>
                     <a href={url} target="_blank" rel="nofollow noopener noreferrer">
                       {company}
                     </a>
                   </StyledCompany>
                 </StyledJobTitle>
                 <StyledJobDetails>
-                  <span>{range}</span>
+                  {range ? (
+                    <span>
+                      {range} | {location}
+                    </span>
+                  ) : (
+                    <span>{location}</span>
+                  )}
                 </StyledJobDetails>
                 <div dangerouslySetInnerHTML={{ __html: html }} />
               </StyledTabContent>

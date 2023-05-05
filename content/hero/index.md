@@ -1,8 +1,8 @@
 ---
 title: 'Hi, my name is'
-name: 'Mikaela Carino'
+name: 'Mikaela (Kelly) Carino'
 subtitle: 'Software Engineer and Game Developer.'
-buttonText: 'Get In Touch'
+buttonText: 'Contact'
 ---
 
-Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
+I'm a software engineer with a focus on frontend development, and I'm passionate about the video game industry. My goal is to transition my skills and experience into becoming a game developer. With my expertise in creating user-friendly and visually appealing interfaces, I believe that I can contribute to the creation of engaging and immersive gameplay experiences.

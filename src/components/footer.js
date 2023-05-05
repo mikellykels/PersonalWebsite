@@ -43,7 +43,7 @@ const StyledMetadata = styled.div`
 `;
 const StyledGitHubLink = styled.a`
   color: ${colors.lightSlate};
-  padding: 10px;
+  padding: 10px 0 10px 10px;
 `;
 const StyledGitHubInfo = styled.div`
   margin-top: 10px;
@@ -69,7 +69,6 @@ const Footer = () => {
 
   useEffect(() => {
     if (process.env.NODE_ENV !== 'production') {
-
     }
   }, []);
 
@@ -78,17 +77,17 @@ const Footer = () => {
       <StyledSocial>
         <StyledSocialList>
           {socialMedia &&
-          socialMedia.map(({ name, url }, i) => (
-            <li key={i}>
-              <StyledSocialLink
-                href={url}
-                target="_blank"
-                rel="nofollow noopener noreferrer"
-                aria-label={name}>
-                <FormattedIcon name={name}/>
-              </StyledSocialLink>
-            </li>
-          ))}
+            socialMedia.map(({ name, url }, i) => (
+              <li key={i}>
+                <StyledSocialLink
+                  href={url}
+                  target="_blank"
+                  rel="nofollow noopener noreferrer"
+                  aria-label={name}>
+                  <FormattedIcon name={name} />
+                </StyledSocialLink>
+              </li>
+            ))}
         </StyledSocialList>
       </StyledSocial>
       <StyledMetadata tabindex="-1">
@@ -97,14 +96,18 @@ const Footer = () => {
           target="_blank"
           rel="nofollow noopener noreferrer">
           <div>Designed &amp; Built by Brittany Chiang |</div>
-
         </StyledGitHubLink>
         <StyledGitHubLink
           href="https://github.com/anmol098"
           target="_blank"
           rel="nofollow noopener noreferrer">
           <div>| Customized By Anmol Pratap Singh</div>
-
+        </StyledGitHubLink>
+        <StyledGitHubLink
+          href="https://github.com/mikellykels"
+          target="_blank"
+          rel="nofollow noopener noreferrer">
+          <div>(and myself!)</div>
         </StyledGitHubLink>
         <StyledGitHubInfo>
           <span>

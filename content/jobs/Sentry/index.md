@@ -1,9 +1,9 @@
 ---
-date: '2022-06-06'
+date: '2'
 title: 'Software Engineer'
 company: 'Sentry'
 location: 'San Francisco, CA'
-range: 'June 2022 - Present'
+range: 'March 2017 - June 2022'
 url: 'https://sentry.io/'
 ---
 

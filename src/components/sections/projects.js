@@ -22,16 +22,16 @@ const StyledTitle = styled.h4`
     display: block;
   }
 `;
-const StyledArchiveLink = styled(Link)`
-  ${mixins.inlineLink};
-  text-align: center;
-  margin: 0 auto;
-  font-family: ${fonts.SFMono};
-  font-size: ${fontSizes.sm};
-  &:after {
-    bottom: 0.1em;
-  }
-`;
+// const StyledArchiveLink = styled(Link)`
+//   ${mixins.inlineLink};
+//   text-align: center;
+//   margin: 0 auto;
+//   font-family: ${fonts.SFMono};
+//   font-size: ${fontSizes.sm};
+//   &:after {
+//     bottom: 0.1em;
+//   }
+// `;
 const StyledGrid = styled.div`
   margin-top: 50px;
 
@@ -122,9 +122,9 @@ const StyledTechList = styled.ul`
     }
   }
 `;
-const StyledMoreButton = styled(Button)`
-  margin: 100px auto 0;
-`;
+// const StyledMoreButton = styled(Button)`
+//   margin: 100px auto 0;
+// `;
 
 const Projects = ({ data }) => {
   const [showMore, setShowMore] = useState(false);
@@ -145,10 +145,10 @@ const Projects = ({ data }) => {
 
   return (
     <StyledContainer>
-      <StyledTitle ref={revealTitle}>Other Noteworthy Projects</StyledTitle>
-      <StyledArchiveLink to="/archive" ref={revealArchiveLink}>
+      <StyledTitle ref={revealTitle}>Other Projects</StyledTitle>
+      {/* <StyledArchiveLink to="/archive" ref={revealArchiveLink}>
         view the archive
-      </StyledArchiveLink>
+      </StyledArchiveLink> */}
 
       <StyledGrid>
         <TransitionGroup className="projects">
@@ -216,9 +216,9 @@ const Projects = ({ data }) => {
         </TransitionGroup>
       </StyledGrid>
 
-      <StyledMoreButton onClick={() => setShowMore(!showMore)}>
+      {/* <StyledMoreButton onClick={() => setShowMore(!showMore)}>
         Show {showMore ? 'Less' : 'More'}
-      </StyledMoreButton>
+      </StyledMoreButton> */}
     </StyledContainer>
   );
 };

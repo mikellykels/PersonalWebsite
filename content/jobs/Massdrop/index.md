@@ -1,5 +1,5 @@
 ---
-date: '2022-06-06'
+date: '1'
 title: 'Senior Community Support Manager'
 company: 'Massdrop'
 location: 'San Francisco, CA'

@@ -1,13 +1,12 @@
 ---
-date: '3'
-title: 'Placeholder Title'
+date: '2'
+title: 'Steampunk RPG'
 cover: './placeholderImage.png'
-github: ''
+github: 'https://github.com/mikellykels/RPG'
 external: ''
 tech:
-  - Python
-  - Intellij PyCharm
-  - GitHub Actions
+  - C++
+  - Unreal Engine
 showInProjects: true
 ---
 
