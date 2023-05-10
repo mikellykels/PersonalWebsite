@@ -3,7 +3,7 @@ date: '1'
 title: 'Senior Community Support Manager'
 company: 'Massdrop'
 location: 'San Francisco, CA'
-range: 'June 2022 - Present'
+range: 'January 2015 - February 2017'
 url: 'https://drop.com/'
 ---
 
