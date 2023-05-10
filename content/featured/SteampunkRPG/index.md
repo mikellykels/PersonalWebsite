@@ -1,6 +1,7 @@
 ---
 date: '2'
 title: 'Steampunk RPG'
+subtitle: 'Ongoing'
 cover: './placeholderImage.png'
 github: 'https://github.com/mikellykels/RPG'
 external: ''
@@ -10,4 +11,4 @@ tech:
 showInProjects: true
 ---
 
-Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
+Ongoing project - a steam punk RPG using C++ and Unreal Engine 5.1. Currently includes an equipment system, attack system, player stats, Enemy AI, and UI elements.

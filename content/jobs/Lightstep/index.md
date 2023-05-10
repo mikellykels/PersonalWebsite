@@ -7,6 +7,7 @@ range: 'June 2022 - Present'
 url: 'https://lightstep.com/'
 ---
 
-- Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
-- Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
-- Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
+- Contribute work on the Investigating Change team.
+- Build out features for Notebooks and Change Intelligence, such as handling responses from the backend to display in tables and charts, and making sure they work in a condensed version/side panel.
+- Implement the design from our design team.
+- Maintain and add any necessary end to end tests, and unit tests.

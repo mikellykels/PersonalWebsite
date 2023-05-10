@@ -7,6 +7,6 @@ range: 'June 2022 - Present'
 url: 'https://drop.com/'
 ---
 
-- Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
-- Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
-- Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
+- Managed 12 employees, 2 onsite and 9 offsite, and collaborated with the offsite team’s Program Manager.
+- Improved productivity by 60% for our offsite team by motivating the team to focus on a single KPI, which proved to drive corresponding metrics.
+- Worked directly with our Project Managers and Development team to propose, develop, and release product features.

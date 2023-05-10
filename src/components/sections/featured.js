@@ -4,18 +4,13 @@ import Img from 'gatsby-image';
 import sr from '@utils/sr';
 import { srConfig } from '@config';
 import { FormattedIcon } from '@components/icons';
-import {
-  Button,
-  Dialog,
-  DialogActions,
-  DialogContent,
-  DialogContentText,
-  DialogTitle,
-} from '@mui/material';
+import { Button, Dialog, DialogActions, DialogTitle } from '@mui/material';
+import PersonalVideoIcon from '@mui/icons-material/PersonalVideo';
 import Slide from '@mui/material/Slide';
-import { TransitionProps } from '@mui/material/transitions';
 import styled from 'styled-components';
 import { theme, mixins, media, Section, Heading } from '@styles';
+import { PROJECTS } from './constants';
+
 const { colors, fontSizes, fonts } = theme;
 
 const StyledContainer = styled(Section)`
@@ -106,7 +101,7 @@ const StyledLinkWrapper = styled.div`
   align-items: center;
   position: relative;
   margin-top: 10px;
-  margin-left: -10px;
+  margin-left: 10px;
   color: ${colors.lightestSlate};
   a {
     padding: 10px;
@@ -201,7 +196,6 @@ const StyledProject = styled.div`
     ${StyledLinkWrapper} {
       justify-content: flex-end;
       margin-left: 0;
-      margin-right: -10px;
     }
     ${StyledImgContainer} {
       grid-column: 1 / 8;
@@ -212,119 +206,16 @@ const StyledProject = styled.div`
       `};
     }
   }
-`;
-const StyledTabs = styled.div`
-  display: flex;
-  align-items: flex-start;
-  position: relative;
-  ${media.thone`
-    display: block;
-  `};
-`;
-const StyledTabList = styled.ul`
-  display: block;
-  position: relative;
-  width: max-content;
-  z-index: 3;
-  padding: 0;
-  margin: 0;
-  list-style: none;
-
-  ${media.thone`
-    display: flex;
-    overflow-x: scroll;
-    margin-bottom: 30px;
-    width: calc(100% + 100px);
-    margin-left: -50px;
-  `};
-  ${media.phablet`
-    width: calc(100% + 50px);
-    margin-left: -25px;
-  `};
-
-  li {
-    &:first-of-type {
-      ${media.thone`
-        margin-left: 50px;
-      `};
-      ${media.phablet`
-        margin-left: 25px;
-      `};
-    }
-    &:last-of-type {
-      ${media.thone`
-        padding-right: 50px;
-      `};
-      ${media.phablet`
-        padding-right: 25px;
-      `};
+  &:nth-of-type(even) {
+    ${StyledLinkWrapper} {
+      margin-left: -10px;
     }
   }
-`;
-const StyledTabButton = styled.button`
-  ${mixins.link};
-  display: flex;
-  align-items: center;
-  width: 100%;
-  background-color: transparent;
-  height: ${theme.tabHeight}px;
-  padding: 0 20px 2px;
-  transition: ${theme.transition};
-  border-left: 2px solid ${colors.lightestNavy};
-  text-align: left;
-  white-space: nowrap;
-  font-family: ${fonts.SFMono};
-  font-size: ${fontSizes.smish};
-  color: ${props => (props.isActive ? colors.purple : colors.slate)};
-  ${media.tablet`padding: 0 15px 2px;`};
-  ${media.thone`
-    ${mixins.flexCenter};
-    padding: 0 15px;
-    text-align: center;
-    border-left: 0;
-    border-bottom: 2px solid ${colors.lightestNavy};
-    min-width: 120px;
-  `};
-  &:hover,
-  &:focus {
-    background-color: ${colors.lightNavy};
-  }
-`;
-const StyledHighlight = styled.span`
-  display: block;
-  background: ${colors.purple};
-  width: 2px;
-  height: ${theme.tabHeight}px;
-  border-radius: ${theme.borderRadius};
-  position: absolute;
-  top: 0;
-  left: 0;
-  transition: transform 0.25s cubic-bezier(0.645, 0.045, 0.355, 1);
-  transition-delay: 0.1s;
-  z-index: 10;
-  transform: translateY(
-    ${props => (props.activeTabId > 0 ? props.activeTabId * theme.tabHeight : 0)}px
-  );
-  ${media.thone`
-    width: 100%;
-    max-width: ${theme.tabWidth}px;
-    height: 2px;
-    top: auto;
-    bottom: 0;
-    transform: translateX(
-      ${props => (props.activeTabId > 0 ? props.activeTabId * theme.tabWidth : 0)}px
-    );
-    margin-left: 50px;
-  `};
-  ${media.phablet`
-    margin-left: 25px;
-  `};
 `;
 const StyledDialogContent = styled.div`
   position: relative;
   width: 100%;
   height: auto;
-  padding-top: 12px;
   padding-left: 30px;
   ${media.tablet`padding-left: 20px;`};
   ${media.thone`padding-left: 0;`};
@@ -335,6 +226,9 @@ const StyledDialogContent = styled.div`
   a {
     ${mixins.inlineLink};
   }
+  iframe {
+    border: 0;
+  }
 `;
 const StyledDialogTitle = styled(DialogTitle)`
   color: ${colors.lightestSlate};
@@ -342,26 +236,36 @@ const StyledDialogTitle = styled(DialogTitle)`
   font-weight: 500;
   margin-bottom: 5px;
 `;
-const StyledJobDetails = styled.h5`
+const StyledDialogDetails = styled.h5`
   font-family: ${fonts.SFMono};
   font-size: ${fontSizes.smish};
   font-weight: normal;
   letter-spacing: 0.05em;
   color: ${colors.lightSlate};
   margin-bottom: 30px;
+  span {
+    margin-left: 24px;
+  }
   svg {
     width: 15px;
   }
 `;
-const StyledCompany = styled.span`
-  color: ${colors.purple};
+const StyledDialogDescription = styled.div`
+  color: ${colors.lightSlate};
+  font-size: ${fontSizes.lg};
+`;
+const StyledPersonalVideoIcon = styled(PersonalVideoIcon)`
+  :hover {
+    color: ${colors.purple};
+  }
 `;
 const StyledDialog = styled(Dialog)`
   .MuiDialog-paper {
     background-color: ${colors.lightestNavy};
   }
   .MuiDialogTitle-root {
-    color: ${colors.lightSlate};
+    color: ${colors.lightestSlate};
+    font-family: ${fonts.Calibre};
   }
   .MuiDialogContentText-root {
     color: ${colors.lightestSlate};
@@ -375,12 +279,15 @@ const Transition = React.forwardRef(function Transition(props, ref) {
 const Featured = ({ data }) => {
   const featuredProjects = data.filter(({ node }) => node);
   const [open, setOpen] = React.useState(false);
-  const [activeTabId, setActiveTabId] = React.useState(0);
   const [tabFocus, setTabFocus] = React.useState(null);
-  const tabs = useRef([]);
+  const [projectDialogDetails, setProjectDialogDetails] = React.useState({
+    title: '',
+    subtitle: '',
+  });
 
-  const handleClickOpen = () => {
+  const handleClickOpen = (subtitle, title) => {
     setOpen(true);
+    setProjectDialogDetails({ subtitle, title });
   };
 
   const handleClose = () => {
@@ -407,7 +314,46 @@ const Featured = ({ data }) => {
     }
   };
 
-  const tabTitles = ['Details', 'Videos', 'Images'];
+  function ProjectDialog() {
+    const project = Object.values(PROJECTS)
+      .map(project => {
+        if (project.TITLE === projectDialogDetails.title) {
+          return project;
+        }
+      })
+      .filter(Boolean);
+    return (
+      <StyledDialog
+        fullWidth
+        maxWidth
+        onClose={handleClose}
+        open={open}
+        scroll="paper"
+        TransitionComponent={Transition}>
+        <StyledDialogTitle>{projectDialogDetails.title}</StyledDialogTitle>
+        <StyledDialogDetails>
+          <span>{projectDialogDetails.subtitle}</span>
+        </StyledDialogDetails>
+        <StyledDialogContent>
+          <figure className="video_container">
+            <iframe
+              title={(project[0] || [])?.TITLE}
+              src={(project[0] || [])?.VIDEO}
+              width="640"
+              height="360"
+              allow="autoplay; fullscreen; picture-in-picture"
+              allowFullScreen></iframe>
+          </figure>
+          <div>
+            <StyledDialogDescription>{(project[0] || [])?.DESCRIPTION}</StyledDialogDescription>
+          </div>
+        </StyledDialogContent>
+        <DialogActions>
+          <Button onClick={handleClose}>Close</Button>
+        </DialogActions>
+      </StyledDialog>
+    );
+  }
 
   return (
     <StyledContainer id="projects">
@@ -417,7 +363,7 @@ const Featured = ({ data }) => {
         {featuredProjects &&
           featuredProjects.map(({ node }, i) => {
             const { frontmatter, html } = node;
-            const { external, title, tech, github, cover } = frontmatter;
+            const { external, title, tech, github, cover, subtitle } = frontmatter;
 
             return (
               <StyledProject key={i} ref={el => (revealProjects.current[i] = el)}>
@@ -463,29 +409,12 @@ const Featured = ({ data }) => {
                         <FormattedIcon name="External" />
                       </a>
                     )}
+                    <StyledPersonalVideoIcon onClick={() => handleClickOpen(subtitle, title)} />
                   </StyledLinkWrapper>
                 </StyledContent>
-                <StyledDialog
-                  fullWidth
-                  maxWidth
-                  onClose={handleClose}
-                  open={open}
-                  scroll="paper"
-                  TransitionComponent={Transition}>
-                  <StyledDialogTitle>Project Title</StyledDialogTitle>
-                  <StyledJobDetails>
-                    <span>Project subtitle</span>
-                  </StyledJobDetails>
-                  <StyledDialogContent>
-                    {/* <div dangerouslySetInnerHTML={{ __html: html }} /> */}
-                  </StyledDialogContent>
-                  <DialogActions>
-                    <Button onClick={handleClose}>Close</Button>
-                  </DialogActions>
-                </StyledDialog>
+                <ProjectDialog />
                 <StyledImgContainer
-                  // href={external ? external : github ? github : '#'}
-                  onClick={handleClickOpen}
+                  onClick={() => handleClickOpen(subtitle, title)}
                   rel="nofollow noopener noreferrer"
                   target="_blank">
                   <StyledFeaturedImg fluid={cover.childImageSharp.fluid} alt={title} />
