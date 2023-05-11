@@ -6,7 +6,8 @@ external: 'https://github.com/getsentry/sentry/pulls?q=is%3Apr+author%3Amikellyk
 android: ''
 ios: ''
 tech:
-  - JavaScript/TypeScript
+  - JavaScript
+  - TypeScript
   - React
 company: 'Placeholder Company'
 showInProjects: true

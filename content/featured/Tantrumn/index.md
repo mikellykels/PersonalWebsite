@@ -1,7 +1,7 @@
 ---
 date: '1'
 title: 'Tantrumn'
-subtitle: ''
+subtitle: '2023'
 cover: './placeholderImage.png'
 github: 'https://github.com/mikellykels/Tantrumn'
 external: ''

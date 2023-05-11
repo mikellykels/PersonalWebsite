@@ -4,12 +4,11 @@ import Img from 'gatsby-image';
 import sr from '@utils/sr';
 import { srConfig } from '@config';
 import { FormattedIcon } from '@components/icons';
-import { Button, Dialog, DialogActions, DialogTitle } from '@mui/material';
 import PersonalVideoIcon from '@mui/icons-material/PersonalVideo';
-import Slide from '@mui/material/Slide';
 import styled from 'styled-components';
 import { theme, mixins, media, Section, Heading } from '@styles';
-import { PROJECTS } from './constants';
+
+import ProjectDialog from './projectDialog';
 
 const { colors, fontSizes, fonts } = theme;
 
@@ -212,74 +211,15 @@ const StyledProject = styled.div`
     }
   }
 `;
-const StyledDialogContent = styled.div`
-  position: relative;
-  width: 100%;
-  height: auto;
-  padding-left: 30px;
-  ${media.tablet`padding-left: 20px;`};
-  ${media.thone`padding-left: 0;`};
-
-  ul {
-    ${mixins.fancyList};
-  }
-  a {
-    ${mixins.inlineLink};
-  }
-  iframe {
-    border: 0;
-  }
-`;
-const StyledDialogTitle = styled(DialogTitle)`
-  color: ${colors.lightestSlate};
-  font-size: ${fontSizes.xxl};
-  font-weight: 500;
-  margin-bottom: 5px;
-`;
-const StyledDialogDetails = styled.h5`
-  font-family: ${fonts.SFMono};
-  font-size: ${fontSizes.smish};
-  font-weight: normal;
-  letter-spacing: 0.05em;
-  color: ${colors.lightSlate};
-  margin-bottom: 30px;
-  span {
-    margin-left: 24px;
-  }
-  svg {
-    width: 15px;
-  }
-`;
-const StyledDialogDescription = styled.div`
-  color: ${colors.lightSlate};
-  font-size: ${fontSizes.lg};
-`;
 const StyledPersonalVideoIcon = styled(PersonalVideoIcon)`
   :hover {
     color: ${colors.purple};
   }
 `;
-const StyledDialog = styled(Dialog)`
-  .MuiDialog-paper {
-    background-color: ${colors.lightestNavy};
-  }
-  .MuiDialogTitle-root {
-    color: ${colors.lightestSlate};
-    font-family: ${fonts.Calibre};
-  }
-  .MuiDialogContentText-root {
-    color: ${colors.lightestSlate};
-  }
-`;
-
-const Transition = React.forwardRef(function Transition(props, ref) {
-  return <Slide direction="up" ref={ref} {...props} />;
-});
 
 const Featured = ({ data }) => {
   const featuredProjects = data.filter(({ node }) => node);
   const [open, setOpen] = React.useState(false);
-  const [tabFocus, setTabFocus] = React.useState(null);
   const [projectDialogDetails, setProjectDialogDetails] = React.useState({
     title: '',
     subtitle: '',
@@ -300,60 +240,6 @@ const Featured = ({ data }) => {
     sr.reveal(revealTitle.current, srConfig());
     revealProjects.current.forEach((ref, i) => sr.reveal(ref, srConfig(i * 100)));
   }, []);
-
-  const onKeyPressed = e => {
-    if (e.keyCode === 38 || e.keyCode === 40) {
-      e.preventDefault();
-      if (e.keyCode === 40) {
-        // Move down
-        setTabFocus(tabFocus + 1);
-      } else if (e.keyCode === 38) {
-        // Move up
-        setTabFocus(tabFocus - 1);
-      }
-    }
-  };
-
-  function ProjectDialog() {
-    const project = Object.values(PROJECTS)
-      .map(project => {
-        if (project.TITLE === projectDialogDetails.title) {
-          return project;
-        }
-      })
-      .filter(Boolean);
-    return (
-      <StyledDialog
-        fullWidth
-        maxWidth
-        onClose={handleClose}
-        open={open}
-        scroll="paper"
-        TransitionComponent={Transition}>
-        <StyledDialogTitle>{projectDialogDetails.title}</StyledDialogTitle>
-        <StyledDialogDetails>
-          <span>{projectDialogDetails.subtitle}</span>
-        </StyledDialogDetails>
-        <StyledDialogContent>
-          <figure className="video_container">
-            <iframe
-              title={(project[0] || [])?.TITLE}
-              src={(project[0] || [])?.VIDEO}
-              width="640"
-              height="360"
-              allow="autoplay; fullscreen; picture-in-picture"
-              allowFullScreen></iframe>
-          </figure>
-          <div>
-            <StyledDialogDescription>{(project[0] || [])?.DESCRIPTION}</StyledDialogDescription>
-          </div>
-        </StyledDialogContent>
-        <DialogActions>
-          <Button onClick={handleClose}>Close</Button>
-        </DialogActions>
-      </StyledDialog>
-    );
-  }
 
   return (
     <StyledContainer id="projects">
@@ -412,7 +298,11 @@ const Featured = ({ data }) => {
                     <StyledPersonalVideoIcon onClick={() => handleClickOpen(subtitle, title)} />
                   </StyledLinkWrapper>
                 </StyledContent>
-                <ProjectDialog />
+                <ProjectDialog
+                  handleClose={handleClose}
+                  open={open}
+                  projectDialogDetails={projectDialogDetails}
+                />
                 <StyledImgContainer
                   onClick={() => handleClickOpen(subtitle, title)}
                   rel="nofollow noopener noreferrer"
