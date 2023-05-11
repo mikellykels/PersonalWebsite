@@ -11,4 +11,4 @@ tech:
 showInProjects: true
 ---
 
-Ongoing project - a steam punk styled RPG using C++ and Unreal Engine 5.1. Currently includes an equipment system, attack system, player stats, Enemy AI, and UI elements.
+Ongoing project - a steampunk-themed RPG using C++ and Unreal Engine 5.1. Currently includes an equipment system, attack system, player stats, Enemy AI, and UI elements.
