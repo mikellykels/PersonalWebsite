@@ -21,18 +21,52 @@ function SteamPunkRPGProjectDialog() {
       <StyledList>
         <li>
           DieselPunk (buildings/props/environment):{' '}
-          <a href="https://kitbash3d.com/products/dieselpunk?_pos=1&_psq=die&_ss=e&_v=1.0">
+          <a
+            href="https://kitbash3d.com/products/dieselpunk"
+            target="_blank"
+            rel="nofollow noopener noreferrer">
             KitBash3D
           </a>
         </li>
         <li>
           Steampunk character collection:{' '}
-          <a href="https://www.unrealengine.com/marketplace/en-US/product/steampunk-character-collection">
+          <a
+            href="https://www.unrealengine.com/marketplace/en-US/product/steampunk-character-collection"
+            target="_blank"
+            rel="nofollow noopener noreferrer">
             Crazy Vertex on UE Marketplace
           </a>
         </li>
         <li>
-          Sounds and Music: <a href="https://freesound.org/">Various from freesound</a>
+          Sounds and Music:{' '}
+          <a href="https://freesound.org/" target="_blank" rel="nofollow noopener noreferrer">
+            Various from freesound
+          </a>
+        </li>
+        <li>
+          Icons: KatGrabowska on{' '}
+          <a
+            href="https://www.unrealengine.com/marketplace/en-US/product/300-stylised-icons-pack/"
+            target="_blank"
+            rel="nofollow noopener noreferrer">
+            UE Marketplace
+          </a>{' '}
+          and Piontek on{' '}
+          <a
+            href="https://www.unrealengine.com/marketplace/en-US/product/pro-icon-pack"
+            target="_blank"
+            rel="nofollow noopener noreferrer">
+            UE Marketplace
+          </a>
+        </li>
+        <li>
+          Icon Generator: AleeZL on{' '}
+          <a
+            href="https://www.unrealengine.com/marketplace/en-US/product/icon-generator"
+            target="_blank"
+            rel="nofollow noopener noreferrer">
+            UE Marketplace
+          </a>
         </li>
       </StyledList>
     </div>

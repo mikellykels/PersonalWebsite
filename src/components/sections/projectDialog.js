@@ -75,7 +75,7 @@ const StyledDialogContent = styled.div`
   height: auto;
   padding: 0 30px 30px 30px;
   ${media.tablet`padding-left: 20px;`};
-  ${media.thone`padding-left: 0;`};
+  ${media.thone`padding-left: 20px;`};
 
   ul {
     ${mixins.fancyList};
