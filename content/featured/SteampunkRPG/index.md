@@ -1,8 +1,9 @@
 ---
+id: '1'
 date: '2'
 title: 'Steampunk RPG'
 subtitle: 'Ongoing - 2023'
-cover: './placeholderImage.png'
+cover: './steampunkrpg.png'
 github: 'https://github.com/mikellykels/RPG'
 external: ''
 tech:
@@ -11,4 +12,4 @@ tech:
 showInProjects: true
 ---
 
-Ongoing project - a steampunk-themed RPG using C++ and Unreal Engine 5.1. Currently includes an equipment system, attack system, player stats, Enemy AI, and UI elements.
+This is an active project: a steampunk-themed RPG designed using C++ and Unreal Engine 5.1. The current build encompasses an equipment system, a dynamic attack mechanism, detailed player stats, enemy AI, and UI elements.

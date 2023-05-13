@@ -249,7 +249,7 @@ const Featured = ({ data }) => {
         {featuredProjects &&
           featuredProjects.map(({ node }, i) => {
             const { frontmatter, html } = node;
-            const { external, title, tech, github, cover, subtitle } = frontmatter;
+            const { id, external, title, tech, github, cover, subtitle } = frontmatter;
 
             return (
               <StyledProject key={i} ref={el => (revealProjects.current[i] = el)}>
@@ -295,7 +295,9 @@ const Featured = ({ data }) => {
                         <FormattedIcon name="External" />
                       </a>
                     )}
-                    <StyledPersonalVideoIcon onClick={() => handleClickOpen(subtitle, title)} />
+                    {id && (
+                      <StyledPersonalVideoIcon onClick={() => handleClickOpen(subtitle, title)} />
+                    )}
                   </StyledLinkWrapper>
                 </StyledContent>
                 <ProjectDialog
@@ -303,12 +305,14 @@ const Featured = ({ data }) => {
                   open={open}
                   projectDialogDetails={projectDialogDetails}
                 />
-                <StyledImgContainer
-                  onClick={() => handleClickOpen(subtitle, title)}
-                  rel="nofollow noopener noreferrer"
-                  target="_blank">
-                  <StyledFeaturedImg fluid={cover.childImageSharp.fluid} alt={title} />
-                </StyledImgContainer>
+                {id && (
+                  <StyledImgContainer
+                    onClick={() => handleClickOpen(subtitle, title)}
+                    rel="nofollow noopener noreferrer"
+                    target="_blank">
+                    <StyledFeaturedImg fluid={cover.childImageSharp.fluid} alt={title} />
+                  </StyledImgContainer>
+                )}
               </StyledProject>
             );
           })}

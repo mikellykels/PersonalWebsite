@@ -26,7 +26,6 @@ function ProjectDialog({ handleClose, open, projectDialogDetails }) {
   return (
     <StyledDialog
       fullWidth
-      maxWidth
       onClose={handleClose}
       open={open}
       scroll="paper"
@@ -36,7 +35,7 @@ function ProjectDialog({ handleClose, open, projectDialogDetails }) {
         <span>{projectDialogDetails.subtitle}</span>
       </StyledDialogDetails>
       <StyledDialogContent>
-        <figure className="video_container">
+        <figure style={{ display: 'flex', margin: 0 }}>
           <iframe
             title={(project[0] || [])?.TITLE}
             src={(project[0] || [])?.VIDEO}
@@ -99,7 +98,6 @@ const StyledDialogDetails = styled.h5`
   font-weight: normal;
   letter-spacing: 0.05em;
   color: ${colors.lightSlate};
-  margin-bottom: 30px;
   span {
     margin-left: 24px;
   }
