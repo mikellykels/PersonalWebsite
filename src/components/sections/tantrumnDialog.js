@@ -8,7 +8,8 @@ const { colors, fontSizes } = theme;
 
 function TantrumnProjectDialog() {
   return (
-    <div>
+    <div style={{ marginTop: '8px' }}>
+      <StyledSubtitle>Contributions:</StyledSubtitle>
       <StyledList>
         <li></li>
         <li></li>

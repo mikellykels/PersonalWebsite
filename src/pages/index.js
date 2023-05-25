@@ -132,6 +132,7 @@ export const pageQuery = graphql`
         node {
           frontmatter {
             id
+            date
             title
             subtitle
             cover {
@@ -141,6 +142,7 @@ export const pageQuery = graphql`
                 }
               }
             }
+            company
             tech
             github
             external

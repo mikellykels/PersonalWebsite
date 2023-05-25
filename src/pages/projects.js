@@ -8,7 +8,10 @@ import { Layout } from '@components';
 import { FormattedIcon } from '@components/icons';
 import styled from 'styled-components';
 import { theme, mixins, media, Main } from '@styles';
+import PersonalVideoIcon from '@mui/icons-material/PersonalVideo';
 const { colors, fonts, fontSizes } = theme;
+
+import ProjectDialog from '../components/sections/projectDialog';
 
 const StyledMainContainer = styled(Main)``;
 const StyledTableContainer = styled.div`
@@ -93,9 +96,21 @@ const StyledTable = styled.table`
     }
   }
 `;
+const StyledPersonalVideoIcon = styled(PersonalVideoIcon)`
+  margin-left: 10px;
+  :hover {
+    color: ${colors.purple};
+  }
+`;
 
 const ArchivePage = ({ location, data }) => {
-  const projects = data.allMarkdownRemark.edges;
+  const projects = data.projects.edges;
+  const featured = data.featured.edges;
+  const [open, setOpen] = React.useState(false);
+  const [projectDialogDetails, setProjectDialogDetails] = React.useState({
+    title: '',
+    subtitle: '',
+  });
 
   const revealTitle = useRef(null);
   const revealTable = useRef(null);
@@ -106,20 +121,133 @@ const ArchivePage = ({ location, data }) => {
     revealProjects.current.forEach((ref, i) => sr.reveal(ref, srConfig(i * 10)));
   }, []);
 
+  const handleClickOpen = (subtitle, title) => {
+    setOpen(true);
+    setProjectDialogDetails({ subtitle, title });
+  };
+  const handleClose = () => {
+    setOpen(false);
+  };
+
   return (
     <Layout location={location}>
       <Helmet>
-        <title>Archive | AnmolSingh</title>
-        <link rel="canonical" href="https://anmolsingh.me/archive" />
+        <title>Archive | Mikaela Carino</title>
+        <link rel="canonical" href="https://mikaelacarino.com/archive" />
       </Helmet>
 
       <StyledMainContainer>
         <header ref={revealTitle}>
-          <h1 className="big-title">Archive</h1>
+          <h1 className="big-title">Projects</h1>
           <p className="subtitle">A big list of things I’ve worked on</p>
         </header>
 
         <StyledTableContainer ref={revealTable}>
+          <h1 style={{ marginLeft: '20px' }}>Featured Projects</h1>
+          <StyledTable>
+            <thead>
+              <tr>
+                <th>Year</th>
+                <th>Title</th>
+                <th className="hide-on-mobile">Made at</th>
+                <th className="hide-on-mobile">Built with</th>
+                <th>Link</th>
+              </tr>
+            </thead>
+            <tbody>
+              {featured.length > 0 &&
+                featured.map(({ node }, i) => {
+                  const {
+                    date,
+                    id,
+                    subtitle,
+                    github,
+                    external,
+                    ios,
+                    android,
+                    title,
+                    tech,
+                    company,
+                  } = node.frontmatter;
+                  return (
+                    <tr key={i} ref={el => (revealProjects.current[i] = el)}>
+                      <td className="overline year">{`${new Date(date).getFullYear()}`}</td>
+
+                      <td className="title">{title}</td>
+
+                      <td className="company hide-on-mobile">
+                        {company ? <span>{company}</span> : <span>—</span>}
+                      </td>
+
+                      <td className="tech hide-on-mobile">
+                        {tech.length > 0 &&
+                          tech.map((item, i) => (
+                            <span key={i}>
+                              {item}
+                              {''}
+                              {i !== tech.length - 1 && <span className="separator">&middot;</span>}
+                            </span>
+                          ))}
+                      </td>
+
+                      <td className="links">
+                        <span>
+                          {external && (
+                            <a
+                              href={external}
+                              target="_blank"
+                              rel="nofollow noopener noreferrer"
+                              aria-label="External Link">
+                              <FormattedIcon name="External" />
+                            </a>
+                          )}
+                          {github && (
+                            <a
+                              href={github}
+                              target="_blank"
+                              rel="nofollow noopener noreferrer"
+                              aria-label="GitHub Link">
+                              <FormattedIcon name="GitHub" />
+                            </a>
+                          )}
+                          {ios && (
+                            <a
+                              href={ios}
+                              target="_blank"
+                              rel="nofollow noopener noreferrer"
+                              aria-label="Apple App Store Link">
+                              <FormattedIcon name="AppStore" />
+                            </a>
+                          )}
+                          {android && (
+                            <a
+                              href={android}
+                              target="_blank"
+                              rel="nofollow noopener noreferrer"
+                              aria-label="Google Play Store Link">
+                              <FormattedIcon name="PlayStore" />
+                            </a>
+                          )}
+                          {id && (
+                            <StyledPersonalVideoIcon
+                              onClick={() => handleClickOpen(subtitle, title)}
+                            />
+                          )}
+                        </span>
+                      </td>
+                    </tr>
+                  );
+                })}
+            </tbody>
+            <ProjectDialog
+              handleClose={handleClose}
+              open={open}
+              projectDialogDetails={projectDialogDetails}
+            />
+          </StyledTable>
+        </StyledTableContainer>
+        <StyledTableContainer ref={revealTable}>
+          <h1>Other Projects</h1>
           <StyledTable>
             <thead>
               <tr>
@@ -133,16 +261,8 @@ const ArchivePage = ({ location, data }) => {
             <tbody>
               {projects.length > 0 &&
                 projects.map(({ node }, i) => {
-                  const {
-                    date,
-                    github,
-                    external,
-                    ios,
-                    android,
-                    title,
-                    tech,
-                    company,
-                  } = node.frontmatter;
+                  const { date, github, external, ios, android, title, tech, company } =
+                    node.frontmatter;
                   return (
                     <tr key={i} ref={el => (revealProjects.current[i] = el)}>
                       <td className="overline year">{`${new Date(date).getFullYear()}`}</td>
@@ -223,7 +343,7 @@ export default ArchivePage;
 
 export const pageQuery = graphql`
   {
-    allMarkdownRemark(
+    projects: allMarkdownRemark(
       filter: { fileAbsolutePath: { regex: "/projects/" } }
       sort: { fields: [frontmatter___date], order: DESC }
     ) {
@@ -238,6 +358,33 @@ export const pageQuery = graphql`
             ios
             android
             company
+          }
+          html
+        }
+      }
+    }
+    featured: allMarkdownRemark(
+      filter: { fileAbsolutePath: { regex: "/featured/" } }
+      sort: { fields: [frontmatter___date], order: DESC }
+    ) {
+      edges {
+        node {
+          frontmatter {
+            id
+            date
+            title
+            subtitle
+            cover {
+              childImageSharp {
+                fluid(maxWidth: 700, quality: 90, traceSVG: { color: "#64ffda" }) {
+                  ...GatsbyImageSharpFluid_withWebp_tracedSVG
+                }
+              }
+            }
+            company
+            tech
+            github
+            external
           }
           html
         }

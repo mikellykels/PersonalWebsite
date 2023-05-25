@@ -1,5 +1,5 @@
 ---
-date: '1'
+date: '03-01-2017'
 title: 'Various open source contributions at Sentry'
 github: 'https://github.com/getsentry/sentry'
 external: 'https://github.com/getsentry/sentry/pulls?q=is%3Apr+author%3Amikellykels+is%3Aclosed'
@@ -9,7 +9,7 @@ tech:
   - JavaScript
   - TypeScript
   - React
-company: 'Placeholder Company'
+company: 'Sentry'
 showInProjects: true
 ---
 

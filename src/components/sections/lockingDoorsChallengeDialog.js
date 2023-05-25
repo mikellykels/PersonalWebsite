@@ -6,29 +6,15 @@ import { theme, mixins } from '@styles';
 
 const { colors, fontSizes } = theme;
 
-function SteamPunkRPGProjectDialog() {
+function LockingDoorsProjectDialog() {
   return (
     <div style={{ marginTop: '8px' }}>
-      <StyledSubtitle>Contributions:</StyledSubtitle>
+      <StyledSubtitle>Required Mechanics:</StyledSubtitle>
       <StyledList>
-        <li>
-          Gameplay programming for the main character, enemy charcter, attack system, equipment
-          system, player stats, interactions, AI, and UI{' '}
-        </li>
-        <li>Connected the animations and sounds</li>
-        <li>Level and UI design</li>
-        <li>
-          Entered as part of the{' '}
-          <a
-            href={'https://www.therookies.co/entries/21590'}
-            target="_blank"
-            rel="nofollow noopener noreferrer">
-            Rookie Awards 2023
-          </a>
-          .
-        </li>
+        <li>Locking door that requires player to have a key to unlock and open.</li>
+        <li>At least one door requires a combination of keys to unlock.</li>
       </StyledList>
-      <StyledSubtitle>Assets are from various sites:</StyledSubtitle>
+      <StyledSubtitle>Contributions:</StyledSubtitle>
       <StyledList>
         <li>
           DieselPunk (buildings/props/environment):{' '}
@@ -84,9 +70,9 @@ function SteamPunkRPGProjectDialog() {
   );
 }
 
-export default SteamPunkRPGProjectDialog;
+export default LockingDoorsProjectDialog;
 
-SteamPunkRPGProjectDialog.propTypes = {
+LockingDoorsProjectDialog.propTypes = {
   handleClose: PropTypes.func,
   open: PropTypes.bool,
   projectDialogDetails: PropTypes.object,

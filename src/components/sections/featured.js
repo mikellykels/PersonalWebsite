@@ -1,12 +1,13 @@
 import React, { useEffect, useRef } from 'react';
 import PropTypes from 'prop-types';
+import { navigate } from 'gatsby';
 import Img from 'gatsby-image';
 import sr from '@utils/sr';
 import { srConfig } from '@config';
 import { FormattedIcon } from '@components/icons';
 import PersonalVideoIcon from '@mui/icons-material/PersonalVideo';
 import styled from 'styled-components';
-import { theme, mixins, media, Section, Heading } from '@styles';
+import { theme, mixins, media, Section, Heading, Button } from '@styles';
 
 import ProjectDialog from './projectDialog';
 
@@ -163,6 +164,9 @@ const StyledImgContainer = styled.a`
     mix-blend-mode: screen;
   }
 `;
+const StyledHeading = styled(Heading)`
+  margin-bottom: 8px;
+`;
 const StyledProject = styled.div`
   display: grid;
   grid-gap: 10px;
@@ -216,6 +220,9 @@ const StyledPersonalVideoIcon = styled(PersonalVideoIcon)`
     color: ${colors.purple};
   }
 `;
+const StyledViewAllButton = styled(Button)`
+  margin: 100px auto 0;
+`;
 
 const Featured = ({ data }) => {
   const featuredProjects = data.filter(({ node }) => node);
@@ -236,15 +243,16 @@ const Featured = ({ data }) => {
 
   const revealTitle = useRef(null);
   const revealProjects = useRef([]);
+  const revealArchiveLink = useRef(null);
   useEffect(() => {
     sr.reveal(revealTitle.current, srConfig());
+    sr.reveal(revealArchiveLink.current, srConfig());
     revealProjects.current.forEach((ref, i) => sr.reveal(ref, srConfig(i * 100)));
   }, []);
 
   return (
     <StyledContainer id="projects">
-      <Heading ref={revealTitle}>Projects</Heading>
-
+      <StyledHeading ref={revealTitle}>Projects</StyledHeading>
       <div>
         {featuredProjects &&
           featuredProjects.map(({ node }, i) => {
@@ -317,6 +325,12 @@ const Featured = ({ data }) => {
             );
           })}
       </div>
+      <StyledViewAllButton
+        onClick={() => {
+          navigate('/projects');
+        }}>
+        View all projects
+      </StyledViewAllButton>
     </StyledContainer>
   );
 };

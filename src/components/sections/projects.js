@@ -6,7 +6,7 @@ import sr from '@utils/sr';
 import { srConfig } from '@config';
 import { FormattedIcon } from '@components/icons';
 import styled from 'styled-components';
-import { theme, mixins, media, Section, Button } from '@styles';
+import { theme, mixins, media, Section } from '@styles';
 const { colors, fontSizes, fonts } = theme;
 
 const StyledContainer = styled(Section)`
@@ -22,16 +22,16 @@ const StyledTitle = styled.h4`
     display: block;
   }
 `;
-// const StyledArchiveLink = styled(Link)`
-//   ${mixins.inlineLink};
-//   text-align: center;
-//   margin: 0 auto;
-//   font-family: ${fonts.SFMono};
-//   font-size: ${fontSizes.sm};
-//   &:after {
-//     bottom: 0.1em;
-//   }
-// `;
+const StyledArchiveLink = styled(Link)`
+  ${mixins.inlineLink};
+  text-align: center;
+  margin: 0 auto;
+  font-family: ${fonts.SFMono};
+  font-size: ${fontSizes.sm};
+  &:after {
+    bottom: 0.1em;
+  }
+`;
 const StyledGrid = styled.div`
   margin-top: 50px;
 
@@ -146,9 +146,9 @@ const Projects = ({ data }) => {
   return (
     <StyledContainer>
       <StyledTitle ref={revealTitle}>Other Projects</StyledTitle>
-      {/* <StyledArchiveLink to="/archive" ref={revealArchiveLink}>
-        view the archive
-      </StyledArchiveLink> */}
+      <StyledArchiveLink to="/projects" ref={revealArchiveLink}>
+        view all projects
+      </StyledArchiveLink>
 
       <StyledGrid>
         <TransitionGroup className="projects">

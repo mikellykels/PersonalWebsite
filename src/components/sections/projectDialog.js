@@ -7,6 +7,7 @@ import { theme, mixins, media } from '@styles';
 
 import SteamPunkRPGProjectDialog from './steampunkRPGDialog';
 import TantrumnProjectDialog from './tantrumnDialog';
+import LockingDoorsProjectDialog from './lockingDoorsChallengeDialog';
 import { PROJECTS } from './constants';
 
 const { colors, fontSizes, fonts } = theme;
@@ -51,6 +52,8 @@ function ProjectDialog({ handleClose, open, projectDialogDetails }) {
           <SteamPunkRPGProjectDialog />
         ) : projectDialogDetails.title === PROJECTS.TANTRUMN.TITLE ? (
           <TantrumnProjectDialog />
+        ) : projectDialogDetails.title === PROJECTS.LOCKINGDOORS.TITLE ? (
+          <LockingDoorsProjectDialog />
         ) : null}
       </StyledDialogContent>
       <DialogActions>

@@ -17,20 +17,18 @@ function Resume() {
   return (
     <main>
       <Helmet>
-        <title>Resume | Anmol Singh</title>
-        <link rel="canonical" href="https://anmolsingh.me/resume" />
+        <title>Resume | Mikaela Carino</title>
+        <link rel="canonical" href="https://mikaelacarino.com/resume" />
       </Helmet>
       {isLoading ? (
         <img
           src="https://i.pinimg.com/originals/65/ba/48/65ba488626025cff82f091336fbf94bb.gif"
-          alt="Loading"
-        ></img>
+          alt="Loading"></img>
       ) : (
         <p
           dangerouslySetInnerHTML={{
             __html: resume,
-          }}
-        ></p>
+          }}></p>
       )}
     </main>
   );
