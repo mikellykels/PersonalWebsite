@@ -14,7 +14,7 @@ export const PROJECTS = {
       'A multiplayer race to the finish! Traverse through the obstacles using any powerups you find to give you the advantage over your opponent. Made during my second term of the Game Programming course at CG Spectrum.',
   },
   LOCKINGDOORS: {
-    TITLE: 'Locking Doors',
+    TITLE: 'Locking Doors Challenge',
     VIDEO:
       'https://player.vimeo.com/video/827254999?h=9228ba4155&amp;badge=0&amp;autopause=0&amp;player_id=0&amp;app_id=58479',
     DESCRIPTION:

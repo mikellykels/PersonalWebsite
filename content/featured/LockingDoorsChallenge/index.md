@@ -1,7 +1,7 @@
 ---
 id: ''
 date: '05-01-2023'
-title: 'Locking Doors'
+title: 'Locking Doors Challenge'
 subtitle: 'May 2023'
 cover: './placeholderImage.png'
 github: 'https://github.com/mikellykels/LockingDoorChallenge'
