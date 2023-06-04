@@ -18,14 +18,6 @@ module.exports = {
     `gatsby-plugin-sitemap`,
     `gatsby-plugin-robots-txt`,
     `gatsby-plugin-offline`,
-    // {
-    //   resolve: 'gatsby-plugin-react-svg',
-    //   options: {
-    //     rule: {
-    //       include: /assets/,
-    //     },
-    //   },
-    // },
     {
       resolve: 'gatsby-source-filesystem',
       options: {

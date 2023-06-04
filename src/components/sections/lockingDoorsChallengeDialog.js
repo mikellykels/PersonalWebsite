@@ -17,53 +17,14 @@ function LockingDoorsProjectDialog() {
       <StyledSubtitle>Contributions:</StyledSubtitle>
       <StyledList>
         <li>
-          DieselPunk (buildings/props/environment):{' '}
-          <a
-            href="https://kitbash3d.com/products/dieselpunk"
-            target="_blank"
-            rel="nofollow noopener noreferrer">
-            KitBash3D
-          </a>
+          All C++ code, blueprints, and UI, for example, the Character, PlayerController, inventory
+          system, door and key actors, data tables, interaction interface, and widgets.
         </li>
+      </StyledList>
+      <StyledSubtitle>Assets:</StyledSubtitle>
+      <StyledList>
         <li>
-          Steampunk character collection:{' '}
-          <a
-            href="https://www.unrealengine.com/marketplace/en-US/product/steampunk-character-collection"
-            target="_blank"
-            rel="nofollow noopener noreferrer">
-            Crazy Vertex on UE Marketplace
-          </a>
-        </li>
-        <li>
-          Sounds and Music:{' '}
-          <a href="https://freesound.org/" target="_blank" rel="nofollow noopener noreferrer">
-            Various from freesound
-          </a>
-        </li>
-        <li>
-          Icons: KatGrabowska on{' '}
-          <a
-            href="https://www.unrealengine.com/marketplace/en-US/product/300-stylised-icons-pack/"
-            target="_blank"
-            rel="nofollow noopener noreferrer">
-            UE Marketplace
-          </a>{' '}
-          and Piontek on{' '}
-          <a
-            href="https://www.unrealengine.com/marketplace/en-US/product/pro-icon-pack"
-            target="_blank"
-            rel="nofollow noopener noreferrer">
-            UE Marketplace
-          </a>
-        </li>
-        <li>
-          Icon Generator: AleeZL on{' '}
-          <a
-            href="https://www.unrealengine.com/marketplace/en-US/product/icon-generator"
-            target="_blank"
-            rel="nofollow noopener noreferrer">
-            UE Marketplace
-          </a>
+          Provided by CG Spectrum in the repo: UE Third Person template and UE Starter Content
         </li>
       </StyledList>
     </div>

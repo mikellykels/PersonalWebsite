@@ -1,9 +1,9 @@
 ---
-id: ''
+id: '3'
 date: '05-01-2023'
 title: 'Locking Doors Challenge'
 subtitle: 'May 2023'
-cover: './placeholderImage.png'
+cover: './lockingDoors.png'
 github: 'https://github.com/mikellykels/LockingDoorChallenge'
 external: ''
 company: 'CG Spectrum project'
@@ -13,4 +13,4 @@ tech:
 showInProjects: true
 ---
 
-Monthly Game Mechanic Challenge at CG Spectrum where we had two weeks to complete the challenge.
+Monthly Game Mechanic Challenge at CG Spectrum where we had two weeks to complete the challenge using the assets provided.
