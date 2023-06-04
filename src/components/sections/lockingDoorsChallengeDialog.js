@@ -18,8 +18,9 @@ function LockingDoorsProjectDialog() {
       <StyledList>
         <li>
           All C++ code, blueprints, and UI, for example, the Character, PlayerController, inventory
-          system, door and key actors, data tables, interaction interface, and widgets.
+          system, door and key actors, data tables, interaction interface, and widgets
         </li>
+        <li>Level design</li>
       </StyledList>
       <StyledSubtitle>Assets:</StyledSubtitle>
       <StyledList>
