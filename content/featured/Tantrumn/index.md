@@ -1,9 +1,9 @@
 ---
-id: ''
+id: '1'
 date: '02-01-2023'
 title: 'Tantrumn'
 subtitle: '2023'
-cover: './placeholderImage.png'
+cover: './tantrumn.png'
 github: 'https://github.com/mikellykels/Tantrumn'
 external: ''
 company: 'CG Spectrum project'

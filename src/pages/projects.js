@@ -197,7 +197,8 @@ const ArchivePage = ({ location, data }) => {
                               href={external}
                               target="_blank"
                               rel="nofollow noopener noreferrer"
-                              aria-label="External Link">
+                              aria-label="External Link"
+                            >
                               <FormattedIcon name="External" />
                             </a>
                           )}
@@ -206,7 +207,8 @@ const ArchivePage = ({ location, data }) => {
                               href={github}
                               target="_blank"
                               rel="nofollow noopener noreferrer"
-                              aria-label="GitHub Link">
+                              aria-label="GitHub Link"
+                            >
                               <FormattedIcon name="GitHub" />
                             </a>
                           )}
@@ -215,7 +217,8 @@ const ArchivePage = ({ location, data }) => {
                               href={ios}
                               target="_blank"
                               rel="nofollow noopener noreferrer"
-                              aria-label="Apple App Store Link">
+                              aria-label="Apple App Store Link"
+                            >
                               <FormattedIcon name="AppStore" />
                             </a>
                           )}
@@ -224,11 +227,12 @@ const ArchivePage = ({ location, data }) => {
                               href={android}
                               target="_blank"
                               rel="nofollow noopener noreferrer"
-                              aria-label="Google Play Store Link">
+                              aria-label="Google Play Store Link"
+                            >
                               <FormattedIcon name="PlayStore" />
                             </a>
                           )}
-                          {id && (
+                          {id && id !== '1' && (
                             <StyledPersonalVideoIcon
                               onClick={() => handleClickOpen(subtitle, title)}
                             />
@@ -291,7 +295,8 @@ const ArchivePage = ({ location, data }) => {
                               href={external}
                               target="_blank"
                               rel="nofollow noopener noreferrer"
-                              aria-label="External Link">
+                              aria-label="External Link"
+                            >
                               <FormattedIcon name="External" />
                             </a>
                           )}
@@ -300,7 +305,8 @@ const ArchivePage = ({ location, data }) => {
                               href={github}
                               target="_blank"
                               rel="nofollow noopener noreferrer"
-                              aria-label="GitHub Link">
+                              aria-label="GitHub Link"
+                            >
                               <FormattedIcon name="GitHub" />
                             </a>
                           )}
@@ -309,7 +315,8 @@ const ArchivePage = ({ location, data }) => {
                               href={ios}
                               target="_blank"
                               rel="nofollow noopener noreferrer"
-                              aria-label="Apple App Store Link">
+                              aria-label="Apple App Store Link"
+                            >
                               <FormattedIcon name="AppStore" />
                             </a>
                           )}
@@ -318,7 +325,8 @@ const ArchivePage = ({ location, data }) => {
                               href={android}
                               target="_blank"
                               rel="nofollow noopener noreferrer"
-                              aria-label="Google Play Store Link">
+                              aria-label="Google Play Store Link"
+                            >
                               <FormattedIcon name="PlayStore" />
                             </a>
                           )}

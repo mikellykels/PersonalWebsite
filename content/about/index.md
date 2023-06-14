@@ -3,9 +3,10 @@ title: 'About Me'
 avatar: './me.jpg'
 skills:
   - C++
-  - Unreal Engine 5
   - JavaScript
+  - Unreal Engine 5
   - TypeScript
+  - Maya
   - ReactJS
 ---
 

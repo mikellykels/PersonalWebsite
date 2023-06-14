@@ -269,7 +269,8 @@ const Featured = ({ data }) => {
                         href={external}
                         target="_blank"
                         rel="nofollow noopener noreferrer"
-                        aria-label="External Link">
+                        aria-label="External Link"
+                      >
                         {title}
                       </a>
                     ) : (
@@ -290,7 +291,8 @@ const Featured = ({ data }) => {
                         href={github}
                         target="_blank"
                         rel="nofollow noopener noreferrer"
-                        aria-label="GitHub Link">
+                        aria-label="GitHub Link"
+                      >
                         <FormattedIcon name="GitHub" />
                       </a>
                     )}
@@ -299,11 +301,12 @@ const Featured = ({ data }) => {
                         href={external}
                         target="_blank"
                         rel="nofollow noopener noreferrer"
-                        aria-label="External Link">
+                        aria-label="External Link"
+                      >
                         <FormattedIcon name="External" />
                       </a>
                     )}
-                    {id && (
+                    {id && id !== '1' && (
                       <StyledPersonalVideoIcon onClick={() => handleClickOpen(subtitle, title)} />
                     )}
                   </StyledLinkWrapper>
@@ -315,9 +318,10 @@ const Featured = ({ data }) => {
                 />
                 {id && (
                   <StyledImgContainer
-                    onClick={() => handleClickOpen(subtitle, title)}
+                    onClick={() => id !== '1' && handleClickOpen(subtitle, title)}
                     rel="nofollow noopener noreferrer"
-                    target="_blank">
+                    target="_blank"
+                  >
                     <StyledFeaturedImg fluid={cover.childImageSharp.fluid} alt={title} />
                   </StyledImgContainer>
                 )}
@@ -328,7 +332,8 @@ const Featured = ({ data }) => {
       <StyledViewAllButton
         onClick={() => {
           navigate('/projects');
-        }}>
+        }}
+      >
         View all projects
       </StyledViewAllButton>
     </StyledContainer>
