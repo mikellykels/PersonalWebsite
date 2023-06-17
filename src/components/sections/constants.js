@@ -8,10 +8,9 @@ export const PROJECTS = {
   },
   TANTRUMN: {
     TITLE: 'Tantrumn',
-    VIDEO:
-      'https://player.vimeo.com/video/827254999?h=9228ba4155&amp;badge=0&amp;autopause=0&amp;player_id=0&amp;app_id=58479',
+    VIDEO: '',
     DESCRIPTION:
-      'A multiplayer race to the finish! Traverse through the obstacles using any powerups you find to give you the advantage over your opponent. Made during my second term of the Game Programming course at CG Spectrum.',
+      'A multiplayer race to the finish! Traverse through the obstacles using any power-ups you find to give you the advantage over your opponent. Made during my second term of the Game Programming course at CG Spectrum (12 weeks), and I focused on the multiplayer split-screen and race against the AI game modes.',
   },
   LOCKINGDOORS: {
     TITLE: 'Locking Doors Challenge',

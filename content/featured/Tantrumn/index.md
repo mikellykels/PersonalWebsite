@@ -1,6 +1,6 @@
 ---
-id: '1'
-date: '02-01-2023'
+id: '2'
+date: '01-02-2023'
 title: 'Tantrumn'
 subtitle: '2023'
 cover: './tantrumn.png'
@@ -13,4 +13,4 @@ tech:
 showInProjects: true
 ---
 
-A multiplayer race to the finish! Traverse through the obstacles using any powerups you find to give you the advantage over your opponent.
+A multiplayer race to the finish! Traverse through the obstacles using any power-ups you find to give you the advantage over your opponent.

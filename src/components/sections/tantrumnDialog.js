@@ -11,15 +11,40 @@ function TantrumnProjectDialog() {
     <div style={{ marginTop: '8px' }}>
       <StyledSubtitle>Contributions:</StyledSubtitle>
       <StyledList>
-        <li></li>
-        <li></li>
-        <li></li>
+        <li>Interaction system (code and UI)</li>
+        <li>Power-up system (code and UI)</li>
+        <li>Equipped item system (code and UI)</li>
+        <li>Pause and Resume menu (code and UI)</li>
+        <li>
+          Adding in sounds for walking/running, jumping, use, attached, and win
+          animations/conditions.
+        </li>
+        <li>Level design</li>
+        <li>
+          Various code improvements/additions to the course code to work with my added
+          contributions. This includes updating the Game Mode, Character Base, Player Controller,
+          and Game State/Player State.
+        </li>
       </StyledList>
-      <StyledSubtitle>Assets are from various sites:</StyledSubtitle>
+      <StyledSubtitle>Assets:</StyledSubtitle>
       <StyledList>
-        <li></li>
-        <li></li>
-        <li></li>
+        <li>
+          The{' '}
+          <a
+            href="https://www.unrealengine.com/marketplace/en-US/product/unreal-learning-kit"
+            target="_blank"
+            rel="nofollow noopener noreferrer"
+          >
+            Unreal Learning Kit
+          </a>{' '}
+          from the Unreal Engine Marketplace
+        </li>
+        <li>
+          Various sounds from the Unreal Starter Content, the Unreal Learning Kit, and{' '}
+          <a href="https://freesound.org/" target="_blank" rel="nofollow noopener noreferrer">
+            freesound.org
+          </a>
+        </li>
       </StyledList>
     </div>
   );

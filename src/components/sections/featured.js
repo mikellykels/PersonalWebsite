@@ -306,7 +306,7 @@ const Featured = ({ data }) => {
                         <FormattedIcon name="External" />
                       </a>
                     )}
-                    {id && id !== '1' && (
+                    {id && (
                       <StyledPersonalVideoIcon onClick={() => handleClickOpen(subtitle, title)} />
                     )}
                   </StyledLinkWrapper>

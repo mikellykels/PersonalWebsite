@@ -12,9 +12,13 @@ function SteamPunkRPGProjectDialog() {
       <StyledSubtitle>Contributions:</StyledSubtitle>
       <StyledList>
         <li>
-          Gameplay programming for the main character, enemy charcter, attack system, equipment
-          system, player stats, interactions, AI, and UI{' '}
+          <i>All contributions are by me except for assets noted below</i>
         </li>
+        <li>Gameplay programming for the main character and enemy AI charcter</li>
+        <li>Attack system (code and UI)</li>
+        <li>Equipment/Inventory system (code and UI)</li>
+        <li>Player Stats system (code and UI)</li>
+        <li>Interaction system (code and UI)</li>
         <li>Connected the animations and sounds</li>
         <li>Level and UI design</li>
         <li>
@@ -22,7 +26,8 @@ function SteamPunkRPGProjectDialog() {
           <a
             href={'https://www.therookies.co/entries/21590'}
             target="_blank"
-            rel="nofollow noopener noreferrer">
+            rel="nofollow noopener noreferrer"
+          >
             Rookie Awards 2023
           </a>
           .
@@ -35,7 +40,8 @@ function SteamPunkRPGProjectDialog() {
           <a
             href="https://kitbash3d.com/products/dieselpunk"
             target="_blank"
-            rel="nofollow noopener noreferrer">
+            rel="nofollow noopener noreferrer"
+          >
             KitBash3D
           </a>
         </li>
@@ -44,7 +50,8 @@ function SteamPunkRPGProjectDialog() {
           <a
             href="https://www.unrealengine.com/marketplace/en-US/product/steampunk-character-collection"
             target="_blank"
-            rel="nofollow noopener noreferrer">
+            rel="nofollow noopener noreferrer"
+          >
             Crazy Vertex on UE Marketplace
           </a>
         </li>
@@ -59,14 +66,16 @@ function SteamPunkRPGProjectDialog() {
           <a
             href="https://www.unrealengine.com/marketplace/en-US/product/300-stylised-icons-pack/"
             target="_blank"
-            rel="nofollow noopener noreferrer">
+            rel="nofollow noopener noreferrer"
+          >
             UE Marketplace
           </a>{' '}
           and Piontek on{' '}
           <a
             href="https://www.unrealengine.com/marketplace/en-US/product/pro-icon-pack"
             target="_blank"
-            rel="nofollow noopener noreferrer">
+            rel="nofollow noopener noreferrer"
+          >
             UE Marketplace
           </a>
         </li>
@@ -75,7 +84,8 @@ function SteamPunkRPGProjectDialog() {
           <a
             href="https://www.unrealengine.com/marketplace/en-US/product/icon-generator"
             target="_blank"
-            rel="nofollow noopener noreferrer">
+            rel="nofollow noopener noreferrer"
+          >
             UE Marketplace
           </a>
         </li>

@@ -118,6 +118,7 @@ export const pageQuery = graphql`
             date
             title
             url
+            external
             id
           }
           html

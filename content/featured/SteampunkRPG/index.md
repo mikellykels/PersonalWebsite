@@ -1,8 +1,8 @@
 ---
-id: '2'
-date: '04-01-2023'
+id: '3'
+date: '01-03-2023'
 title: 'Steampunk RPG'
-subtitle: 'April - May 2023'
+subtitle: 'April 2023 - Present'
 cover: './steampunkrpg.png'
 github: 'https://github.com/mikellykels/RPG'
 external: ''
@@ -13,4 +13,4 @@ tech:
 showInProjects: true
 ---
 
-A steampunk-themed RPG designed using C++ and Unreal Engine 5.1. Practicing and exploring an equipment system, a dynamic attack mechanism, detailed player stats, enemy AI, and UI elements. Also entered as part of the [Rookie Awards 2023](https://www.therookies.co/entries/21590).
+Ongoing Project: A steampunk-themed RPG designed using C++ and Unreal Engine 5.1. Practicing and exploring an equipment system, a dynamic attack mechanism, detailed player stats, enemy AI, and UI elements. Also entered as part of the [Rookie Awards 2023](https://www.therookies.co/entries/21590).

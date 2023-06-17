@@ -3,10 +3,9 @@ import PropTypes from 'prop-types';
 import sr from '@utils/sr';
 import { srConfig } from '@config';
 import styled from 'styled-components';
-import { CardMedia, CardContent, Grid } from '@mui/material';
+import { FormattedIcon } from '@components/icons';
+import { CardActions, CardMedia, CardContent, Grid } from '@mui/material';
 import { theme, mixins, media, Section } from '@styles';
-
-import CertificationsDialog from './certificationsDialog';
 
 const { colors, fontSizes, fonts } = theme;
 
@@ -55,25 +54,19 @@ const StyedDate = styled.span`
   font-size: 13px;
   color: ${colors.lightSlate};
 `;
+const StyledIconLink = styled.a`
+  position: relative;
+  top: -10px;
+  padding: 10px;
+  svg {
+    width: 20px;
+    height: 20px;
+  }
+`;
 
 const AwardsCertifications = ({ data }) => {
   const revealTitle = useRef(null);
   const revealContainer = useRef(null);
-  const [open, setOpen] = React.useState(false);
-  const [imageURL, setImageURL] = React.useState('');
-
-  const handleClickOpen = url => {
-    setOpen(true);
-
-    if (url) {
-      setImageURL(url);
-    }
-  };
-
-  const handleClose = () => {
-    setOpen(false);
-    setImageURL('');
-  };
 
   useEffect(() => sr.reveal(revealContainer.current, srConfig()), []);
 
@@ -81,22 +74,22 @@ const AwardsCertifications = ({ data }) => {
     <StyledContainer id="certifications" ref={revealContainer}>
       <StyledTitle ref={revealTitle}>Certifications</StyledTitle>
       <Grid container mt={2.25} spacing={4}>
-        <CertificationsDialog handleClose={handleClose} open={open} url={imageURL} />
         {data &&
           data.map(({ node }, i) => {
             const { frontmatter } = node;
-            const { date, id, title, url } = frontmatter;
+            const { date, id, title, url, external } = frontmatter;
             return (
               <Grid item key={i} xs={12} sm={6} md={4}>
                 {id && (
-                  <StyledCertification onClick={() => handleClickOpen(url)}>
+                  <StyledCertification>
                     <StyledCard
                       sx={{
                         height: '100%',
                         display: 'flex',
                         flexDirection: 'column',
                         backgroundColor: `${colors.lightNavy}`,
-                      }}>
+                      }}
+                    >
                       <StyledCardMedia component="img" image={url} alt="certification" />
                       <CardContent
                         sx={{
@@ -104,10 +97,21 @@ const AwardsCertifications = ({ data }) => {
                           color: `${colors.lightestSlate}`,
                           fontSize: '18px',
                           fontWeight: '600',
-                        }}>
+                        }}
+                      >
                         {title}
                         <StyedDate>{date}</StyedDate>
                       </CardContent>
+                      <CardActions style={{ paddingBottom: '0px' }}>
+                        <StyledIconLink
+                          href={external}
+                          target="_blank"
+                          rel="nofollow noopener noreferrer"
+                          aria-label="External Link"
+                        >
+                          <FormattedIcon name="External" />
+                        </StyledIconLink>
+                      </CardActions>
                     </StyledCard>
                   </StyledCertification>
                 )}
