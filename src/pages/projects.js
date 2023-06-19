@@ -232,7 +232,7 @@ const ArchivePage = ({ location, data }) => {
                               <FormattedIcon name="PlayStore" />
                             </a>
                           )}
-                          {id && id !== '1' && (
+                          {id && (
                             <StyledPersonalVideoIcon
                               onClick={() => handleClickOpen(subtitle, title)}
                             />

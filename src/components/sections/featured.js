@@ -318,7 +318,7 @@ const Featured = ({ data }) => {
                 />
                 {id && (
                   <StyledImgContainer
-                    onClick={() => id !== '1' && handleClickOpen(subtitle, title)}
+                    onClick={() => handleClickOpen(subtitle, title)}
                     rel="nofollow noopener noreferrer"
                     target="_blank"
                   >
