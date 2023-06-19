@@ -8,7 +8,8 @@ export const PROJECTS = {
   },
   TANTRUMN: {
     TITLE: 'Tantrumn',
-    VIDEO: '',
+    VIDEO:
+      'https://player.vimeo.com/video/837390479?badge=0&amp;autopause=0&amp;player_id=0&amp;app_id=58479',
     DESCRIPTION:
       'A multiplayer race to the finish! Traverse through the obstacles using any power-ups you find to give you the advantage over your opponent. Made during my second term of the Game Programming course at CG Spectrum (12 weeks), and I focused on the multiplayer split-screen and race against the AI game modes.',
   },
