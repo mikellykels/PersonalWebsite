@@ -14,7 +14,7 @@ export const PROJECTS = {
       'A multiplayer race to the finish! Traverse through the obstacles using any power-ups you find to give you the advantage over your opponent. Made during my second term of the Game Programming course at CG Spectrum (12 weeks), and I focused on the multiplayer split-screen and race against the AI game modes.',
   },
   LOCKINGDOORS: {
-    TITLE: 'Locking Doors Challenge',
+    TITLE: 'Locking Doors',
     VIDEO:
       'https://player.vimeo.com/video/832988407?h=725303ed43&amp;badge=0&amp;autopause=0&amp;player_id=0&amp;app_id=58479',
     DESCRIPTION:

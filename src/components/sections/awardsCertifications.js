@@ -88,17 +88,17 @@ const AwardsCertifications = ({ data }) => {
                         display: 'flex',
                         flexDirection: 'column',
                         backgroundColor: `${colors.lightNavy}`,
-                      }}
-                    >
-                      <StyledCardMedia component="img" image={url} alt="certification" />
+                      }}>
+                      <a href={external} target="_blank" rel="nofollow noopener noreferrer">
+                        <StyledCardMedia component="img" image={url} alt="certification" />
+                      </a>
                       <CardContent
                         sx={{
                           flexGrow: 1,
                           color: `${colors.lightestSlate}`,
                           fontSize: '18px',
                           fontWeight: '600',
-                        }}
-                      >
+                        }}>
                         {title}
                         <StyedDate>{date}</StyedDate>
                       </CardContent>
@@ -107,8 +107,7 @@ const AwardsCertifications = ({ data }) => {
                           href={external}
                           target="_blank"
                           rel="nofollow noopener noreferrer"
-                          aria-label="External Link"
-                        >
+                          aria-label="External Link">
                           <FormattedIcon name="External" />
                         </StyledIconLink>
                       </CardActions>

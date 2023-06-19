@@ -9,6 +9,7 @@ import {
   Jobs,
   Education,
   Projects,
+  ProjectStudiesChallenges,
   Featured,
   Contact,
 } from '@components';
@@ -25,6 +26,7 @@ const IndexPage = ({ location, data }) => (
       <Hero data={data.hero.edges} />
       <About data={data.about.edges} />
       <Featured data={data.featured.edges} />
+      <ProjectStudiesChallenges data={data.projectStudiesChallenges.edges} />
       <Projects data={data.projects.edges} />
       <Jobs data={data.jobs.edges} />
       <Education data={data.education.edges} />
@@ -166,6 +168,31 @@ export const pageQuery = graphql`
             tech
             github
             external
+          }
+          html
+        }
+      }
+    }
+    projectStudiesChallenges: allMarkdownRemark(
+      filter: {
+        fileAbsolutePath: { regex: "/projectStudiesChallenges/" }
+        frontmatter: { showInProjects: { ne: false } }
+      }
+      sort: { fields: [frontmatter___date], order: DESC }
+    ) {
+      edges {
+        node {
+          frontmatter {
+            id
+            date
+            title
+            subtitle
+            company
+            tech
+            github
+            external
+            url
+            videoLink
           }
           html
         }

@@ -7,8 +7,12 @@ import { srConfig } from '@config';
 import { FormattedIcon } from '@components/icons';
 import styled from 'styled-components';
 import { theme, mixins, media, Section } from '@styles';
-import TerminalOutlinedIcon from '@mui/icons-material/TerminalOutlined';
+// import { PersonalVideoIcon, SportsEsportsOutlinedIcon } from '@mui/icons-material';
+import SportsEsportsOutlinedIcon from '@mui/icons-material/SportsEsportsOutlined';
+import PersonalVideoIcon from '@mui/icons-material/PersonalVideo';
 const { colors, fontSizes, fonts } = theme;
+
+import ProjectDialog from './projectDialog';
 
 const StyledContainer = styled(Section)`
   ${mixins.flexCenter};
@@ -81,6 +85,7 @@ const StyledCardIcon = styled.div`
 const StyledProjectLinks = styled.div`
   margin-right: -10px;
   color: ${colors.lightSlate};
+  display: flex;
 `;
 const StyledIconLink = styled.a`
   position: relative;
@@ -123,12 +128,22 @@ const StyledTechList = styled.ul`
     }
   }
 `;
+const StyledPersonalVideoIcon = styled(PersonalVideoIcon)`
+  :hover {
+    color: ${colors.purple};
+  }
+`;
 // const StyledMoreButton = styled(Button)`
 //   margin: 100px auto 0;
 // `;
 
-const Projects = ({ data }) => {
+const ProjectStudiesChallenges = ({ data }) => {
   const [showMore, setShowMore] = useState(false);
+  const [open, setOpen] = React.useState(false);
+  const [projectDialogDetails, setProjectDialogDetails] = React.useState({
+    title: '',
+    subtitle: '',
+  });
   const revealTitle = useRef(null);
   const revealArchiveLink = useRef(null);
   const revealProjects = useRef([]);
@@ -144,9 +159,18 @@ const Projects = ({ data }) => {
   const firstSix = projects.slice(0, GRID_LIMIT);
   const projectsToShow = showMore ? projects : firstSix;
 
+  const handleClickOpen = (subtitle, title) => {
+    setOpen(true);
+    setProjectDialogDetails({ subtitle, title });
+  };
+
+  const handleClose = () => {
+    setOpen(false);
+  };
+
   return (
     <StyledContainer>
-      <StyledTitle ref={revealTitle}>Other Projects</StyledTitle>
+      <StyledTitle ref={revealTitle}>Game Studies and Challenges</StyledTitle>
       <StyledArchiveLink to="/projects" ref={revealArchiveLink}>
         view all projects
       </StyledArchiveLink>
@@ -156,7 +180,7 @@ const Projects = ({ data }) => {
           {projectsToShow &&
             projectsToShow.map(({ node }, i) => {
               const { frontmatter, html } = node;
-              const { github, external, title, tech } = frontmatter;
+              const { github, external, subtitle, title, tech, url, videoLink } = frontmatter;
               return (
                 <CSSTransition
                   key={i}
@@ -175,8 +199,13 @@ const Projects = ({ data }) => {
                         <header>
                           <StyledProjectHeader>
                             <StyledCardIcon>
-                              <TerminalOutlinedIcon />
+                              <SportsEsportsOutlinedIcon fontSize="large" />
                             </StyledCardIcon>
+                            <ProjectDialog
+                              handleClose={handleClose}
+                              open={open}
+                              projectDialogDetails={projectDialogDetails}
+                            />
                             <StyledProjectLinks>
                               {github && (
                                 <StyledIconLink
@@ -196,10 +225,18 @@ const Projects = ({ data }) => {
                                   <FormattedIcon name="External" />
                                 </StyledIconLink>
                               )}
+                              {videoLink && (
+                                <StyledPersonalVideoIcon
+                                  onClick={() => handleClickOpen(subtitle, title)}
+                                />
+                              )}
                             </StyledProjectLinks>
                           </StyledProjectHeader>
                           <StyledProjectName>{title}</StyledProjectName>
                           <StyledProjectDescription dangerouslySetInnerHTML={{ __html: html }} />
+                          {/* <StyledArchiveLink to={url} ref={revealArchiveLink}>
+                            More details
+                          </StyledArchiveLink> */}
                         </header>
                         <footer>
                           {tech && (
@@ -226,8 +263,8 @@ const Projects = ({ data }) => {
   );
 };
 
-Projects.propTypes = {
+ProjectStudiesChallenges.propTypes = {
   data: PropTypes.array.isRequired,
 };
 
-export default Projects;
+export default ProjectStudiesChallenges;

@@ -106,6 +106,7 @@ const StyledPersonalVideoIcon = styled(PersonalVideoIcon)`
 const ArchivePage = ({ location, data }) => {
   const projects = data.projects.edges;
   const featured = data.featured.edges;
+  const projectStudiesChallenges = data.projectStudiesChallenges.edges;
   const [open, setOpen] = React.useState(false);
   const [projectDialogDetails, setProjectDialogDetails] = React.useState({
     title: '',
@@ -143,7 +144,7 @@ const ArchivePage = ({ location, data }) => {
         </header>
 
         <StyledTableContainer ref={revealTable}>
-          <h1 style={{ marginLeft: '20px' }}>Featured Projects</h1>
+          <h1>Featured Projects</h1>
           <StyledTable>
             <thead>
               <tr>
@@ -197,8 +198,7 @@ const ArchivePage = ({ location, data }) => {
                               href={external}
                               target="_blank"
                               rel="nofollow noopener noreferrer"
-                              aria-label="External Link"
-                            >
+                              aria-label="External Link">
                               <FormattedIcon name="External" />
                             </a>
                           )}
@@ -207,8 +207,7 @@ const ArchivePage = ({ location, data }) => {
                               href={github}
                               target="_blank"
                               rel="nofollow noopener noreferrer"
-                              aria-label="GitHub Link"
-                            >
+                              aria-label="GitHub Link">
                               <FormattedIcon name="GitHub" />
                             </a>
                           )}
@@ -217,8 +216,7 @@ const ArchivePage = ({ location, data }) => {
                               href={ios}
                               target="_blank"
                               rel="nofollow noopener noreferrer"
-                              aria-label="Apple App Store Link"
-                            >
+                              aria-label="Apple App Store Link">
                               <FormattedIcon name="AppStore" />
                             </a>
                           )}
@@ -227,8 +225,111 @@ const ArchivePage = ({ location, data }) => {
                               href={android}
                               target="_blank"
                               rel="nofollow noopener noreferrer"
-                              aria-label="Google Play Store Link"
-                            >
+                              aria-label="Google Play Store Link">
+                              <FormattedIcon name="PlayStore" />
+                            </a>
+                          )}
+                          {id && (
+                            <StyledPersonalVideoIcon
+                              onClick={() => handleClickOpen(subtitle, title)}
+                            />
+                          )}
+                        </span>
+                      </td>
+                    </tr>
+                  );
+                })}
+            </tbody>
+            <ProjectDialog
+              handleClose={handleClose}
+              open={open}
+              projectDialogDetails={projectDialogDetails}
+            />
+          </StyledTable>
+        </StyledTableContainer>
+        <StyledTableContainer ref={revealTable}>
+          <h1>Game Studies and Challenges</h1>
+          <StyledTable>
+            <thead>
+              <tr>
+                <th>Year</th>
+                <th>Title</th>
+                <th className="hide-on-mobile">Made at</th>
+                <th className="hide-on-mobile">Built with</th>
+                <th>Link</th>
+              </tr>
+            </thead>
+            <tbody>
+              {projectStudiesChallenges.length > 0 &&
+                projectStudiesChallenges.map(({ node }, i) => {
+                  const {
+                    date,
+                    id,
+                    subtitle,
+                    github,
+                    external,
+                    ios,
+                    android,
+                    title,
+                    tech,
+                    company,
+                  } = node.frontmatter;
+                  return (
+                    <tr key={i} ref={el => (revealProjects.current[i] = el)}>
+                      <td className="overline year">{`${new Date(date).getFullYear()}`}</td>
+
+                      <td className="title">{title}</td>
+
+                      <td className="company hide-on-mobile">
+                        {company ? <span>{company}</span> : <span>—</span>}
+                      </td>
+
+                      <td className="tech hide-on-mobile">
+                        {tech.length > 0 &&
+                          tech.map((item, i) => (
+                            <span key={i}>
+                              {item}
+                              {''}
+                              {i !== tech.length - 1 && <span className="separator">&middot;</span>}
+                            </span>
+                          ))}
+                      </td>
+
+                      <td className="links">
+                        <span>
+                          {external && (
+                            <a
+                              href={external}
+                              target="_blank"
+                              rel="nofollow noopener noreferrer"
+                              aria-label="External Link">
+                              <FormattedIcon name="External" />
+                            </a>
+                          )}
+                          {github && (
+                            <a
+                              href={github}
+                              target="_blank"
+                              rel="nofollow noopener noreferrer"
+                              aria-label="GitHub Link">
+                              <FormattedIcon name="GitHub" />
+                            </a>
+                          )}
+                          {ios && (
+                            <a
+                              href={ios}
+                              target="_blank"
+                              rel="nofollow noopener noreferrer"
+                              aria-label="Apple App Store Link">
+                              <FormattedIcon name="AppStore" />
+                            </a>
+                          )}
+                          {android && (
+                            <a
+                              href={android}
+                              target="_blank"
+                              rel="nofollow noopener noreferrer"
+                              aria-label="Google Play Store Link">
                               <FormattedIcon name="PlayStore" />
                             </a>
                           )}
@@ -295,8 +396,7 @@ const ArchivePage = ({ location, data }) => {
                               href={external}
                               target="_blank"
                               rel="nofollow noopener noreferrer"
-                              aria-label="External Link"
-                            >
+                              aria-label="External Link">
                               <FormattedIcon name="External" />
                             </a>
                           )}
@@ -305,8 +405,7 @@ const ArchivePage = ({ location, data }) => {
                               href={github}
                               target="_blank"
                               rel="nofollow noopener noreferrer"
-                              aria-label="GitHub Link"
-                            >
+                              aria-label="GitHub Link">
                               <FormattedIcon name="GitHub" />
                             </a>
                           )}
@@ -315,8 +414,7 @@ const ArchivePage = ({ location, data }) => {
                               href={ios}
                               target="_blank"
                               rel="nofollow noopener noreferrer"
-                              aria-label="Apple App Store Link"
-                            >
+                              aria-label="Apple App Store Link">
                               <FormattedIcon name="AppStore" />
                             </a>
                           )}
@@ -325,8 +423,7 @@ const ArchivePage = ({ location, data }) => {
                               href={android}
                               target="_blank"
                               rel="nofollow noopener noreferrer"
-                              aria-label="Google Play Store Link"
-                            >
+                              aria-label="Google Play Store Link">
                               <FormattedIcon name="PlayStore" />
                             </a>
                           )}
@@ -393,6 +490,31 @@ export const pageQuery = graphql`
             tech
             github
             external
+          }
+          html
+        }
+      }
+    }
+    projectStudiesChallenges: allMarkdownRemark(
+      filter: {
+        fileAbsolutePath: { regex: "/projectStudiesChallenges/" }
+        frontmatter: { showInProjects: { ne: false } }
+      }
+      sort: { fields: [frontmatter___date], order: DESC }
+    ) {
+      edges {
+        node {
+          frontmatter {
+            id
+            date
+            title
+            subtitle
+            company
+            tech
+            github
+            external
+            url
+            videoLink
           }
           html
         }
