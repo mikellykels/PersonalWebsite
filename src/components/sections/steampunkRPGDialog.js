@@ -12,7 +12,10 @@ function SteamPunkRPGProjectDialog() {
       <StyledSubtitle>Contributions:</StyledSubtitle>
       <StyledList>
         <li>
-          <i>All contributions are by me except for assets noted below</i>
+          <i>
+            Note: I was the solo developer on this project. My contributions are primarily focused
+            on C++ code and utilizing Unreal Engine. Asset credits are further below.
+          </i>
         </li>
         <li>Gameplay programming for the main character and enemy AI charcter</li>
         <li>Attack system (code and UI)</li>

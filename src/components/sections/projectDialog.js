@@ -7,7 +7,7 @@ import { theme, mixins, media } from '@styles';
 
 import SteamPunkRPGProjectDialog from './steampunkRPGDialog';
 import TantrumnProjectDialog from './tantrumnDialog';
-import LockingDoorsProjectDialog from './lockingDoorsChallengeDialog';
+import LuxLabyrinthDialog from './luxLabyrinthDialog';
 import { PROJECTS } from './constants';
 
 const { colors, fontSizes, fonts } = theme;
@@ -30,7 +30,8 @@ function ProjectDialog({ handleClose, open, projectDialogDetails }) {
       onClose={handleClose}
       open={open}
       scroll="paper"
-      TransitionComponent={Transition}>
+      TransitionComponent={Transition}
+    >
       <StyledDialogTitle>{projectDialogDetails.title}</StyledDialogTitle>
       <StyledDialogDetails>
         <span>{projectDialogDetails.subtitle}</span>
@@ -43,7 +44,8 @@ function ProjectDialog({ handleClose, open, projectDialogDetails }) {
             width="640"
             height="360"
             allow="autoplay; fullscreen; picture-in-picture"
-            allowFullScreen></iframe>
+            allowFullScreen
+          ></iframe>
         </figure>
         <div>
           <StyledDialogDescription>{(project[0] || [])?.DESCRIPTION}</StyledDialogDescription>
@@ -52,8 +54,8 @@ function ProjectDialog({ handleClose, open, projectDialogDetails }) {
           <SteamPunkRPGProjectDialog />
         ) : projectDialogDetails.title === PROJECTS.TANTRUMN.TITLE ? (
           <TantrumnProjectDialog />
-        ) : projectDialogDetails.title === PROJECTS.LOCKINGDOORS.TITLE ? (
-          <LockingDoorsProjectDialog />
+        ) : projectDialogDetails.title === PROJECTS.LUXLABYRINTH.TITLE ? (
+          <LuxLabyrinthDialog />
         ) : null}
       </StyledDialogContent>
       <DialogActions>

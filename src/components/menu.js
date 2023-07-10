@@ -97,7 +97,8 @@ const Menu = ({ menuOpen, toggleMenu }) => {
       menuOpen={menuOpen}
       onClick={handleMenuClick}
       aria-hidden={!menuOpen}
-      tabIndex={menuOpen ? 1 : -1}>
+      tabIndex={menuOpen ? 1 : -1}
+    >
       <Sidebar>
         <NavLinks>
           <NavList>
@@ -108,7 +109,7 @@ const Menu = ({ menuOpen, toggleMenu }) => {
                 </NavListItem>
               ))}
           </NavList>
-          <ResumeLink href="/resume" rel="nofollow noopener noreferrer">
+          <ResumeLink href="/resume.pdf" target="_blank" rel="nofollow noopener noreferrer">
             Resume
           </ResumeLink>
         </NavLinks>

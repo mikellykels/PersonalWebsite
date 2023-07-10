@@ -13,11 +13,18 @@ export const PROJECTS = {
     DESCRIPTION:
       'A multiplayer race to the finish! Traverse through the obstacles using any power-ups you find to give you the advantage over your opponent. Made during my second term of the Game Programming course at CG Spectrum (12 weeks), and I focused on the multiplayer split-screen and race against the AI game modes.',
   },
+  LUXLABYRINTH: {
+    TITLE: 'Lux Labyrinth',
+    VIDEO:
+      'https://player.vimeo.com/video/843629048?badge=0&amp;autopause=0&amp;player_id=0&amp;app_id=58479',
+    DESCRIPTION:
+      'Monthly Game Mechanic Challenge hosted by CG Spectrum where we had three weeks to complete the challenge of getting a ball through a hoop.',
+  },
   LOCKINGDOORS: {
     TITLE: 'Locking Doors',
     VIDEO:
       'https://player.vimeo.com/video/832988407?h=725303ed43&amp;badge=0&amp;autopause=0&amp;player_id=0&amp;app_id=58479',
     DESCRIPTION:
-      'Monthly Game Mechanic Challenge at CG Spectrum where we had two weeks to complete the challenge using the assets provided. I wanted to start refining my code and explore different solutions for handling interaction interfaces, inventory systems, data tables, and the UI.',
+      'Monthly Game Mechanic Challenge hosted by CG Spectrum where we had two weeks to complete the challenge using the assets provided. I wanted to start refining my code and explore different solutions for handling interaction interfaces, inventory systems, data tables, and the UI.',
   },
 };
