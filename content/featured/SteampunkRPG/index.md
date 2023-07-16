@@ -1,7 +1,7 @@
 ---
 id: '3'
 date: '01-03-2023'
-title: 'Steampunk RPG'
+title: 'Automaton Alpha'
 subtitle: 'April 2023 - Present'
 cover: './steampunkrpg.png'
 github: 'https://github.com/mikellykels/RPG'
