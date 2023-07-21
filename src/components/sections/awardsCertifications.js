@@ -1,26 +1,19 @@
 import React, { useEffect, useRef } from 'react';
 import PropTypes from 'prop-types';
+import Img from 'gatsby-image';
 import sr from '@utils/sr';
 import { srConfig } from '@config';
 import styled from 'styled-components';
 import { FormattedIcon } from '@components/icons';
-import { CardActions, CardMedia, CardContent, Grid } from '@mui/material';
-import { theme, mixins, media, Section } from '@styles';
+import { CardActions, CardContent, Grid } from '@mui/material';
+import { theme, mixins, media, Section, Heading } from '@styles';
 
-const { colors, fontSizes, fonts } = theme;
+const { colors, fonts } = theme;
 
 const StyledContainer = styled(Section)`
   ${mixins.flexCenter};
   flex-direction: column;
   align-items: flex-start;
-`;
-const StyledTitle = styled.h4`
-  margin: 0 auto;
-  font-size: ${fontSizes.h3};
-  ${media.tablet`font-size: 24px;`};
-  a {
-    display: block;
-  }
 `;
 const StyledCard = styled.div`
   ${mixins.boxShadow};
@@ -28,7 +21,7 @@ const StyledCard = styled.div`
   flex-direction: column;
   align-items: flex-start;
   position: relative;
-  height: 100%;
+  height: 461px;
   border-radius: ${theme.borderRadius};
   transition: ${theme.transition};
   background-color: ${colors.lightNavy};
@@ -44,9 +37,106 @@ const StyledCertification = styled.div`
     }
   }
 `;
-const StyledCardMedia = styled(CardMedia)`
+const StyledImg = styled(Img)`
+  width: 312px !important;
+  height: 312px !important;
+  object-fit: cover !important;
   border-top-left-radius: ${theme.borderRadius};
   border-top-right-radius: ${theme.borderRadius};
+
+  mix-blend-mode: multiply;
+  filter: grayscale(100%) contrast(1) brightness(90%);
+  ${media.tablet`
+    object-fit: cover;
+    width: auto;
+    height: 100%;
+    filter: grayscale(100%) contrast(1) brightness(80%);
+  `};
+`;
+const StyledI = styled.img`
+  mix-blend-mode: multiply;
+  ${media.tablet`
+    object-fit: cover;
+    width: auto;
+    height: 100%;
+  `};
+`;
+const StyledImageContainer = styled.div`
+  padding-top: 45px;
+  width: 312px;
+  height: 312px;
+  background-color: white;
+  border-top-left-radius: ${theme.borderRadius};
+  border-top-right-radius: ${theme.borderRadius};
+
+  z-index: 1;
+  background-color: ${colors.purple};
+  border-top-left-radius: ${theme.radius + 1}px;
+  border-top-right-radius: ${theme.radius + 1}px;
+  transition: ${theme.transition};
+  ${media.tablet`height: 100%;`};
+  ${media.thone`
+    grid-column: 1 / -1;
+    opacity: 0.25;
+  `};
+  &:hover,
+  &:focus {
+    background-color: white;
+    &:before,
+    ${StyledImg} {
+      background: transparent;
+      filter: none;
+    }
+  }
+  &:before {
+    content: '';
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    z-index: 3;
+    transition: ${theme.transition};
+    background-color: ${colors.navy};
+    mix-blend-mode: screen;
+  }
+`;
+const StyledIContainer = styled.div`
+  z-index: 1;
+  background-color: ${colors.purple};
+  border-top-left-radius: ${theme.radius + 1}px;
+  border-top-right-radius: ${theme.radius + 1}px;
+  transition: ${theme.transition};
+  ${media.tablet`height: 100%;`};
+  ${media.thone`
+    grid-column: 1 / -1;
+    opacity: 0.25;
+  `};
+  &:hover,
+  &:focus {
+    background-color: white;
+    &:before,
+    ${StyledImg} {
+      background: transparent;
+      filter: none;
+    }
+  }
+  &:before {
+    content: '';
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    z-index: 3;
+    transition: ${theme.transition};
+    background-color: ${colors.navy};
+    mix-blend-mode: screen;
+  }
 `;
 const StyedDate = styled.span`
   display: block;
@@ -71,13 +161,13 @@ const AwardsCertifications = ({ data }) => {
   useEffect(() => sr.reveal(revealContainer.current, srConfig()), []);
 
   return (
-    <StyledContainer id="certifications" ref={revealContainer}>
-      <StyledTitle ref={revealTitle}>Certifications</StyledTitle>
-      <Grid container mt={2.25} spacing={4}>
+    <StyledContainer id="certifications-awards" ref={revealContainer}>
+      <Heading ref={revealTitle}>Certifications & Awards</Heading>
+      <Grid container spacing={4}>
         {data &&
           data.map(({ node }, i) => {
             const { frontmatter } = node;
-            const { date, id, title, url, external } = frontmatter;
+            const { date, id, title, image, external, externalImage } = frontmatter;
             return (
               <Grid item key={i} xs={12} sm={6} md={4}>
                 {id && (
@@ -88,9 +178,18 @@ const AwardsCertifications = ({ data }) => {
                         display: 'flex',
                         flexDirection: 'column',
                         backgroundColor: `${colors.lightNavy}`,
-                      }}>
+                      }}
+                    >
                       <a href={external} target="_blank" rel="nofollow noopener noreferrer">
-                        <StyledCardMedia component="img" image={url} alt="certification" />
+                        {image ? (
+                          <StyledIContainer>
+                            <StyledImg fluid={image.childImageSharp.fluid} alt="certification" />
+                          </StyledIContainer>
+                        ) : (
+                          <StyledImageContainer>
+                            <StyledI src={externalImage} alt="certification" />
+                          </StyledImageContainer>
+                        )}
                       </a>
                       <CardContent
                         sx={{
@@ -98,7 +197,8 @@ const AwardsCertifications = ({ data }) => {
                           color: `${colors.lightestSlate}`,
                           fontSize: '18px',
                           fontWeight: '600',
-                        }}>
+                        }}
+                      >
                         {title}
                         <StyedDate>{date}</StyedDate>
                       </CardContent>
@@ -107,7 +207,8 @@ const AwardsCertifications = ({ data }) => {
                           href={external}
                           target="_blank"
                           rel="nofollow noopener noreferrer"
-                          aria-label="External Link">
+                          aria-label="External Link"
+                        >
                           <FormattedIcon name="External" />
                         </StyledIconLink>
                       </CardActions>

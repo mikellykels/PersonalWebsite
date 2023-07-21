@@ -24,13 +24,13 @@ const IndexPage = ({ location, data }) => (
   <Layout location={location}>
     <StyledMainContainer className="fillHeight">
       <Hero data={data.hero.edges} />
-      <About data={data.about.edges} />
       <Featured data={data.featured.edges} />
       <ProjectStudiesChallenges data={data.projectStudiesChallenges.edges} />
       <Projects data={data.projects.edges} />
       <Jobs data={data.jobs.edges} />
       <Education data={data.education.edges} />
       <AwardsCertifications data={data.awardsCertifications.edges} />
+      <About data={data.about.edges} />
       <Contact data={data.contact.edges} />
     </StyledMainContainer>
   </Layout>
@@ -119,7 +119,15 @@ export const pageQuery = graphql`
           frontmatter {
             date
             title
+            image {
+              childImageSharp {
+                fluid(maxWidth: 800) {
+                  ...GatsbyImageSharpFluid
+                }
+              }
+            }
             url
+            externalImage
             external
             id
           }

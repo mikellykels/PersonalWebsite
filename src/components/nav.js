@@ -225,6 +225,8 @@ const Nav = ({ isHome }) => {
     const throttleScroll = throttle(handleScroll);
     const throttleResize = throttle(handleResize);
 
+    isComponentMounted.current = true;
+
     const timer = setTimeout(() => {
       setIsMounted(true);
       window.addEventListener('scroll', throttleScroll);
@@ -250,7 +252,8 @@ const Nav = ({ isHome }) => {
       className="resume-button"
       href="/resume.pdf"
       target="_blank"
-      rel="noopener noreferrer">
+      rel="noopener noreferrer"
+    >
       Resume
     </StyledResumeButton>
   );
@@ -300,7 +303,8 @@ const Nav = ({ isHome }) => {
                   <CSSTransition key={i} classNames={fadeDownClass} timeout={timeout}>
                     <StyledListItem
                       key={i}
-                      style={{ transitionDelay: `${isHome ? i * 100 : 0}ms` }}>
+                      style={{ transitionDelay: `${isHome ? i * 100 : 0}ms` }}
+                    >
                       <StyledListLink to={url}>{name}</StyledListLink>
                     </StyledListItem>
                   </CSSTransition>

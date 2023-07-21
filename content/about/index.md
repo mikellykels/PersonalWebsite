@@ -10,10 +10,12 @@ skills:
   - ReactJS
 ---
 
-Hi there! My name is Mikaela, or Kelly, and I'm a software engineer with a passion for video games. I have been playing games since the original Nintendo, along with having LAN parties with my family playing games like Hexen and Doom. I've always been fascinated by the way that they can transport players to different worlds and create engaging experiences. Some of my favorite games include The Last of Us Part I & II, Horizon Zero Dawn and Horizon Forbidden West, the Zelda series, and the Halo series.
+Hello! I'm Mikaela, often known as Kelly, a self-taught frontend software engineer with a deep-rooted passion for video games. Picture me immersed in the world of the original Nintendo, or engrossed in family LAN parties, navigating my way through classics like Hexen and Doom—that's where my journey began.
 
-After studying art and design at SJSU, I decided to pursue a career in software engineering with a focus on frontend development. However, my love for games has never waned, and I'm now taking courses on C++ and Unreal Engine to learn more about game development and improve my skills in this exciting field.
+My love for video games is not just about playing, it's about the immersive experiences and alternate realities they create. Titles like The Last of Us Part I & II, Horizon Zero Dawn, Horizon Forbidden West, the Zelda series, and the Halo series are among my favorites.
 
-I'm constantly seeking out new technologies and programming languages specific to the video game industry, as I believe that there is always room to learn and grow as a developer. I'm excited to continue exploring the video game industry and all that it has to offer, and I'm looking forward to the challenges and opportunities that lie ahead.
+Following my studies in art and design at SJSU, I took a pivot into the realm of software engineering, with an emphasis on frontend development. But the game enthusiast in me remains alive and well. In fact, I'm currently broadening my skill set by learning more about game development through courses on C++ and Unreal Engine.
+
+I'm an avid explorer of new technologies and programming languages within the video game industry. I hold the philosophy that there's always room for growth and learning in any developer's journey. Excitement fills me as I continue to delve into the video game industry, eagerly anticipating the challenges and opportunities that lie ahead.
 
 Here are a few technologies I've been working with recently:

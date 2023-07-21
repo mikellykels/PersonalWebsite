@@ -40,6 +40,14 @@ module.exports = {
       },
     },
     {
+      resolve: `gatsby-source-filesystem`,
+      options: {
+        path: `${__dirname}/content/awardsCertifications`,
+        name: `awardsCertifications`,
+      },
+    },
+
+    {
       resolve: `gatsby-transformer-remark`,
       options: {
         plugins: [
