@@ -39,7 +39,6 @@ const StyledCertification = styled.div`
 `;
 const StyledImg = styled(Img)`
   width: 312px !important;
-  height: 312px !important;
   object-fit: cover !important;
   border-top-left-radius: ${theme.borderRadius};
   border-top-right-radius: ${theme.borderRadius};
@@ -54,6 +53,9 @@ const StyledImg = styled(Img)`
   `};
 `;
 const StyledI = styled.img`
+  object-fit: cover !important;
+  border-top-left-radius: ${theme.borderRadius};
+  border-top-right-radius: ${theme.borderRadius};
   mix-blend-mode: multiply;
   ${media.tablet`
     object-fit: cover;
@@ -62,9 +64,7 @@ const StyledI = styled.img`
   `};
 `;
 const StyledImageContainer = styled.div`
-  padding-top: 45px;
   width: 312px;
-  height: 312px;
   background-color: white;
   border-top-left-radius: ${theme.borderRadius};
   border-top-right-radius: ${theme.borderRadius};

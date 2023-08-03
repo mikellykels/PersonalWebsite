@@ -112,7 +112,7 @@ export const pageQuery = graphql`
     }
     awardsCertifications: allMarkdownRemark(
       filter: { fileAbsolutePath: { regex: "/awardsCertifications/" } }
-      sort: { fields: [frontmatter___date], order: DESC }
+      sort: { fields: [frontmatter___id], order: DESC }
     ) {
       edges {
         node {
@@ -137,7 +137,7 @@ export const pageQuery = graphql`
     }
     featured: allMarkdownRemark(
       filter: { fileAbsolutePath: { regex: "/featured/" } }
-      sort: { fields: [frontmatter___date], order: DESC }
+      sort: { fields: [frontmatter___id], order: DESC }
     ) {
       edges {
         node {
