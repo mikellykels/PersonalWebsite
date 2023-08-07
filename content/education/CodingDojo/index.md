@@ -3,11 +3,11 @@ date: '1'
 title: ''
 company: 'Coding Dojo'
 location: 'Online'
-range: ''
+range: '2016'
 url: 'https://www.codingdojo.com/'
 ---
 
-- Frontend and Backend Web Development
+- <b>Frontend and Backend Web Development</b>
   - HTML/CSS
   - JQuery
   - Python

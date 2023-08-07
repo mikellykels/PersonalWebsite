@@ -72,8 +72,9 @@ const StyledProject = styled.div`
   }
 `;
 const StyledProjectHeader = styled.div`
-  ${mixins.flexBetween};
+  display: flex;
   margin-bottom: 30px;
+  justify-content: space-between;
 `;
 const StyledCardIcon = styled.div`
   color: ${colors.purple};
@@ -83,7 +84,6 @@ const StyledCardIcon = styled.div`
   }
 `;
 const StyledProjectLinks = styled.div`
-  margin-right: -10px;
   color: ${colors.lightSlate};
   display: flex;
 `;
@@ -131,6 +131,7 @@ const StyledTechList = styled.ul`
 const StyledPersonalVideoIcon = styled(PersonalVideoIcon)`
   :hover {
     color: ${colors.purple};
+    cursor: pointer;
   }
 `;
 // const StyledMoreButton = styled(Button)`

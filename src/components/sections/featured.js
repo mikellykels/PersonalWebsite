@@ -218,6 +218,7 @@ const StyledProject = styled.div`
 const StyledPersonalVideoIcon = styled(PersonalVideoIcon)`
   :hover {
     color: ${colors.purple};
+    cursor: pointer;
   }
 `;
 const StyledViewAllButton = styled(Button)`
@@ -269,8 +270,7 @@ const Featured = ({ data }) => {
                         href={external}
                         target="_blank"
                         rel="nofollow noopener noreferrer"
-                        aria-label="External Link"
-                      >
+                        aria-label="External Link">
                         {title}
                       </a>
                     ) : (
@@ -291,8 +291,7 @@ const Featured = ({ data }) => {
                         href={github}
                         target="_blank"
                         rel="nofollow noopener noreferrer"
-                        aria-label="GitHub Link"
-                      >
+                        aria-label="GitHub Link">
                         <FormattedIcon name="GitHub" />
                       </a>
                     )}
@@ -301,8 +300,7 @@ const Featured = ({ data }) => {
                         href={external}
                         target="_blank"
                         rel="nofollow noopener noreferrer"
-                        aria-label="External Link"
-                      >
+                        aria-label="External Link">
                         <FormattedIcon name="External" />
                       </a>
                     )}
@@ -320,8 +318,7 @@ const Featured = ({ data }) => {
                   <StyledImgContainer
                     onClick={() => handleClickOpen(subtitle, title)}
                     rel="nofollow noopener noreferrer"
-                    target="_blank"
-                  >
+                    target="_blank">
                     <StyledFeaturedImg fluid={cover.childImageSharp.fluid} alt={title} />
                   </StyledImgContainer>
                 )}
@@ -332,8 +329,7 @@ const Featured = ({ data }) => {
       <StyledViewAllButton
         onClick={() => {
           navigate('/projects');
-        }}
-      >
+        }}>
         View all projects
       </StyledViewAllButton>
     </StyledContainer>

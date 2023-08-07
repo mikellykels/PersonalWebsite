@@ -127,7 +127,6 @@ export const pageQuery = graphql`
               }
             }
             url
-            externalImage
             external
             id
           }

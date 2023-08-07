@@ -3,8 +3,8 @@ date: '2'
 title: ''
 company: 'San Jose State University'
 location: 'San Jose, CA'
-range: ''
+range: '2013'
 url: 'https://www.sjsu.edu/'
 ---
 
-- Bachelor of Arts in Art and Design Studies
+- <b>Bachelor of Arts in Art and Design Studies</b>

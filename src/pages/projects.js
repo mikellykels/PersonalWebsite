@@ -100,6 +100,7 @@ const StyledPersonalVideoIcon = styled(PersonalVideoIcon)`
   margin-left: 10px;
   :hover {
     color: ${colors.purple};
+    cursor: pointer;
   }
 `;
 

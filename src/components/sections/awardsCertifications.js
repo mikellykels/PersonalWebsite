@@ -1,11 +1,12 @@
-import React, { useEffect, useRef } from 'react';
+import React, { useEffect, useRef, useState } from 'react';
 import PropTypes from 'prop-types';
 import Img from 'gatsby-image';
 import sr from '@utils/sr';
 import { srConfig } from '@config';
 import styled from 'styled-components';
 import { FormattedIcon } from '@components/icons';
-import { CardActions, CardContent, Grid } from '@mui/material';
+import CloseIcon from '@mui/icons-material/Close';
+import { Button, CardContent, Dialog, DialogContent, DialogActions, Grid } from '@mui/material';
 import { theme, mixins, media, Section, Heading } from '@styles';
 
 const { colors, fonts } = theme;
@@ -21,7 +22,7 @@ const StyledCard = styled.div`
   flex-direction: column;
   align-items: flex-start;
   position: relative;
-  height: 461px;
+  height: 450px;
   border-radius: ${theme.borderRadius};
   transition: ${theme.transition};
   background-color: ${colors.lightNavy};
@@ -47,61 +48,10 @@ const StyledImg = styled(Img)`
   filter: grayscale(100%) contrast(1) brightness(90%);
   ${media.tablet`
     object-fit: cover;
-    width: auto;
-    height: 100%;
+    width: 340px !important;
+    height: auto;
     filter: grayscale(100%) contrast(1) brightness(80%);
   `};
-`;
-const StyledI = styled.img`
-  object-fit: cover !important;
-  border-top-left-radius: ${theme.borderRadius};
-  border-top-right-radius: ${theme.borderRadius};
-  mix-blend-mode: multiply;
-  ${media.tablet`
-    object-fit: cover;
-    width: auto;
-    height: 100%;
-  `};
-`;
-const StyledImageContainer = styled.div`
-  width: 312px;
-  background-color: white;
-  border-top-left-radius: ${theme.borderRadius};
-  border-top-right-radius: ${theme.borderRadius};
-
-  z-index: 1;
-  background-color: ${colors.purple};
-  border-top-left-radius: ${theme.radius + 1}px;
-  border-top-right-radius: ${theme.radius + 1}px;
-  transition: ${theme.transition};
-  ${media.tablet`height: 100%;`};
-  ${media.thone`
-    grid-column: 1 / -1;
-    opacity: 0.25;
-  `};
-  &:hover,
-  &:focus {
-    background-color: white;
-    &:before,
-    ${StyledImg} {
-      background: transparent;
-      filter: none;
-    }
-  }
-  &:before {
-    content: '';
-    position: absolute;
-    width: 100%;
-    height: 100%;
-    top: 0;
-    left: 0;
-    right: 0;
-    bottom: 0;
-    z-index: 3;
-    transition: ${theme.transition};
-    background-color: ${colors.navy};
-    mix-blend-mode: screen;
-  }
 `;
 const StyledIContainer = styled.div`
   z-index: 1;
@@ -109,13 +59,14 @@ const StyledIContainer = styled.div`
   border-top-left-radius: ${theme.radius + 1}px;
   border-top-right-radius: ${theme.radius + 1}px;
   transition: ${theme.transition};
-  ${media.tablet`height: 100%;`};
+  ${media.tablet``};
   ${media.thone`
     grid-column: 1 / -1;
     opacity: 0.25;
   `};
   &:hover,
   &:focus {
+    cursor: pointer;
     background-color: white;
     &:before,
     ${StyledImg} {
@@ -134,7 +85,6 @@ const StyledIContainer = styled.div`
     bottom: 0;
     z-index: 3;
     transition: ${theme.transition};
-    background-color: ${colors.navy};
     mix-blend-mode: screen;
   }
 `;
@@ -143,22 +93,58 @@ const StyedDate = styled.span`
   font-family: ${fonts.SFMono};
   font-size: 13px;
   color: ${colors.lightSlate};
+  margin-top: 16px;
 `;
-const StyledIconLink = styled.a`
-  position: relative;
-  top: -10px;
-  padding: 10px;
-  svg {
-    width: 20px;
-    height: 20px;
+const StyledDialog = styled(Dialog)`
+  .MuiDialog-paper {
+    background-color: ${colors.lightestNavy};
   }
+  .MuiDialogTitle-root {
+    color: ${colors.lightestSlate};
+    font-family: ${fonts.Calibre};
+  }
+  .MuiDialogContentText-root {
+    color: ${colors.lightestSlate};
+  }
+  .MuiButton-root {
+    font-family: ${fonts.SFMono};
+    color: ${colors.lightestSlate};
+    border: 1px solid ${colors.lightestSlate};
+    margin-left: 8px;
+    margin-right: 8px;
+    &:hover,
+    &:focus {
+      border: 1px solid ${colors.purple};
+      color: ${colors.purple};
+    }
+  }
+  .MuiButton-endIcon {
+    width: 16px;
+    height: 16px;
+    display: flex;
+    align-items: center;
+  }
+`;
+const StyledDialogImg = styled(Img)`
+  width: 800px;
 `;
 
 const AwardsCertifications = ({ data }) => {
   const revealTitle = useRef(null);
   const revealContainer = useRef(null);
+  const [open, setOpen] = useState(false);
+  const [currentCard, setCurrentCard] = useState(null);
 
   useEffect(() => sr.reveal(revealContainer.current, srConfig()), []);
+
+  const handleClickOpen = card => {
+    setCurrentCard(card);
+    setOpen(true);
+  };
+
+  const handleClose = () => {
+    setOpen(false);
+  };
 
   return (
     <StyledContainer id="certifications-awards" ref={revealContainer}>
@@ -167,7 +153,7 @@ const AwardsCertifications = ({ data }) => {
         {data &&
           data.map(({ node }, i) => {
             const { frontmatter } = node;
-            const { date, id, title, image, external, externalImage } = frontmatter;
+            const { date, id, title, image } = frontmatter;
             return (
               <Grid item key={i} xs={12} sm={6} md={4}>
                 {id && (
@@ -178,40 +164,52 @@ const AwardsCertifications = ({ data }) => {
                         display: 'flex',
                         flexDirection: 'column',
                         backgroundColor: `${colors.lightNavy}`,
-                      }}
-                    >
-                      <a href={external} target="_blank" rel="nofollow noopener noreferrer">
-                        {image ? (
-                          <StyledIContainer>
-                            <StyledImg fluid={image.childImageSharp.fluid} alt="certification" />
-                          </StyledIContainer>
-                        ) : (
-                          <StyledImageContainer>
-                            <StyledI src={externalImage} alt="certification" />
-                          </StyledImageContainer>
-                        )}
-                      </a>
+                      }}>
+                      {image && (
+                        <StyledIContainer onClick={() => handleClickOpen(frontmatter)}>
+                          <StyledImg fluid={image.childImageSharp.fluid} alt="certification" />
+                        </StyledIContainer>
+                      )}
                       <CardContent
                         sx={{
                           flexGrow: 1,
                           color: `${colors.lightestSlate}`,
                           fontSize: '18px',
                           fontWeight: '600',
-                        }}
-                      >
+                        }}>
                         {title}
                         <StyedDate>{date}</StyedDate>
                       </CardContent>
-                      <CardActions style={{ paddingBottom: '0px' }}>
-                        <StyledIconLink
-                          href={external}
-                          target="_blank"
-                          rel="nofollow noopener noreferrer"
-                          aria-label="External Link"
-                        >
-                          <FormattedIcon name="External" />
-                        </StyledIconLink>
-                      </CardActions>
+                      {currentCard && (
+                        <StyledDialog maxWidth="lg" open={open} onClose={handleClose}>
+                          <DialogContent>
+                            <StyledDialogImg
+                              fluid={currentCard.image.childImageSharp.fluid}
+                              alt="certification"
+                            />
+                          </DialogContent>
+                          <DialogActions>
+                            <Button
+                              href={currentCard.external}
+                              target="_blank"
+                              rel="nofollow noopener noreferrer"
+                              aria-label="External Link"
+                              size="small"
+                              variant="outlined"
+                              onClick={handleClose}
+                              endIcon={<FormattedIcon name="External" />}>
+                              More info
+                            </Button>
+                            <Button
+                              size="small"
+                              variant="outlined"
+                              onClick={handleClose}
+                              endIcon={<CloseIcon />}>
+                              Close
+                            </Button>
+                          </DialogActions>
+                        </StyledDialog>
+                      )}
                     </StyledCard>
                   </StyledCertification>
                 )}

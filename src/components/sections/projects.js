@@ -86,6 +86,7 @@ const StyledIconLink = styled.a`
   position: relative;
   top: -10px;
   padding: 10px;
+  padding-left: 0px;
   svg {
     width: 20px;
     height: 20px;

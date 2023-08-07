@@ -3,6 +3,7 @@ import PropTypes from 'prop-types';
 import styled from 'styled-components';
 
 import { Button, Dialog, DialogActions, DialogTitle, Slide } from '@mui/material';
+import CloseIcon from '@mui/icons-material/Close';
 import { theme, mixins, media } from '@styles';
 
 import SteamPunkRPGProjectDialog from './steampunkRPGDialog';
@@ -27,25 +28,24 @@ function ProjectDialog({ handleClose, open, projectDialogDetails }) {
   return (
     <StyledDialog
       fullWidth
+      maxWidth="lg"
       onClose={handleClose}
       open={open}
       scroll="paper"
-      TransitionComponent={Transition}
-    >
+      TransitionComponent={Transition}>
       <StyledDialogTitle>{projectDialogDetails.title}</StyledDialogTitle>
       <StyledDialogDetails>
         <span>{projectDialogDetails.subtitle}</span>
       </StyledDialogDetails>
       <StyledDialogContent>
-        <figure style={{ display: 'flex', margin: 0 }}>
+        <figure style={{ display: 'flex', justifyContent: 'center' }}>
           <iframe
             title={(project[0] || [])?.TITLE}
             src={(project[0] || [])?.VIDEO}
             width="640"
             height="360"
             allow="autoplay; fullscreen; picture-in-picture"
-            allowFullScreen
-          ></iframe>
+            allowFullScreen></iframe>
         </figure>
         <div>
           <StyledDialogDescription>{(project[0] || [])?.DESCRIPTION}</StyledDialogDescription>
@@ -59,7 +59,9 @@ function ProjectDialog({ handleClose, open, projectDialogDetails }) {
         ) : null}
       </StyledDialogContent>
       <DialogActions>
-        <Button onClick={handleClose}>Close</Button>
+        <Button onClick={handleClose} endIcon={<CloseIcon />}>
+          Close
+        </Button>
       </DialogActions>
     </StyledDialog>
   );
@@ -126,6 +128,14 @@ const StyledDialog = styled(Dialog)`
     color: ${colors.lightestSlate};
   }
   .MuiButton-root {
-    color: ${colors.purple};
+    font-family: ${fonts.SFMono};
+    color: ${colors.lightestSlate};
+    border: 1px solid ${colors.lightestSlate};
+    margin-right: 8px;
+    &:hover,
+    &:focus {
+      border: 1px solid ${colors.purple};
+      color: ${colors.purple};
+    }
   }
 `;
