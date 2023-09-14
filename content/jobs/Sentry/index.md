@@ -7,10 +7,9 @@ range: 'March 2017 - June 2022'
 url: 'https://sentry.io/'
 ---
 
-- Contributed to projects that improved customer workflow throughout the application. Areas of features included issue triaging, issue/metric alerts and details, alert notifications, and application health stats.
-- Implemented design improvements to user experience that were relevant to the developer or team using the product.
-- Maintained and added any necessary acceptance tests, and unit tests.
-- Participated in code reviews and gained valuable knowledge and experience through review feedback.
-- Managed and followed projects through Jira tickets.
-- Fixed bugs that came in through GitHub issues, support, or other internal requests.
-- Technical documentation on new features the team released.
+- Drove user experience enhancements, resulting in a more intuitive platform and increased user satisfaction.
+- Redesigned user interfaces that significantly improved user interactions and feedback on the platform.
+- Authored technical documentation for new features, reducing onboarding times and user queries.
+- Charted a trajectory of consistent professional growth, contributing to a variety of company objectives and projects, reflecting adaptability and a drive for excellence.
+  - Senior Support Engineer - July 2019 - March 2021
+  - Support Engineer - March 2017 - July 2019
