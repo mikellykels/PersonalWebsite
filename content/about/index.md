@@ -4,10 +4,11 @@ avatar: './me.jpg'
 skills:
   - C++
   - JavaScript
-  - Unreal Engine 5
+  - Unreal Engine
   - TypeScript
   - Maya
   - ReactJS
+  - Substance Painter
 ---
 
 Hello! I'm Mikaela, often known as Kelly, a self-taught frontend software engineer with a deep-rooted passion for video games. Picture me immersed in the world of the original Nintendo, or engrossed in family LAN parties, navigating my way through classics like Hexen and Doom—that's where my journey began.

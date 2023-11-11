@@ -141,7 +141,7 @@ const ArchivePage = ({ location, data }) => {
       <StyledMainContainer>
         <header ref={revealTitle}>
           <h1 className="big-title">Projects</h1>
-          <p className="subtitle">A big list of things I’ve worked on</p>
+          <p className="subtitle">A big list of things I've worked on</p>
         </header>
 
         <StyledTableContainer ref={revealTable}>
@@ -160,8 +160,8 @@ const ArchivePage = ({ location, data }) => {
               {featured.length > 0 &&
                 featured.map(({ node }, i) => {
                   const {
-                    date,
                     id,
+                    date,
                     subtitle,
                     github,
                     external,
@@ -172,7 +172,11 @@ const ArchivePage = ({ location, data }) => {
                     company,
                   } = node.frontmatter;
                   return (
-                    <tr key={i} ref={el => (revealProjects.current[i] = el)}>
+                    <tr
+                      key={i}
+                      ref={el => (revealProjects.current[i] = el)}
+                      onClick={() => handleClickOpen(subtitle, title)}
+                    >
                       <td className="overline year">{`${new Date(date).getFullYear()}`}</td>
 
                       <td className="title">{title}</td>
@@ -199,7 +203,8 @@ const ArchivePage = ({ location, data }) => {
                               href={external}
                               target="_blank"
                               rel="nofollow noopener noreferrer"
-                              aria-label="External Link">
+                              aria-label="External Link"
+                            >
                               <FormattedIcon name="External" />
                             </a>
                           )}
@@ -208,7 +213,8 @@ const ArchivePage = ({ location, data }) => {
                               href={github}
                               target="_blank"
                               rel="nofollow noopener noreferrer"
-                              aria-label="GitHub Link">
+                              aria-label="GitHub Link"
+                            >
                               <FormattedIcon name="GitHub" />
                             </a>
                           )}
@@ -217,7 +223,8 @@ const ArchivePage = ({ location, data }) => {
                               href={ios}
                               target="_blank"
                               rel="nofollow noopener noreferrer"
-                              aria-label="Apple App Store Link">
+                              aria-label="Apple App Store Link"
+                            >
                               <FormattedIcon name="AppStore" />
                             </a>
                           )}
@@ -226,7 +233,8 @@ const ArchivePage = ({ location, data }) => {
                               href={android}
                               target="_blank"
                               rel="nofollow noopener noreferrer"
-                              aria-label="Google Play Store Link">
+                              aria-label="Google Play Store Link"
+                            >
                               <FormattedIcon name="PlayStore" />
                             </a>
                           )}
@@ -276,7 +284,11 @@ const ArchivePage = ({ location, data }) => {
                     company,
                   } = node.frontmatter;
                   return (
-                    <tr key={i} ref={el => (revealProjects.current[i] = el)}>
+                    <tr
+                      key={i}
+                      ref={el => (revealProjects.current[i] = el)}
+                      onClick={() => handleClickOpen(subtitle, title)}
+                    >
                       <td className="overline year">{`${new Date(date).getFullYear()}`}</td>
 
                       <td className="title">{title}</td>
@@ -303,7 +315,8 @@ const ArchivePage = ({ location, data }) => {
                               href={external}
                               target="_blank"
                               rel="nofollow noopener noreferrer"
-                              aria-label="External Link">
+                              aria-label="External Link"
+                            >
                               <FormattedIcon name="External" />
                             </a>
                           )}
@@ -312,7 +325,8 @@ const ArchivePage = ({ location, data }) => {
                               href={github}
                               target="_blank"
                               rel="nofollow noopener noreferrer"
-                              aria-label="GitHub Link">
+                              aria-label="GitHub Link"
+                            >
                               <FormattedIcon name="GitHub" />
                             </a>
                           )}
@@ -321,7 +335,8 @@ const ArchivePage = ({ location, data }) => {
                               href={ios}
                               target="_blank"
                               rel="nofollow noopener noreferrer"
-                              aria-label="Apple App Store Link">
+                              aria-label="Apple App Store Link"
+                            >
                               <FormattedIcon name="AppStore" />
                             </a>
                           )}
@@ -330,7 +345,8 @@ const ArchivePage = ({ location, data }) => {
                               href={android}
                               target="_blank"
                               rel="nofollow noopener noreferrer"
-                              aria-label="Google Play Store Link">
+                              aria-label="Google Play Store Link"
+                            >
                               <FormattedIcon name="PlayStore" />
                             </a>
                           )}
@@ -397,7 +413,8 @@ const ArchivePage = ({ location, data }) => {
                               href={external}
                               target="_blank"
                               rel="nofollow noopener noreferrer"
-                              aria-label="External Link">
+                              aria-label="External Link"
+                            >
                               <FormattedIcon name="External" />
                             </a>
                           )}
@@ -406,7 +423,8 @@ const ArchivePage = ({ location, data }) => {
                               href={github}
                               target="_blank"
                               rel="nofollow noopener noreferrer"
-                              aria-label="GitHub Link">
+                              aria-label="GitHub Link"
+                            >
                               <FormattedIcon name="GitHub" />
                             </a>
                           )}
@@ -415,7 +433,8 @@ const ArchivePage = ({ location, data }) => {
                               href={ios}
                               target="_blank"
                               rel="nofollow noopener noreferrer"
-                              aria-label="Apple App Store Link">
+                              aria-label="Apple App Store Link"
+                            >
                               <FormattedIcon name="AppStore" />
                             </a>
                           )}
@@ -424,7 +443,8 @@ const ArchivePage = ({ location, data }) => {
                               href={android}
                               target="_blank"
                               rel="nofollow noopener noreferrer"
-                              aria-label="Google Play Store Link">
+                              aria-label="Google Play Store Link"
+                            >
                               <FormattedIcon name="PlayStore" />
                             </a>
                           )}

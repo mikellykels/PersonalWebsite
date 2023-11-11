@@ -9,6 +9,7 @@ import { theme, mixins, media } from '@styles';
 import SteamPunkRPGProjectDialog from './steampunkRPGDialog';
 import TantrumnProjectDialog from './tantrumnDialog';
 import LuxLabyrinthDialog from './luxLabyrinthDialog';
+import LockingDoorsProjectDialog from './lockingDoorsChallengeDialog';
 import { PROJECTS } from './constants';
 
 const { colors, fontSizes, fonts } = theme;
@@ -32,7 +33,8 @@ function ProjectDialog({ handleClose, open, projectDialogDetails }) {
       onClose={handleClose}
       open={open}
       scroll="paper"
-      TransitionComponent={Transition}>
+      TransitionComponent={Transition}
+    >
       <StyledDialogTitle>{projectDialogDetails.title}</StyledDialogTitle>
       <StyledDialogDetails>
         <span>{projectDialogDetails.subtitle}</span>
@@ -45,7 +47,8 @@ function ProjectDialog({ handleClose, open, projectDialogDetails }) {
             width="640"
             height="360"
             allow="autoplay; fullscreen; picture-in-picture"
-            allowFullScreen></iframe>
+            allowFullScreen
+          ></iframe>
         </figure>
         <div>
           <StyledDialogDescription>{(project[0] || [])?.DESCRIPTION}</StyledDialogDescription>
@@ -56,13 +59,15 @@ function ProjectDialog({ handleClose, open, projectDialogDetails }) {
           <TantrumnProjectDialog />
         ) : projectDialogDetails.title === PROJECTS.LUXLABYRINTH.TITLE ? (
           <LuxLabyrinthDialog />
+        ) : projectDialogDetails.title === PROJECTS.LOCKINGDOORS.TITLE ? (
+          <LockingDoorsProjectDialog />
         ) : null}
       </StyledDialogContent>
-      <DialogActions>
+      <StyledDialogActions>
         <Button onClick={handleClose} endIcon={<CloseIcon />}>
           Close
         </Button>
-      </DialogActions>
+      </StyledDialogActions>
     </StyledDialog>
   );
 }
@@ -138,4 +143,8 @@ const StyledDialog = styled(Dialog)`
       color: ${colors.purple};
     }
   }
+`;
+const StyledDialogActions = styled(DialogActions)`
+  margin-top: 10px;
+  margin-bottom: 10px;
 `;

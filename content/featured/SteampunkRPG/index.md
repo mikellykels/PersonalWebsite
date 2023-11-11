@@ -1,6 +1,6 @@
 ---
-id: '3'
-date: '01-03-2023'
+id: '1'
+date: '01-01-2023'
 title: 'Automaton Alpha'
 subtitle: 'April 2023 - Present'
 cover: './steampunkrpg.png'
@@ -9,8 +9,9 @@ external: ''
 company: 'Personal project'
 tech:
   - C++
+  - Blueprints
   - Unreal Engine
 showInProjects: true
 ---
 
-Ongoing Project: A steampunk-themed RPG designed using C++ and Unreal Engine 5.1. Practicing and exploring an equipment system, a dynamic attack mechanism, detailed player stats, enemy AI, and UI elements. Also entered as part of the [Rookie Awards 2023](https://www.therookies.co/entries/21590).
+A steampunk-themed RPG designed using C++ and Unreal Engine 5.1. Practicing and exploring an equipment system, a dynamic attack mechanism, detailed player stats, enemy AI, and UI elements. Also entered as part of the [Rookie Awards 2023](https://www.therookies.co/entries/21590).

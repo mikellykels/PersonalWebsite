@@ -8,8 +8,6 @@ import {
   About,
   Jobs,
   Education,
-  Projects,
-  ProjectStudiesChallenges,
   Featured,
   Contact,
 } from '@components';
@@ -25,11 +23,9 @@ const IndexPage = ({ location, data }) => (
     <StyledMainContainer className="fillHeight">
       <Hero data={data.hero.edges} />
       <Featured data={data.featured.edges} />
-      <ProjectStudiesChallenges data={data.projectStudiesChallenges.edges} />
-      <Projects data={data.projects.edges} />
+      <AwardsCertifications data={data.awardsCertifications.edges} />
       <Jobs data={data.jobs.edges} />
       <Education data={data.education.edges} />
-      <AwardsCertifications data={data.awardsCertifications.edges} />
       <About data={data.about.edges} />
       <Contact data={data.contact.edges} />
     </StyledMainContainer>

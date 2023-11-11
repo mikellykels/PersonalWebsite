@@ -1,6 +1,6 @@
 ---
-id: '1'
-date: '01-02-2023'
+id: '3'
+date: '01-04-2023'
 title: 'Lux Labyrinth'
 subtitle: 'July 2023'
 cover: './luxLabyrinth.png'
@@ -9,6 +9,7 @@ external: ''
 company: 'Personal project'
 tech:
   - C++
+  - Blueprints
   - Unreal Engine
   - Maya
 showInProjects: true

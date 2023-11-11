@@ -128,6 +128,10 @@ const StyledDialog = styled(Dialog)`
 const StyledDialogImg = styled(Img)`
   width: 800px;
 `;
+const StyledDialogActions = styled(DialogActions)`
+  margin-top: 10px;
+  margin-bottom: 10px;
+`;
 
 const AwardsCertifications = ({ data }) => {
   const revealTitle = useRef(null);
@@ -164,7 +168,8 @@ const AwardsCertifications = ({ data }) => {
                         display: 'flex',
                         flexDirection: 'column',
                         backgroundColor: `${colors.lightNavy}`,
-                      }}>
+                      }}
+                    >
                       {image && (
                         <StyledIContainer onClick={() => handleClickOpen(frontmatter)}>
                           <StyledImg fluid={image.childImageSharp.fluid} alt="certification" />
@@ -176,7 +181,8 @@ const AwardsCertifications = ({ data }) => {
                           color: `${colors.lightestSlate}`,
                           fontSize: '18px',
                           fontWeight: '600',
-                        }}>
+                        }}
+                      >
                         {title}
                         <StyedDate>{date}</StyedDate>
                       </CardContent>
@@ -188,7 +194,7 @@ const AwardsCertifications = ({ data }) => {
                               alt="certification"
                             />
                           </DialogContent>
-                          <DialogActions>
+                          <StyledDialogActions>
                             <Button
                               href={currentCard.external}
                               target="_blank"
@@ -197,17 +203,19 @@ const AwardsCertifications = ({ data }) => {
                               size="small"
                               variant="outlined"
                               onClick={handleClose}
-                              endIcon={<FormattedIcon name="External" />}>
+                              endIcon={<FormattedIcon name="External" />}
+                            >
                               More info
                             </Button>
                             <Button
                               size="small"
                               variant="outlined"
                               onClick={handleClose}
-                              endIcon={<CloseIcon />}>
+                              endIcon={<CloseIcon />}
+                            >
                               Close
                             </Button>
-                          </DialogActions>
+                          </StyledDialogActions>
                         </StyledDialog>
                       )}
                     </StyledCard>

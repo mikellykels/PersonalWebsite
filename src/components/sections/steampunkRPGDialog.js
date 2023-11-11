@@ -18,12 +18,13 @@ function SteamPunkRPGProjectDialog() {
           </i>
         </li>
         <li>Gameplay programming for the main character and enemy AI charcter</li>
-        <li>Attack system (code and UI)</li>
-        <li>Equipment/Inventory system (code and UI)</li>
-        <li>Player Stats system (code and UI)</li>
-        <li>Interaction system (code and UI)</li>
+        <li>Attack system</li>
+        <li>Equipment/Inventory system</li>
+        <li>Player Stats system</li>
+        <li>Interaction system</li>
         <li>Connected the animations and sounds</li>
-        <li>Level and UI design</li>
+        <li>Level design</li>
+        <li>UI design</li>
         <li>
           Entered as part of the{' '}
           <a

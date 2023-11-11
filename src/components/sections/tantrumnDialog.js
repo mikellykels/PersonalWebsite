@@ -11,15 +11,16 @@ function TantrumnProjectDialog() {
     <div style={{ marginTop: '8px' }}>
       <StyledSubtitle>Contributions:</StyledSubtitle>
       <StyledList>
-        <li>Interaction system (code and UI)</li>
-        <li>Power-up system (code and UI)</li>
-        <li>Equipped item system (code and UI)</li>
-        <li>Pause and Resume menu (code and UI)</li>
+        <li>Interaction system</li>
+        <li>Power-up system</li>
+        <li>Equipped item system</li>
+        <li>Pause and Resume menu</li>
         <li>
           Adding in sounds for walking/running, jumping, use, attached, and win
           animations/conditions.
         </li>
         <li>Level design</li>
+        <li>UI design</li>
         <li>
           Various code improvements/additions to the course code to work with my added
           contributions. This includes updating the Game Mode, Character Base, Player Controller,

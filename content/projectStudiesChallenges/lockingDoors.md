@@ -9,6 +9,7 @@ external: ''
 url: '/lockingDoors'
 tech:
   - C++
+  - Blueprints
   - Unreal Engine
 company: 'Personal project'
 showInProjects: true

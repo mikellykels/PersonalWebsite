@@ -17,10 +17,18 @@ function LockingDoorsProjectDialog() {
       <StyledSubtitle>Contributions:</StyledSubtitle>
       <StyledList>
         <li>
-          All C++ code, blueprints, and UI, for example, the Character, PlayerController, inventory
-          system, door and key actors, data tables, interaction interface, and widgets
+          <i>
+            Note: I was the solo developer on this project. My contributions are primarily focused
+            on C++ code and utilizing Unreal Engine. Asset credits are further below.
+          </i>
         </li>
+        <li>Character movement/inputs</li>
+        <li>Inventory system</li>
+        <li>Interaction interface</li>
+        <li>Doors and key game mechanics</li>
+        <li>Data tables</li>
         <li>Level design</li>
+        <li>UI design</li>
       </StyledList>
       <StyledSubtitle>Assets:</StyledSubtitle>
       <StyledList>

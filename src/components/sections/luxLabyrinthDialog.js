@@ -28,6 +28,7 @@ function LuxLabyrinthDialog() {
         <li>Connecting sounds, effects, and health bar UI</li>
         <li>The hoop (created in Maya)</li>
         <li>Level design</li>
+        <li>UI design</li>
       </StyledList>
       <StyledSubtitle>Assets:</StyledSubtitle>
       <StyledList>
