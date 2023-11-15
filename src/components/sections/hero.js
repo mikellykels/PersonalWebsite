@@ -1,7 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import PropTypes from 'prop-types';
 import { CSSTransition, TransitionGroup } from 'react-transition-group';
-import { email } from '@config';
 import styled from 'styled-components';
 import { theme, mixins, media, Section } from '@styles';
 const { colors, fontSizes, fonts, navDelay, loaderDelay } = theme;
@@ -51,7 +50,7 @@ const StyledDescription = styled.div`
     ${mixins.inlineLink};
   }
 `;
-const StyledEmailLink = styled.a`
+const StyledProjetcLink = styled.a`
   ${mixins.bigButton};
   margin-top: 50px;
 `;
@@ -83,7 +82,7 @@ const Hero = ({ data }) => {
   );
   const five = () => (
     <div style={{ transitionDelay: '500ms' }}>
-      <StyledEmailLink href={`mailto:${email}`}>Contact</StyledEmailLink>
+      <StyledProjetcLink href={'/#projects'}>Projects</StyledProjetcLink>
     </div>
   );
 

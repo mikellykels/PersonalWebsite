@@ -35,11 +35,10 @@ module.exports = {
     {
       resolve: `gatsby-source-filesystem`,
       options: {
-        path: `${__dirname}/content/awardsCertifications`,
-        name: `awardsCertifications`,
+        path: `${__dirname}/content/awards`,
+        name: `awards`,
       },
     },
-
     {
       resolve: `gatsby-transformer-remark`,
       options: {

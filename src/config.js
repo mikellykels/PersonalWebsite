@@ -4,11 +4,9 @@ module.exports = {
   siteKeywords: 'keywords',
   siteUrl: 'https://mikaelacarino.com',
   siteLanguage: 'en_US',
-  // googleAnalyticsID: 'UA-127188467-2',
-  // googleVerification: 'zWJzGMVk8J4FpXsLNpt7CB17SPaa2_ti9YfdGwnGr00',
   name: 'Mikaela Carino',
   location: 'California, USA',
-  email: 'mikaela.carino@gmail.com',
+  // email: 'mikaela.carino@gmail.com',
   github: 'https://github.com/mikellykels',
   twitterHandle: '@mikellykels',
   socialMedia: [
@@ -21,16 +19,12 @@ module.exports = {
       url: 'https://www.linkedin.com/in/mikaelacarino',
     },
   ],
-  lastUpdated: 'November 10, 2023',
+  lastUpdated: 'November 15, 2023',
 
   navLinks: [
     {
       name: 'Projects',
       url: '/#projects',
-    },
-    {
-      name: 'Certifications & Awards',
-      url: '/#certifications-awards',
     },
     {
       name: 'Experience',
@@ -41,12 +35,16 @@ module.exports = {
       url: '/#education',
     },
     {
-      name: 'About',
-      url: '/#about',
+      name: 'Certifications',
+      url: '/#certifications',
     },
     {
-      name: 'Contact',
-      url: '/#contact',
+      name: 'Awards',
+      url: '/#awards',
+    },
+    {
+      name: 'About',
+      url: '/#about',
     },
   ],
 

@@ -2,14 +2,14 @@ import React from 'react';
 import { graphql } from 'gatsby';
 import PropTypes from 'prop-types';
 import {
-  AwardsCertifications,
+  Awards,
+  Certifications,
   Layout,
   Hero,
   About,
   Jobs,
   Education,
   Featured,
-  Contact,
 } from '@components';
 import styled from 'styled-components';
 import { Main } from '@styles';
@@ -23,11 +23,11 @@ const IndexPage = ({ location, data }) => (
     <StyledMainContainer className="fillHeight">
       <Hero data={data.hero.edges} />
       <Featured data={data.featured.edges} />
-      <AwardsCertifications data={data.awardsCertifications.edges} />
       <Jobs data={data.jobs.edges} />
       <Education data={data.education.edges} />
+      <Certifications data={data.certifications.edges} />
+      <Awards data={data.awards.edges} />
       <About data={data.about.edges} />
-      <Contact data={data.contact.edges} />
     </StyledMainContainer>
   </Layout>
 );
@@ -106,15 +106,36 @@ export const pageQuery = graphql`
         }
       }
     }
-    awardsCertifications: allMarkdownRemark(
-      filter: { fileAbsolutePath: { regex: "/awardsCertifications/" } }
-      sort: { fields: [frontmatter___id], order: DESC }
+    awards: allMarkdownRemark(
+      filter: { fileAbsolutePath: { regex: "/awards/" } }
+      sort: { fields: [frontmatter___date], order: DESC }
     ) {
       edges {
         node {
           frontmatter {
-            date
             title
+            company
+            location
+            range
+            url
+          }
+          html
+        }
+      }
+    }
+    certifications: allMarkdownRemark(
+      filter: { fileAbsolutePath: { regex: "/certifications/" } }
+      sort: { fields: [frontmatter___date], order: DESC }
+    ) {
+      edges {
+        node {
+          frontmatter {
+            title
+            company
+            location
+            range
+            url
+            external
             image {
               childImageSharp {
                 fluid(maxWidth: 800) {
@@ -122,9 +143,6 @@ export const pageQuery = graphql`
                 }
               }
             }
-            url
-            external
-            id
           }
           html
         }
@@ -196,17 +214,6 @@ export const pageQuery = graphql`
             external
             url
             videoLink
-          }
-          html
-        }
-      }
-    }
-    contact: allMarkdownRemark(filter: { fileAbsolutePath: { regex: "/contact/" } }) {
-      edges {
-        node {
-          frontmatter {
-            title
-            buttonText
           }
           html
         }
