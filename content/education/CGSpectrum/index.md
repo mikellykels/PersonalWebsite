@@ -3,7 +3,7 @@ date: '3'
 title: ''
 company: 'CG Spectrum'
 location: 'Online'
-range: '2022 - 2023'
+range: '2022 - Present'
 url: 'https://www.cgspectrum.com/'
 ---
 
