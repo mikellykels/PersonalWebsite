@@ -1,6 +1,7 @@
 ---
 id: '2'
 date: '01-02-2023'
+year: '2023'
 title: 'Tantrumn'
 subtitle: '2023'
 cover: './tantrumn.png'

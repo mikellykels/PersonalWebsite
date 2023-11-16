@@ -11,12 +11,20 @@ skills:
   - Substance Painter
 ---
 
-Hello! I'm Mikaela, often known as Kelly, a self-taught frontend software engineer with a deep-rooted passion for video games. Picture me immersed in the world of the original Nintendo, or engrossed in family LAN parties, navigating my way through classics like Hexen and Doom—that's where my journey began.
+Hello there! I'm Mikaela, but you can call me Kelly. I'm a self-taught frontend software engineer with a deep passion for video games. My journey into the world of gaming began with classics like Hexen and Doom during family LAN parties and the original Nintendo console.
 
-My love for video games is not just about playing, it's about the immersive experiences and alternate realities they create. Titles like The Last of Us Part I & II, Horizon Zero Dawn, Horizon Forbidden West, the Zelda series, and the Halo series are among my favorites.
+As I reflect on titles like The Last of Us Part I & II, Horizon Zero Dawn, Horizon Forbidden West, the Zelda series, and the Halo series, it becomes clear why they are my top picks. It's all about the immersive experiences and alternate realities they offer.
 
-Following my studies in art and design at SJSU, I took a pivot into the realm of software engineering, with an emphasis on frontend development. But the game enthusiast in me remains alive and well. In fact, I'm currently broadening my skill set by learning more about game development through courses on C++ and Unreal Engine at CG Spectrum.
+The immersive stories draw me in, making me feel emotionally connected to the characters and their struggles. Intricate narratives keep me engaged, often leaving me pondering the game's events long after I've finished playing.
 
-I'm an avid explorer of new technologies and programming languages within the video game industry. I hold the philosophy that there's always room for growth and learning in any developer's journey. Excitement fills me as I continue to delve into the video game industry, eagerly anticipating the challenges and opportunities that lie ahead.
+Moreover, the stunning graphics in these titles transport me to beautifully rendered worlds, adding a visual depth to the gaming experience that is truly awe-inspiring. It's not just about playing a game; it's about being part of a visually breathtaking universe.
+
+The inclusion of strong female protagonists in some of these games is another aspect I admire. It's empowering to see women take on central roles, demonstrating their strength, resilience, and complexity. These characters serve as powerful role models and contribute to the richness of the storytelling.
+
+Finally, the gameplay itself is a key factor in my love for these games. The mechanics are well-designed, offering a perfect balance of challenge and enjoyment, making every moment of gameplay an absolute joy.
+
+After studying art and design at SJSU, I shifted gears into software engineering, specializing in frontend development. I'm a passionate explorer of new technologies and programming languages within the gaming industry and I firmly believe that there's always room for growth and learning in a developer's journey. I'm excited to keep delving into the world of video games, eagerly anticipating the challenges and opportunities ahead.
+
+Currently, I'm expanding my horizons by delving into game development through courses in C++, Unreal Engine, 3D Modeling, and Technical Art at CG Spectrum.
 
 Here are a few technologies I've been working with recently:

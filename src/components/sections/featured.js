@@ -39,10 +39,21 @@ const StyledLabel = styled.h4`
 `;
 const StyledProjectName = styled.h5`
   font-size: 28px;
-  margin: 0 0 20px;
   color: ${colors.lightestSlate};
+  margin: 0;
   ${media.tablet`font-size: 24px;`};
   ${media.thone`color: ${colors.white};`};
+  a {
+    ${media.tablet`display: block;`};
+  }
+`;
+const StyledProjectYear = styled.div`
+  font-size: ${fontSizes.smish};
+  margin: 0 0 20px;
+  color: ${colors.slate};
+  font-family: ${fonts.SFMono};
+  ${media.tablet`font-size: ${fontSizes.smish}; margin: 0`};
+  ${media.thone`color: ${colors.slate};`};
   a {
     ${media.tablet`display: block;`};
   }
@@ -258,7 +269,7 @@ const Featured = ({ data }) => {
         {featuredProjects &&
           featuredProjects.map(({ node }, i) => {
             const { frontmatter, html } = node;
-            const { id, external, title, tech, github, cover, subtitle } = frontmatter;
+            const { id, external, title, tech, github, cover, subtitle, year } = frontmatter;
 
             return (
               <StyledProject key={i} ref={el => (revealProjects.current[i] = el)}>
@@ -270,13 +281,15 @@ const Featured = ({ data }) => {
                         href={external}
                         target="_blank"
                         rel="nofollow noopener noreferrer"
-                        aria-label="External Link">
+                        aria-label="External Link"
+                      >
                         {title}
                       </a>
                     ) : (
                       title
                     )}
                   </StyledProjectName>
+                  <StyledProjectYear>{year}</StyledProjectYear>
                   <StyledDescription dangerouslySetInnerHTML={{ __html: html }} />
                   {tech && (
                     <StyledTechList>
@@ -291,7 +304,8 @@ const Featured = ({ data }) => {
                         href={github}
                         target="_blank"
                         rel="nofollow noopener noreferrer"
-                        aria-label="GitHub Link">
+                        aria-label="GitHub Link"
+                      >
                         <FormattedIcon name="GitHub" />
                       </a>
                     )}
@@ -300,7 +314,8 @@ const Featured = ({ data }) => {
                         href={external}
                         target="_blank"
                         rel="nofollow noopener noreferrer"
-                        aria-label="External Link">
+                        aria-label="External Link"
+                      >
                         <FormattedIcon name="External" />
                       </a>
                     )}
@@ -318,7 +333,8 @@ const Featured = ({ data }) => {
                   <StyledImgContainer
                     onClick={() => handleClickOpen(subtitle, title)}
                     rel="nofollow noopener noreferrer"
-                    target="_blank">
+                    target="_blank"
+                  >
                     <StyledFeaturedImg fluid={cover.childImageSharp.fluid} alt={title} />
                   </StyledImgContainer>
                 )}
@@ -329,7 +345,8 @@ const Featured = ({ data }) => {
       <StyledViewAllButton
         onClick={() => {
           navigate('/projects');
-        }}>
+        }}
+      >
         View all projects
       </StyledViewAllButton>
     </StyledContainer>

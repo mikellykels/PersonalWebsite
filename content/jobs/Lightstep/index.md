@@ -7,7 +7,7 @@ range: 'June 2022 - Present'
 url: 'https://www.servicenow.com/products/observability.html'
 ---
 
-- Formerly Lightstep - Acquired by ServiceNow.
+- Formerly know as Lightstep - acquired by ServiceNow.
 - Spearhead the development of innovative features in the Cloud Observability product, notably Notebooks, Change Intelligence, and Alerts, enhancing user experience and driving increased user engagement.
 - Facilitate cross-functional collaboration, ensuring cohesive product features that resonate with user needs and streamline their journey.
 - Manage multiple Jira projects from conception to completion, leading to timely product releases that consistently meet user expectations.

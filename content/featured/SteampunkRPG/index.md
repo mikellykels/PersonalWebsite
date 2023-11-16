@@ -1,8 +1,9 @@
 ---
 id: '1'
 date: '01-01-2023'
+year: '2023'
 title: 'Automaton Alpha'
-subtitle: 'April 2023 - Present'
+subtitle: 'April 2023 - July 2023'
 cover: './steampunkrpg.png'
 github: 'https://github.com/mikellykels/RPG'
 external: ''
@@ -14,4 +15,4 @@ tech:
 showInProjects: true
 ---
 
-A steampunk-themed RPG designed using C++ and Unreal Engine 5.1. Practicing and exploring an equipment system, a dynamic attack mechanism, detailed player stats, enemy AI, and UI elements. Also entered as part of the [Rookie Awards 2023](https://www.therookies.co/entries/21590).
+A steampunk-themed RPG using C++ and Unreal Engine 5.1, incorporating features like an equipment system, attack system, player stats, enemy AI, and UI elements. This project was part of my entry for the [Rookie Awards 2023](https://www.therookies.co/entries/21590), a prestigious competition spotlighting emerging talent in the creative industry.
