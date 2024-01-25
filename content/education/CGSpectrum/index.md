@@ -7,10 +7,10 @@ range: '2022 - Present'
 url: 'https://www.cgspectrum.com/'
 ---
 
-### 3D Modeling Essentials <i>(currently attending)</i>
+### Real-Time 3D Essentials
 
-- <b>Introduction to 3D Modeling | 12 Weeks</b>
-  - Maya and other common tools
-  - Profressional workflows
-  - Build 3D assets from scratch using 3D modeling techniques
-  - Textures in Substance Painter
+- <b>Real-Time 3D Essentials | 12 Weeks</b>
+  - How to use a wide range of Unreal Engine features
+  - Basic animation and rigging skills
+  - Working with motion capture
+  - An overview of real-time and virtual production pipelines

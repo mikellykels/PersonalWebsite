@@ -102,5 +102,6 @@ const StyledList = styled.ul`
 `;
 const StyledSubtitle = styled.span`
   font-size: ${fontSizes.lg};
+  font-weight: 600;
   color: ${colors.lightestSlate};
 `;

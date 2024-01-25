@@ -58,6 +58,17 @@ const StyledProjectYear = styled.div`
     ${media.tablet`display: block;`};
   }
 `;
+const StyledCategory = styled.div`
+  font-size: ${fontSizes.md};
+  margin: 20px 0 0;
+  color: ${colors.white};
+  font-family: ${fonts.SFMono};
+  ${media.tablet`font-size: ${fontSizes.md}; margin: 0`};
+  ${media.thone`color: ${colors.white};`};
+  a {
+    ${media.tablet`display: block;`};
+  }
+`;
 const StyledDescription = styled.div`
   ${mixins.boxShadow};
   position: relative;
@@ -88,7 +99,7 @@ const StyledTechList = styled.ul`
   display: flex;
   flex-wrap: wrap;
   padding: 0;
-  margin: 25px 0 10px;
+  margin: 10px 0 10px;
   list-style: none;
 
   li {
@@ -269,7 +280,8 @@ const Featured = ({ data }) => {
         {featuredProjects &&
           featuredProjects.map(({ node }, i) => {
             const { frontmatter, html } = node;
-            const { id, external, title, tech, github, cover, subtitle, year } = frontmatter;
+            const { id, external, title, tech, github, cover, subtitle, year, contribution } =
+              frontmatter;
 
             return (
               <StyledProject key={i} ref={el => (revealProjects.current[i] = el)}>
@@ -291,6 +303,7 @@ const Featured = ({ data }) => {
                   </StyledProjectName>
                   <StyledProjectYear>{year}</StyledProjectYear>
                   <StyledDescription dangerouslySetInnerHTML={{ __html: html }} />
+                  <StyledCategory>{contribution}</StyledCategory>
                   {tech && (
                     <StyledTechList>
                       {tech.map((tech, i) => (

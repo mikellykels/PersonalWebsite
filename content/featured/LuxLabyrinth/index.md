@@ -2,6 +2,7 @@
 id: '3'
 date: '01-04-2023'
 year: '2023'
+contribution: 'Game Programming'
 title: 'Lux Labyrinth'
 subtitle: 'July 2023'
 cover: './luxLabyrinth.png'

@@ -2,13 +2,14 @@
 title: 'About Me'
 avatar: './me.jpg'
 skills:
-  - C++
-  - JavaScript
   - Unreal Engine
-  - TypeScript
+  - C++
   - Maya
-  - ReactJS
+  - JavaScript
   - Substance Painter
+  - TypeScript
+  - MotionBuilder
+  - ReactJS
 ---
 
 Hello there! I'm Mikaela, but you can call me Kelly. I'm a self-taught frontend software engineer with a deep passion for video games. My journey into the world of gaming began with classics like Hexen and Doom during family LAN parties and the original Nintendo console.
@@ -27,4 +28,4 @@ After studying art and design at SJSU, I shifted gears into software engineering
 
 Currently, I'm expanding my horizons by delving into game development through courses in C++, Unreal Engine, 3D Modeling, and Technical Art at CG Spectrum.
 
-Here are a few technologies I've been working with recently:
+Here are the technologies I've been working with recently:

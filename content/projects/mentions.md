@@ -1,6 +1,7 @@
 ---
 date: '04-18-2017'
 title: '@mentions'
+contribution: 'Programming'
 github: 'https://github.com/getsentry/sentry/pull/5255'
 external: ''
 tech:

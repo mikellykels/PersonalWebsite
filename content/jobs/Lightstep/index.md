@@ -1,6 +1,6 @@
 ---
 date: '3'
-title: 'Software Engineer'
+title: 'Software Engineer II'
 company: 'ServiceNow'
 location: 'Remote, USA'
 range: 'June 2022 - Present'

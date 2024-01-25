@@ -2,6 +2,7 @@
 id: '1'
 date: '01-01-2023'
 title: 'Locking Doors Challenge'
+contribution: 'Game Programming'
 subtitle: 'May 2023'
 cover: './lockingDoors.png'
 github: 'https://github.com/mikellykels/LockingDoorChallenge'
