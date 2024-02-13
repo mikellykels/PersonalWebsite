@@ -280,8 +280,7 @@ const Featured = ({ data }) => {
         {featuredProjects &&
           featuredProjects.map(({ node }, i) => {
             const { frontmatter, html } = node;
-            const { id, external, title, tech, github, cover, subtitle, year, contribution } =
-              frontmatter;
+            const { id, external, title, tech, github, cover, subtitle, year, role } = frontmatter;
 
             return (
               <StyledProject key={i} ref={el => (revealProjects.current[i] = el)}>
@@ -303,7 +302,7 @@ const Featured = ({ data }) => {
                   </StyledProjectName>
                   <StyledProjectYear>{year}</StyledProjectYear>
                   <StyledDescription dangerouslySetInnerHTML={{ __html: html }} />
-                  <StyledCategory>{contribution}</StyledCategory>
+                  <StyledCategory>{role}</StyledCategory>
                   {tech && (
                     <StyledTechList>
                       {tech.map((tech, i) => (

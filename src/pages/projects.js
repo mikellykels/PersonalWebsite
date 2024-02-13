@@ -151,7 +151,7 @@ const ArchivePage = ({ location, data }) => {
               <tr>
                 <th>Year</th>
                 <th>Title</th>
-                <th className="hide-on-mobile">Contribution</th>
+                <th className="hide-on-mobile">Role</th>
                 <th className="hide-on-mobile">Made at</th>
                 <th className="hide-on-mobile">Built with</th>
                 <th>Link</th>
@@ -171,7 +171,7 @@ const ArchivePage = ({ location, data }) => {
                     title,
                     tech,
                     company,
-                    contribution,
+                    role,
                   } = node.frontmatter;
                   return (
                     <tr
@@ -183,7 +183,7 @@ const ArchivePage = ({ location, data }) => {
 
                       <td className="title">{title}</td>
 
-                      <td className="contribution hide-on-mobile">{contribution}</td>
+                      <td className="role hide-on-mobile">{role}</td>
 
                       <td className="company hide-on-mobile">
                         {company ? <span>{company}</span> : <span>—</span>}
@@ -267,7 +267,7 @@ const ArchivePage = ({ location, data }) => {
               <tr>
                 <th>Year</th>
                 <th>Title</th>
-                <th className="hide-on-mobile">Contribution</th>
+                <th className="hide-on-mobile">Role</th>
                 <th className="hide-on-mobile">Made at</th>
                 <th className="hide-on-mobile">Built with</th>
                 <th>Link</th>
@@ -287,7 +287,7 @@ const ArchivePage = ({ location, data }) => {
                     title,
                     tech,
                     company,
-                    contribution,
+                    role,
                   } = node.frontmatter;
                   return (
                     <tr
@@ -299,7 +299,7 @@ const ArchivePage = ({ location, data }) => {
 
                       <td className="title">{title}</td>
 
-                      <td className="contribution hide-on-mobile">{contribution}</td>
+                      <td className="role hide-on-mobile">{role}</td>
 
                       <td className="company hide-on-mobile">
                         {company ? <span>{company}</span> : <span>—</span>}
@@ -383,7 +383,7 @@ const ArchivePage = ({ location, data }) => {
               <tr>
                 <th>Year</th>
                 <th>Title</th>
-                <th className="hide-on-mobile">Contribution</th>
+                <th className="hide-on-mobile">Role</th>
                 <th className="hide-on-mobile">Made at</th>
                 <th className="hide-on-mobile">Built with</th>
                 <th>Link</th>
@@ -392,24 +392,15 @@ const ArchivePage = ({ location, data }) => {
             <tbody>
               {projects.length > 0 &&
                 projects.map(({ node }, i) => {
-                  const {
-                    date,
-                    github,
-                    external,
-                    ios,
-                    android,
-                    title,
-                    tech,
-                    company,
-                    contribution,
-                  } = node.frontmatter;
+                  const { date, github, external, ios, android, title, tech, company, role } =
+                    node.frontmatter;
                   return (
                     <tr key={i} ref={el => (revealProjects.current[i] = el)}>
                       <td className="overline year">{`${new Date(date).getFullYear()}`}</td>
 
                       <td className="title">{title}</td>
 
-                      <td className="contribution hide-on-mobile">{contribution}</td>
+                      <td className="role hide-on-mobile">{role}</td>
 
                       <td className="company hide-on-mobile">
                         {company ? <span>{company}</span> : <span>—</span>}
@@ -504,7 +495,7 @@ export const pageQuery = graphql`
             ios
             android
             company
-            contribution
+            role
           }
           html
         }
@@ -533,7 +524,7 @@ export const pageQuery = graphql`
             github
             external
             year
-            contribution
+            role
           }
           html
         }
@@ -559,7 +550,7 @@ export const pageQuery = graphql`
             external
             url
             videoLink
-            contribution
+            role
           }
           html
         }

@@ -2,7 +2,7 @@
 id: '3'
 date: '01-04-2023'
 year: '2023'
-contribution: 'Game Programming'
+role: 'Game Programmer'
 title: 'Lux Labyrinth'
 subtitle: 'July 2023'
 cover: './luxLabyrinth.png'

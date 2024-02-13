@@ -2,7 +2,7 @@
 id: '2'
 date: '01-02-2023'
 year: '2023'
-contribution: 'Game Programming'
+role: 'Game Programmer'
 title: 'Tantrumn'
 subtitle: '2023'
 cover: './tantrumn.png'

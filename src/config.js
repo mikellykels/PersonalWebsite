@@ -1,5 +1,5 @@
 module.exports = {
-  siteTitle: 'Mikaela Carino | Software Engineer',
+  siteTitle: 'Mikaela Carino | Technical Artist',
   siteDescription: 'Site description',
   siteKeywords: 'keywords',
   siteUrl: 'https://mikaelacarino.com',
@@ -19,7 +19,7 @@ module.exports = {
       url: 'https://www.linkedin.com/in/mikaelacarino',
     },
   ],
-  lastUpdated: 'January 25, 2024',
+  lastUpdated: 'February 13, 2024',
 
   navLinks: [
     {

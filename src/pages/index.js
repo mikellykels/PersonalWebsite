@@ -171,7 +171,7 @@ export const pageQuery = graphql`
             github
             external
             year
-            contribution
+            role
           }
           html
         }

@@ -2,7 +2,7 @@
 id: '1'
 date: '01-01-2023'
 year: '2023'
-contribution: 'Game Programming'
+role: 'Game Programmer'
 title: 'Automaton Alpha'
 subtitle: 'April 2023 - July 2023'
 cover: './steampunkrpg.png'
