@@ -209,18 +209,17 @@ const ArchivePage = ({ location, data }) => {
         <header ref={revealTitle}>
           <h1 className="big-title">Projects</h1>
           <p className="subtitle">A big list of things I've worked on</p>
+          <StyledFilterContainer>
+            <StyledFilterTitle>Filter by Role:</StyledFilterTitle>
+            <StyledFilterButton onClick={() => handleFilterChange('Technical Artist')}>
+              Technical Artist
+            </StyledFilterButton>
+            <StyledFilterButton onClick={() => handleFilterChange(['Game Programmer'])}>
+              Game Programmer
+            </StyledFilterButton>
+            <StyledFilterButton onClick={() => handleFilterChange([])}>Show All</StyledFilterButton>
+          </StyledFilterContainer>
         </header>
-
-        <StyledFilterContainer>
-          <StyledFilterTitle>Filter by Role:</StyledFilterTitle>
-          <StyledFilterButton onClick={() => handleFilterChange('Technical Artist')}>
-            Technical Artist
-          </StyledFilterButton>
-          <StyledFilterButton onClick={() => handleFilterChange(['Game Programmer'])}>
-            Game Programmer
-          </StyledFilterButton>
-          <StyledFilterButton onClick={() => handleFilterChange([])}>Show All</StyledFilterButton>
-        </StyledFilterContainer>
 
         <StyledTableContainer ref={revealTable}>
           <StyledTable>
