@@ -2,14 +2,13 @@ import { createGlobalStyle } from 'styled-components';
 import theme from './theme';
 import media from './media';
 import mixins from './mixins';
-import FontFaces from './fonts';
 import TransitionStyles from './TransitionStyles';
 import PrismStyles from './PrismStyles';
+import '../font/font.css';
+
 const { colors, fontSizes, fonts } = theme;
 
 const GlobalStyle = createGlobalStyle`
-  ${FontFaces};
-
   html {
     box-sizing: border-box;
     width: 100%;

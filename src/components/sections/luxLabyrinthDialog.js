@@ -71,7 +71,7 @@ function LuxLabyrinthDialog() {
           >
             HQUI: Progress Bars by Piontek on UE Marketplace
           </a>{' '}
-          and
+          and{' '}
           <a
             href="https://www.unrealengine.com/marketplace/en-US/product/hqui-progress-bars"
             target="_blank"
