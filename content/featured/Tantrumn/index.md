@@ -8,7 +8,7 @@ subtitle: '2023'
 cover: './tantrumn.png'
 github: 'https://github.com/mikellykels/Tantrumn'
 external: ''
-company: 'CG Spectrum project'
+company: 'CG Spectrum'
 tech:
   - C++
   - Blueprints

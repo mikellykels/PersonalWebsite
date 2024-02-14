@@ -1,9 +1,9 @@
 ---
 date: '04-18-2017'
 title: '@mentions'
-role: 'Programming'
+role: 'Frontend Programmer'
 github: 'https://github.com/getsentry/sentry/pull/5255'
-external: ''
+external: 'https://github.com/getsentry/sentry/pull/5255'
 tech:
   - JavaScript
   - React

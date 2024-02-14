@@ -1,7 +1,7 @@
 ---
 date: '03-01-2017'
 title: 'Various open source contributions at Sentry'
-role: 'Programming'
+role: 'Frontend Programmer'
 github: 'https://github.com/getsentry/sentry'
 external: 'https://github.com/getsentry/sentry/pulls?q=is%3Apr+author%3Amikellykels+is%3Aclosed'
 android: ''

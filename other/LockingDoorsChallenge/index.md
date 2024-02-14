@@ -7,7 +7,7 @@ subtitle: 'May 2023'
 cover: './lockingDoors.png'
 github: 'https://github.com/mikellykels/LockingDoorChallenge'
 external: ''
-company: 'CG Spectrum project'
+company: 'CG Spectrum'
 tech:
   - C++
   - Unreal Engine
