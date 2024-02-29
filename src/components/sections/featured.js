@@ -282,6 +282,10 @@ const Featured = ({ data }) => {
             const { frontmatter, html } = node;
             const { id, external, title, tech, github, cover, subtitle, year, role } = frontmatter;
 
+            if (!id) {
+              return;
+            }
+
             return (
               <StyledProject key={i} ref={el => (revealProjects.current[i] = el)}>
                 <StyledContent>
