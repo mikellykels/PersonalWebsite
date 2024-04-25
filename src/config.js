@@ -1,5 +1,5 @@
 module.exports = {
-  siteTitle: 'Mikaela Carino | Technical Artist',
+  siteTitle: 'Mikaela Carino | Character Technical Artist',
   siteDescription: 'Site description',
   siteKeywords: 'keywords',
   siteUrl: 'https://mikaelacarino.com',
