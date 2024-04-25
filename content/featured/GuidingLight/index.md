@@ -5,8 +5,8 @@ year: '2023'
 role: 'Game Programmer | Technical Artist'
 title: 'Guiding Light'
 subtitle: 'October 2023'
-cover: './luxLabyrinth.png'
-github: 'https://github.com/mikellykels/LuxLabyrinth'
+cover: './GuidingLight.png'
+github: 'https://github.com/Distance-Over-Time/Hereafter'
 external: ''
 company: 'Distance Over Time Studio'
 tech:
@@ -14,6 +14,7 @@ tech:
   - Blueprints
   - Unreal Engine
 showInProjects: true
+allowClickInProjects: false
 ---
 
 Coming soon...

@@ -7,10 +7,15 @@ range: '2022 - Present'
 url: 'https://www.cgspectrum.com/'
 ---
 
-### Real-Time 3D Essentials
+### Character Rigging
+
+- <b>Character Rigging | 44 Weeks</b>
+
+  - 1:1 Mentor led customized course
+
+### Other Courses
 
 - <b>Real-Time 3D Essentials | 12 Weeks</b>
-  - How to use a wide range of Unreal Engine features
-  - Basic animation and rigging skills
-  - Working with motion capture
-  - An overview of real-time and virtual production pipelines
+- <b>Introduction to 3D Modeling | 12 Weeks</b>
+- <b>Game Programming | 36 Weeks</b>
+- <b>Introduction to Game Programming | 12 Weeks</b>

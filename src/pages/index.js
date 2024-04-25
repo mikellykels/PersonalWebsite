@@ -172,6 +172,7 @@ export const pageQuery = graphql`
             external
             year
             role
+            allowClickInProjects
           }
           html
         }
@@ -180,7 +181,7 @@ export const pageQuery = graphql`
     projects: allMarkdownRemark(
       filter: {
         fileAbsolutePath: { regex: "/projects/" }
-        frontmatter: { showInProjects: { ne: false } }
+        frontmatter: { showInProjects: { ne: false }, allowClickInProjects: { ne: true } }
       }
       sort: { fields: [frontmatter___date], order: DESC }
     ) {
@@ -191,6 +192,7 @@ export const pageQuery = graphql`
             tech
             github
             external
+            allowClickInProjects
           }
           html
         }
@@ -199,7 +201,7 @@ export const pageQuery = graphql`
     projectStudiesChallenges: allMarkdownRemark(
       filter: {
         fileAbsolutePath: { regex: "/projectStudiesChallenges/" }
-        frontmatter: { showInProjects: { ne: false } }
+        frontmatter: { showInProjects: { ne: false }, allowClickInProjects: { ne: false } }
       }
       sort: { fields: [frontmatter___date], order: DESC }
     ) {
@@ -216,6 +218,7 @@ export const pageQuery = graphql`
             external
             url
             videoLink
+            allowClickInProjects
           }
           html
         }

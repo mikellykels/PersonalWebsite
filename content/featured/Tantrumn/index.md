@@ -14,6 +14,7 @@ tech:
   - Blueprints
   - Unreal Engine
 showInProjects: true
+allowClickInProjects: true
 ---
 
 A multiplayer race to the finish! Traverse through the obstacles using any power-ups you find to give you the advantage over your opponent. Completed during my second term of the Game Programming course at CG Spectrum (12 weeks).

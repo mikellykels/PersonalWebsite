@@ -111,7 +111,7 @@ const Footer = () => {
         </StyledGitHubLink>
         <StyledGitHubInfo>
           <span>
-            <span>Last Updated on: {lastUpdated}</span>
+            <span>Last updated on: {lastUpdated}</span>
           </span>
         </StyledGitHubInfo>
       </StyledMetadata>

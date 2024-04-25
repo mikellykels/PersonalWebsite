@@ -9,6 +9,7 @@ tech:
   - React
 company: 'Sentry'
 showInProjects: true
+allowClickInProjects: true
 ---
 
 Contributed to a demo project that integrates Sentry into a React application.

@@ -14,6 +14,7 @@ tech:
   - Unreal Engine
 company: 'Personal project'
 showInProjects: true
+allowClickInProjects: true
 ---
 
 Game Mechanic Challenge at CG Spectrum where we had two weeks to complete the challenge. Required mechanics: Locking door that requires player to have a key to unlock and open, and at least one door requires a combination of keys to unlock.

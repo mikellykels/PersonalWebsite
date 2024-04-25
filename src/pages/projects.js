@@ -34,16 +34,16 @@ const StyledTable = styled.table`
   thead th {
     /* Example fixed widths; adjust as needed */
     &:nth-child(1) {
-      width: 10%;
+      width: 5%;
     } /* Year */
     &:nth-child(2) {
       width: 20%;
     } /* Title */
     &:nth-child(3) {
-      width: 20%;
+      width: 26%;
     } /* Role */
     &:nth-child(4) {
-      width: 15%;
+      width: 20%;
     } /* Made at */
     &:nth-child(5) {
       width: 30%;
@@ -191,10 +191,17 @@ const ArchivePage = ({ location, data }) => {
     setSelectedRoles(Array.isArray(roles) ? roles : [roles]);
   };
 
-  const filterProjectsByRole = (projectsArray, selectedRoles) =>
-    projectsArray.filter(
-      ({ node }) => selectedRoles.length === 0 || selectedRoles.includes(node.frontmatter.role),
-    );
+  const filterProjectsByRole = (projectsArray, selectedRoles) => {
+    if (selectedRoles.length === 0) {
+      return projectsArray;
+    }
+
+    return projectsArray.filter(({ node }) => {
+      const projectRolesString = node.frontmatter.role;
+      const projectRoles = projectRolesString.split(' | ');
+      return projectRoles.some(role => selectedRoles.includes(role));
+    });
+  };
 
   const filteredProjects = filterProjectsByRole(combinedProjects, selectedRoles);
 
@@ -211,7 +218,16 @@ const ArchivePage = ({ location, data }) => {
           <p className="subtitle">A big list of things I've worked on</p>
           <StyledFilterContainer>
             <StyledFilterTitle>Filter by Role:</StyledFilterTitle>
-            <StyledFilterButton onClick={() => handleFilterChange('Technical Artist')}>
+            <StyledFilterButton
+              onClick={() =>
+                handleFilterChange(['Technical Artist', 'Character Technical Artist'])
+              }>
+              Character Technical Artist
+            </StyledFilterButton>
+            <StyledFilterButton
+              onClick={() =>
+                handleFilterChange(['Technical Artist', 'Character Technical Artist'])
+              }>
               Technical Artist
             </StyledFilterButton>
             <StyledFilterButton onClick={() => handleFilterChange(['Game Programmer'])}>
@@ -247,20 +263,21 @@ const ArchivePage = ({ location, data }) => {
                   tech,
                   company,
                   role,
+                  allowClickInProjects,
                 } = node.frontmatter;
                 return (
                   <tr
                     key={i}
                     ref={el => (revealProjects.current[i] = el)}
                     onClick={e => {
-                      if (id) {
+                      console.log({ allowClickInProjects });
+                      if (allowClickInProjects) {
                         handleClickOpen(subtitle, title);
                       }
                       if (external) {
                         handleExternalLinkClick(e, external);
                       }
-                    }}
-                  >
+                    }}>
                     <td className="overline year">{`${new Date(date).getFullYear()}`}</td>
 
                     <td className="title">{title}</td>
@@ -289,8 +306,7 @@ const ArchivePage = ({ location, data }) => {
                             href={github}
                             target="_blank"
                             rel="nofollow noopener noreferrer"
-                            aria-label="GitHub Link"
-                          >
+                            aria-label="GitHub Link">
                             <FormattedIcon name="GitHub" />
                           </a>
                         )}
@@ -299,8 +315,7 @@ const ArchivePage = ({ location, data }) => {
                             href={ios}
                             target="_blank"
                             rel="nofollow noopener noreferrer"
-                            aria-label="Apple App Store Link"
-                          >
+                            aria-label="Apple App Store Link">
                             <FormattedIcon name="AppStore" />
                           </a>
                         )}
@@ -309,12 +324,11 @@ const ArchivePage = ({ location, data }) => {
                             href={android}
                             target="_blank"
                             rel="nofollow noopener noreferrer"
-                            aria-label="Google Play Store Link"
-                          >
+                            aria-label="Google Play Store Link">
                             <FormattedIcon name="PlayStore" />
                           </a>
                         )}
-                        {id && (
+                        {allowClickInProjects && !external && (
                           <StyledPersonalVideoIcon
                             onClick={() => handleClickOpen(subtitle, title)}
                           />
@@ -324,8 +338,7 @@ const ArchivePage = ({ location, data }) => {
                             href={external}
                             target="_blank"
                             rel="nofollow noopener noreferrer"
-                            aria-label="External Link"
-                          >
+                            aria-label="External Link">
                             <FormattedIcon name="External" />
                           </a>
                         )}
@@ -371,6 +384,7 @@ export const pageQuery = graphql`
             android
             company
             role
+            allowClickInProjects
           }
           html
         }
@@ -400,6 +414,7 @@ export const pageQuery = graphql`
             external
             year
             role
+            allowClickInProjects
           }
           html
         }
@@ -408,7 +423,7 @@ export const pageQuery = graphql`
     projectStudiesChallenges: allMarkdownRemark(
       filter: {
         fileAbsolutePath: { regex: "/projectStudiesChallenges/" }
-        frontmatter: { showInProjects: { ne: false } }
+        frontmatter: { showInProjects: { ne: false }, allowClickInProjects: { ne: false } }
       }
       sort: { fields: [frontmatter___date], order: DESC }
     ) {
@@ -426,6 +441,7 @@ export const pageQuery = graphql`
             url
             videoLink
             role
+            allowClickInProjects
           }
           html
         }

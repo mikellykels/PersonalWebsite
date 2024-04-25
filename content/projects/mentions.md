@@ -10,6 +10,7 @@ tech:
   - Python
 company: 'Sentry'
 showInProjects: true
+allowClickInProjects: true
 ---
 
 Hackweek project - Contributed to adding an @mentions feature in the Sentry product

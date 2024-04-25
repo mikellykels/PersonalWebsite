@@ -12,6 +12,7 @@ tech:
   - React
 company: 'Sentry'
 showInProjects: true
+allowClickInProjects: true
 ---
 
 Frontend focused work for the Sentry product.
