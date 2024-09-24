@@ -20,6 +20,13 @@ const StyledTableContainer = styled.div`
     margin: 100px -10px;
   `};
 `;
+const StyledPersonalVideoIcon = styled(PersonalVideoIcon)`
+  margin-left: 10px;
+  :hover {
+    color: ${colors.purple};
+    cursor: pointer;
+  }
+`;
 const StyledTable = styled.table`
   min-width: 100%;
   width: 100%;
@@ -115,8 +122,18 @@ const StyledTable = styled.table`
         align-items: center;
         a {
           ${mixins.flexCenter};
+          color: ${colors.slate};
+          transition: ${theme.transition};
+
+          &:hover {
+            color: ${colors.purple};
+          }
         }
         a + a {
+          margin-left: 10px;
+        }
+        a:not(:first-child),
+        ${StyledPersonalVideoIcon}:not(:first-child) {
           margin-left: 10px;
         }
         svg {
@@ -125,13 +142,6 @@ const StyledTable = styled.table`
         }
       }
     }
-  }
-`;
-const StyledPersonalVideoIcon = styled(PersonalVideoIcon)`
-  margin-left: 10px;
-  :hover {
-    color: ${colors.purple};
-    cursor: pointer;
   }
 `;
 const StyledFilterContainer = styled.div`
@@ -218,16 +228,12 @@ const ArchivePage = ({ location, data }) => {
           <p className="subtitle">A big list of things I've worked on</p>
           <StyledFilterContainer>
             <StyledFilterTitle>Filter by Role:</StyledFilterTitle>
-            <StyledFilterButton
-              onClick={() =>
-                handleFilterChange(['Technical Artist', 'Character Technical Artist'])
-              }>
-              Character Technical Artist
+            <StyledFilterButton onClick={() => handleFilterChange(['Character Rigger'])}>
+              Character Rigger
             </StyledFilterButton>
             <StyledFilterButton
-              onClick={() =>
-                handleFilterChange(['Technical Artist', 'Character Technical Artist'])
-              }>
+              onClick={() => handleFilterChange(['Technical Artist', 'Character Rigger'])}
+            >
               Technical Artist
             </StyledFilterButton>
             <StyledFilterButton onClick={() => handleFilterChange(['Game Programmer'])}>
@@ -252,7 +258,6 @@ const ArchivePage = ({ location, data }) => {
             <tbody>
               {filteredProjects.map(({ node }, i) => {
                 const {
-                  id,
                   date,
                   subtitle,
                   github,
@@ -264,20 +269,21 @@ const ArchivePage = ({ location, data }) => {
                   company,
                   role,
                   allowClickInProjects,
+                  itch,
                 } = node.frontmatter;
                 return (
                   <tr
                     key={i}
                     ref={el => (revealProjects.current[i] = el)}
                     onClick={e => {
-                      console.log({ allowClickInProjects });
                       if (allowClickInProjects) {
                         handleClickOpen(subtitle, title);
                       }
                       if (external) {
                         handleExternalLinkClick(e, external);
                       }
-                    }}>
+                    }}
+                  >
                     <td className="overline year">{`${new Date(date).getFullYear()}`}</td>
 
                     <td className="title">{title}</td>
@@ -306,7 +312,8 @@ const ArchivePage = ({ location, data }) => {
                             href={github}
                             target="_blank"
                             rel="nofollow noopener noreferrer"
-                            aria-label="GitHub Link">
+                            aria-label="GitHub Link"
+                          >
                             <FormattedIcon name="GitHub" />
                           </a>
                         )}
@@ -315,7 +322,8 @@ const ArchivePage = ({ location, data }) => {
                             href={ios}
                             target="_blank"
                             rel="nofollow noopener noreferrer"
-                            aria-label="Apple App Store Link">
+                            aria-label="Apple App Store Link"
+                          >
                             <FormattedIcon name="AppStore" />
                           </a>
                         )}
@@ -324,7 +332,8 @@ const ArchivePage = ({ location, data }) => {
                             href={android}
                             target="_blank"
                             rel="nofollow noopener noreferrer"
-                            aria-label="Google Play Store Link">
+                            aria-label="Google Play Store Link"
+                          >
                             <FormattedIcon name="PlayStore" />
                           </a>
                         )}
@@ -338,8 +347,19 @@ const ArchivePage = ({ location, data }) => {
                             href={external}
                             target="_blank"
                             rel="nofollow noopener noreferrer"
-                            aria-label="External Link">
+                            aria-label="External Link"
+                          >
                             <FormattedIcon name="External" />
+                          </a>
+                        )}
+                        {itch && (
+                          <a
+                            href={itch}
+                            target="_blank"
+                            rel="nofollow noopener noreferrer"
+                            aria-label="itch.io Link"
+                          >
+                            <FormattedIcon name="Itch" />
                           </a>
                         )}
                       </span>
@@ -385,6 +405,7 @@ export const pageQuery = graphql`
             company
             role
             allowClickInProjects
+            itch
           }
           html
         }
@@ -415,6 +436,7 @@ export const pageQuery = graphql`
             year
             role
             allowClickInProjects
+            itch
           }
           html
         }

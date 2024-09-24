@@ -5,9 +5,10 @@ skills:
   - Unreal Engine
   - C++
   - Maya
-  - JavaScript
-  - Substance Painter
   - TypeScript
+  - Python
+  - Substance Painter
+  - JavaScript
   - MotionBuilder
   - ReactJS
 ---

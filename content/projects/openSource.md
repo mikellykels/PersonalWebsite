@@ -13,6 +13,7 @@ tech:
 company: 'Sentry'
 showInProjects: true
 allowClickInProjects: true
+itch: ''
 ---
 
 Frontend focused work for the Sentry product.

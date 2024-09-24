@@ -94,6 +94,55 @@ function SteamPunkRPGProjectDialog() {
           </a>
         </li>
       </StyledList>
+      <StyledSubtitle>Additional Videos:</StyledSubtitle>
+      <figure style={{ display: 'flex', justifyContent: 'center' }}>
+        <iframe
+          title={'Automation Alpha: Connect Character with Animations'}
+          src={
+            'https://player.vimeo.com/video/825786425?badge=0&amp;autopause=0&amp;player_id=0&amp;app_id=58479'
+          }
+          width="640"
+          height="360"
+          allow="autoplay; fullscreen; picture-in-picture"
+          allowFullScreen
+        ></iframe>
+      </figure>
+      <figure style={{ display: 'flex', justifyContent: 'center' }}>
+        <iframe
+          title={'Automation Alpha: Interaction, Attack, HUD, Sounds'}
+          src={
+            'https://player.vimeo.com/video/825810847?badge=0&amp;autopause=0&amp;player_id=0&amp;app_id=58479'
+          }
+          width="640"
+          height="360"
+          allow="autoplay; fullscreen; picture-in-picture"
+          allowFullScreen
+        ></iframe>
+      </figure>
+      <figure style={{ display: 'flex', justifyContent: 'center' }}>
+        <iframe
+          title={'Automation Alpha: Attack and Inventory System, Enemy AI'}
+          src={
+            'https://player.vimeo.com/video/825827353?badge=0&amp;autopause=0&amp;player_id=0&amp;app_id=58479'
+          }
+          width="640"
+          height="360"
+          allow="autoplay; fullscreen; picture-in-picture"
+          allowFullScreen
+        ></iframe>
+      </figure>
+      <figure style={{ display: 'flex', justifyContent: 'center' }}>
+        <iframe
+          title={'Automation Alpha: Level Design'}
+          src={
+            'https://player.vimeo.com/video/825835327?badge=0&amp;autopause=0&amp;player_id=0&amp;app_id=58479'
+          }
+          width="640"
+          height="360"
+          allow="autoplay; fullscreen; picture-in-picture"
+          allowFullScreen
+        ></iframe>
+      </figure>
     </div>
   );
 }

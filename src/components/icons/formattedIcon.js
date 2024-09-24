@@ -15,6 +15,7 @@ import {
   IconStar,
   IconTwitter,
   IconZap,
+  IconItch,
 } from '@components/icons';
 import reactAnimation from '../../assets/animation_lh8hvtvn.json';
 import { Animations } from './animations.tsx';
@@ -33,6 +34,8 @@ const FormattedIcon = ({ name }) => {
       return <IconFork />;
     case 'GitHub':
       return <IconGitHub />;
+    case 'Itch':
+      return <IconItch />;
     case 'Instagram':
       return <IconInstagram />;
     case 'Linkedin':

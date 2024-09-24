@@ -11,6 +11,7 @@ tech:
 company: 'Sentry'
 showInProjects: true
 allowClickInProjects: true
+itch: ''
 ---
 
 Hackweek project - Contributed to adding an @mentions feature in the Sentry product

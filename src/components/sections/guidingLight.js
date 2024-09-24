@@ -11,41 +11,95 @@ function GuidingLightDialog() {
     <div style={{ marginTop: '8px' }}>
       <StyledSubtitle>Contributions:</StyledSubtitle>
       <StyledList>
-        <li>Interaction system</li>
-        <li>Power-up system</li>
-        <li>Equipped item system</li>
-        <li>Pause and Resume menu</li>
+        <li>Redesigning game levels for enhanced player experience</li>
+        <li>Creating a custom pixelated shader for a unique visual style</li>
+        <li>Developing a dynamic flickering lantern effect to add atmosphere</li>
+        <li>Integrating Google Text-to-Speech technology for dialogue and button audio</li>
         <li>
-          Adding in sounds for walking/running, jumping, use, attached, and win
-          animations/conditions.
-        </li>
-        <li>Level design</li>
-        <li>UI design</li>
-        <li>
-          Various code improvements/additions to the course code to work with my added
-          contributions. This includes updating the Game Mode, Character Base, Player Controller,
-          and Game State/Player State.
-        </li>
-      </StyledList>
-      <StyledSubtitle>Assets:</StyledSubtitle>
-      <StyledList>
-        <li>
-          The{' '}
+          This project was part of my entry for the{' '}
           <a
-            href="https://www.unrealengine.com/marketplace/en-US/product/unreal-learning-kit"
+            href="https://www.therookies.co/entries/30189"
             target="_blank"
-            rel="nofollow noopener noreferrer">
-            Unreal Learning Kit
-          </a>{' '}
-          from the Unreal Engine Marketplace
-        </li>
-        <li>
-          Various sounds from the Unreal Starter Content, the Unreal Learning Kit, and{' '}
-          <a href="https://freesound.org/" target="_blank" rel="nofollow noopener noreferrer">
-            freesound.org
+            rel="nofollow noopener noreferrer"
+          >
+            Rookie Awards 2024
           </a>
+          , a prestigious competition spotlighting emerging talent in the creative industry.
         </li>
       </StyledList>
+      <StyledSubtitle>Additional Videos:</StyledSubtitle>
+      <figure style={{ display: 'flex', justifyContent: 'center' }}>
+        <iframe
+          title={'Guiding Light: Dynamic Footstep Audio'}
+          src={
+            'https://player.vimeo.com/video/950424366?badge=0&amp;autopause=0&amp;player_id=0&amp;app_id=58479'
+          }
+          width="640"
+          height="360"
+          allow="autoplay; fullscreen; picture-in-picture"
+          allowFullScreen
+        ></iframe>
+      </figure>
+      <figure style={{ display: 'flex', justifyContent: 'center' }}>
+        <iframe
+          title={'Guiding Light: Enemy AI Movement'}
+          src={
+            'https://player.vimeo.com/video/950425579?badge=0&amp;autopause=0&amp;player_id=0&amp;app_id=58479'
+          }
+          width="640"
+          height="360"
+          allow="autoplay; fullscreen; picture-in-picture"
+          allowFullScreen
+        ></iframe>
+      </figure>
+      <figure style={{ display: 'flex', justifyContent: 'center' }}>
+        <iframe
+          title={'Guiding Light: Niagara System Flickering Light'}
+          src={
+            'https://player.vimeo.com/video/950415740?badge=0&amp;autopause=0&amp;player_id=0&amp;app_id=58479'
+          }
+          width="640"
+          height="360"
+          allow="autoplay; fullscreen; picture-in-picture"
+          allowFullScreen
+        ></iframe>
+      </figure>
+      <figure style={{ display: 'flex', justifyContent: 'center' }}>
+        <iframe
+          title={'Guiding Light: Flickering Lantern'}
+          src={
+            'https://player.vimeo.com/video/950418723?badge=0&amp;autopause=0&amp;player_id=0&amp;app_id=58479'
+          }
+          width="640"
+          height="360"
+          allow="autoplay; fullscreen; picture-in-picture"
+          allowFullScreen
+        ></iframe>
+      </figure>
+      <figure style={{ display: 'flex', justifyContent: 'center' }}>
+        <iframe
+          title={'Guiding Light: Text-to-Speech'}
+          src={
+            'https://player.vimeo.com/video/950473265?badge=0&amp;autopause=0&amp;player_id=0&amp;app_id=58479'
+          }
+          width="640"
+          height="360"
+          allow="autoplay; fullscreen; picture-in-picture"
+          allowFullScreen
+        ></iframe>
+      </figure>
+      <figure style={{ display: 'flex', justifyContent: 'center' }}>
+        <iframe
+          title={'Guiding Light: Level Redesign'}
+          src={
+            'https://player.vimeo.com/video/950427879?badge=0&amp;autopause=0&amp;player_id=0&amp;app_id=58479'
+          }
+          width="640"
+          height="360"
+          allow="autoplay; fullscreen; picture-in-picture"
+          allowFullScreen
+        ></iframe>
+      </figure>
     </div>
   );
 }

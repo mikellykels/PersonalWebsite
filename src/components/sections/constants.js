@@ -1,8 +1,10 @@
 export const PROJECTS = {
   GUIDINGLIGHT: {
     TITLE: 'Guiding Light',
-    VIDEO: '',
-    DESCRIPTION: 'Coming soon...',
+    VIDEO:
+      'https://player.vimeo.com/video/950467791?badge=0&amp;autopause=0&amp;player_id=0&amp;app_id=58479',
+    DESCRIPTION:
+      'In this project, I showcased my skills in C++ game programming and technical art through various contributions to "Guiding Light." My work encompassed several key areas:',
   },
   INNFORTHELOST: {
     TITLE: 'Inn For the Lost',

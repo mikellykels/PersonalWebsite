@@ -1,5 +1,5 @@
 module.exports = {
-  siteTitle: 'Mikaela Carino | Character Technical Artist',
+  siteTitle: 'Mikaela Carino | Character Rigger',
   siteDescription: 'Site description',
   siteKeywords: 'keywords',
   siteUrl: 'https://mikaelacarino.com',
@@ -19,7 +19,7 @@ module.exports = {
       url: 'https://www.linkedin.com/in/mikaelacarino',
     },
   ],
-  lastUpdated: 'April 25, 2024',
+  lastUpdated: 'September 23, 2024',
 
   navLinks: [
     {

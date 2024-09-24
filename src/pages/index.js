@@ -173,6 +173,7 @@ export const pageQuery = graphql`
             year
             role
             allowClickInProjects
+            itch
           }
           html
         }
@@ -193,6 +194,7 @@ export const pageQuery = graphql`
             github
             external
             allowClickInProjects
+            itch
           }
           html
         }

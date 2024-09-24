@@ -1,5 +1,5 @@
 ---
-id: '2'
+id: '1'
 date: '01-02-2023'
 year: '2023'
 role: 'Game Programmer'
@@ -15,6 +15,7 @@ tech:
   - Unreal Engine
 showInProjects: true
 allowClickInProjects: true
+itch: ''
 ---
 
 A multiplayer race to the finish! Traverse through the obstacles using any power-ups you find to give you the advantage over your opponent. Completed during my second term of the Game Programming course at CG Spectrum (12 weeks).

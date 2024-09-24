@@ -10,6 +10,7 @@ tech:
 company: 'Sentry'
 showInProjects: true
 allowClickInProjects: true
+itch: ''
 ---
 
 Contributed to a demo project that integrates Sentry into a React application.

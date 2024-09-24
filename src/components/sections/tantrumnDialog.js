@@ -47,6 +47,79 @@ function TantrumnProjectDialog() {
           </a>
         </li>
       </StyledList>
+      <StyledSubtitle>Additional Videos:</StyledSubtitle>
+      <figure style={{ display: 'flex', justifyContent: 'center' }}>
+        <iframe
+          title={'Tantrumn: Pause and Resume Menus'}
+          src={
+            'https://player.vimeo.com/video/827247875?badge=0&amp;autopause=0&amp;player_id=0&amp;app_id=58479'
+          }
+          width="640"
+          height="360"
+          allow="autoplay; fullscreen; picture-in-picture"
+          allowFullScreen
+        ></iframe>
+      </figure>
+      <figure style={{ display: 'flex', justifyContent: 'center' }}>
+        <iframe
+          title={'Tantrumn: Power-ups'}
+          src={
+            'https://player.vimeo.com/video/827251451?badge=0&amp;autopause=0&amp;player_id=0&amp;app_id=58479'
+          }
+          width="640"
+          height="360"
+          allow="autoplay; fullscreen; picture-in-picture"
+          allowFullScreen
+        ></iframe>
+      </figure>
+      <figure style={{ display: 'flex', justifyContent: 'center' }}>
+        <iframe
+          title={'Tantrumn: Power-ups'}
+          src={
+            'https://player.vimeo.com/video/827251451?badge=0&amp;autopause=0&amp;player_id=0&amp;app_id=58479'
+          }
+          width="640"
+          height="360"
+          allow="autoplay; fullscreen; picture-in-picture"
+          allowFullScreen
+        ></iframe>
+      </figure>
+      <figure style={{ display: 'flex', justifyContent: 'center' }}>
+        <iframe
+          title={'Tantrumn: Split Screen'}
+          src={
+            'https://player.vimeo.com/video/827254999?badge=0&amp;autopause=0&amp;player_id=0&amp;app_id=58479'
+          }
+          width="640"
+          height="360"
+          allow="autoplay; fullscreen; picture-in-picture"
+          allowFullScreen
+        ></iframe>
+      </figure>
+      <figure style={{ display: 'flex', justifyContent: 'center' }}>
+        <iframe
+          title={'Tantrumn: Race vs AI'}
+          src={
+            'https://player.vimeo.com/video/827256695?badge=0&amp;autopause=0&amp;player_id=0&amp;app_id=58479'
+          }
+          width="640"
+          height="360"
+          allow="autoplay; fullscreen; picture-in-picture"
+          allowFullScreen
+        ></iframe>
+      </figure>
+      <figure style={{ display: 'flex', justifyContent: 'center' }}>
+        <iframe
+          title={'Tantrumn: Playground'}
+          src={
+            'https://player.vimeo.com/video/827252873?badge=0&amp;autopause=0&amp;player_id=0&amp;app_id=58479'
+          }
+          width="640"
+          height="360"
+          allow="autoplay; fullscreen; picture-in-picture"
+          allowFullScreen
+        ></iframe>
+      </figure>
     </div>
   );
 }
