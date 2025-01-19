@@ -1,5 +1,5 @@
 ---
-id: '1'
+id: ''
 date: '01-02-2023'
 year: '2023'
 role: 'Game Programmer'

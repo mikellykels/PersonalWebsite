@@ -357,7 +357,7 @@ const Featured = ({ data }) => {
                   open={open}
                   projectDialogDetails={projectDialogDetails}
                 />
-                {id && (
+                {id && cover?.childImageSharp?.fluid && (
                   <StyledImgContainer
                     onClick={() => handleClickOpen(subtitle, title)}
                     rel="nofollow noopener noreferrer"

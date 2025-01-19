@@ -13,6 +13,7 @@ import LockingDoorsProjectDialog from './lockingDoorsChallengeDialog';
 import { PROJECTS } from './constants';
 import GuidingLightDialog from './guidingLight';
 import InnForTheLostDialog from './innForTheLost';
+import ViRigDialog from './viRig';
 
 const { colors, fontSizes, fonts } = theme;
 
@@ -35,7 +36,8 @@ function ProjectDialog({ handleClose, open, projectDialogDetails }) {
       onClose={handleClose}
       open={open}
       scroll="paper"
-      TransitionComponent={Transition}>
+      TransitionComponent={Transition}
+    >
       <StyledDialogTitle>{projectDialogDetails.title}</StyledDialogTitle>
       <StyledDialogDetails>
         <span>{projectDialogDetails.subtitle}</span>
@@ -48,7 +50,8 @@ function ProjectDialog({ handleClose, open, projectDialogDetails }) {
             width="640"
             height="360"
             allow="autoplay; fullscreen; picture-in-picture"
-            allowFullScreen></iframe>
+            allowFullScreen
+          ></iframe>
         </figure>
         <div>
           <StyledDialogDescription>{(project[0] || [])?.DESCRIPTION}</StyledDialogDescription>
@@ -65,6 +68,8 @@ function ProjectDialog({ handleClose, open, projectDialogDetails }) {
           <GuidingLightDialog />
         ) : projectDialogDetails.title === PROJECTS.INNFORTHELOST.TITLE ? (
           <InnForTheLostDialog />
+        ) : projectDialogDetails.title === PROJECTS.VIRIG.TITLE ? (
+          <ViRigDialog />
         ) : null}
       </StyledDialogContent>
       <StyledDialogActions>

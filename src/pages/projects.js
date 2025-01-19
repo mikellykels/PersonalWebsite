@@ -180,7 +180,11 @@ const ArchivePage = ({ location, data }) => {
     revealProjects.current.forEach((ref, i) => sr.reveal(ref, srConfig(i * 10)));
   }, []);
 
-  const combinedProjects = [...featured, ...projectStudiesChallenges, ...projects];
+  const combinedProjects = [...featured, ...projectStudiesChallenges, ...projects].sort((a, b) => {
+    const dateA = new Date(a.node.frontmatter.date);
+    const dateB = new Date(b.node.frontmatter.date);
+    return dateB - dateA; // For descending order (most recent first)
+  });
 
   const handleClickOpen = (subtitle, title) => {
     setOpen(true);
@@ -220,6 +224,9 @@ const ArchivePage = ({ location, data }) => {
       <Helmet>
         <title>Archive | Mikaela Carino</title>
         <link rel="canonical" href="https://mikaelacarino.com/archive" />
+        <meta httpEquiv="cache-control" content="no-cache" />
+        <meta httpEquiv="expires" content="0" />
+        <meta httpEquiv="pragma" content="no-cache" />
       </Helmet>
 
       <StyledMainContainer>

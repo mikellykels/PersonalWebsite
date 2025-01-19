@@ -1,4 +1,11 @@
 export const PROJECTS = {
+  VIRIG: {
+    TITLE: 'Character Rig: Vi from Arcane (WIP)',
+    VIDEO:
+      'https://player.vimeo.com/video/1048279576?badge=0&amp;autopause=0&amp;player_id=0&amp;app_id=58479',
+    DESCRIPTION:
+      'A detailed character rig (work in progress) featuring advanced limb control systems and dynamic secondary animations. This project showcases both technical rigging expertise and innovative problem-solving through custom tool development to streamline the rigging process.',
+  },
   GUIDINGLIGHT: {
     TITLE: 'Guiding Light',
     VIDEO:
