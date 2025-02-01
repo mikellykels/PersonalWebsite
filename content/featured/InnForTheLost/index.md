@@ -15,7 +15,7 @@ tech:
   - Unreal Engine
 showInProjects: true
 allowClickInProjects: false
-itch: ''
+itch: 'https://shleedelie.itch.io/inn-for-the-lost'
 ---
 
 Coming soon...
