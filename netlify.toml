@@ -8,11 +8,6 @@
   NPM_FLAGS = "--legacy-peer-deps"
 
 [[headers]]
-  for = "/archive"
-  [headers.values]
-    Cache-Control = "public, max-age=0, must-revalidate"
-    
-[[headers]]
-  for = "/archive/*"
+  for = "/*"
   [headers.values]
     Cache-Control = "public, max-age=0, must-revalidate"
