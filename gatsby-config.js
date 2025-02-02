@@ -17,6 +17,7 @@ module.exports = {
     `gatsby-transformer-sharp`,
     `gatsby-plugin-sitemap`,
     `gatsby-plugin-robots-txt`,
+    `gatsby-plugin-remove-serviceworker`,
     {
       resolve: 'gatsby-source-filesystem',
       options: {
