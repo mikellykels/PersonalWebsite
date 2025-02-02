@@ -20,4 +20,4 @@ allowClickInProjects: true
 itch: ''
 ---
 
-A detailed character rig (work in progress) featuring advanced limb control systems and dynamic secondary animations. This project showcases both technical rigging expertise and innovative problem-solving through custom tool development to streamline the rigging process.
+A detailed character rig featuring advanced limb control systems, dynamic secondary animations, and motion capture integration. This project showcases technical rigging expertise through custom tool development and successful mocap data processing, demonstrating versatility in both rigging and animation workflows.

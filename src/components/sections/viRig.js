@@ -28,8 +28,12 @@ function ViRigDialog() {
           realistic hair and cloth movement
         </li>
         <li>
-          Successfully retargeted animation data using Maya's Human IK system, demonstrating
-          cross-platform animation integration
+          Processed and retargeted motion capture data in MotionBuilder, ensuring clean animation
+          data transfer to the character rig
+        </li>
+        <li>
+          Successfully integrated and refined mocap animations while maintaining the rig's
+          performance and deformation quality
         </li>
         <li>
           Extended the rig's functionality into Unreal Engine, establishing a robust game-engine
