@@ -5,7 +5,7 @@ import {
   Awards,
   Certifications,
   Layout,
-  Hero,
+  DemoReel,
   About,
   Jobs,
   Education,
@@ -21,7 +21,7 @@ const StyledMainContainer = styled(Main)`
 const IndexPage = ({ location, data }) => (
   <Layout location={location}>
     <StyledMainContainer className="fillHeight">
-      <Hero data={data.hero.edges} />
+      <DemoReel data={data.demoreel.edges} />
       <Featured data={data.featured.edges} />
       <Jobs data={data.jobs.edges} />
       <Education data={data.education.edges} />
@@ -41,7 +41,7 @@ export default IndexPage;
 
 export const pageQuery = graphql`
   {
-    hero: allMarkdownRemark(filter: { fileAbsolutePath: { regex: "/hero/" } }) {
+    demoreel: allMarkdownRemark(filter: { fileAbsolutePath: { regex: "/demoreel/" } }) {
       edges {
         node {
           frontmatter {
@@ -49,6 +49,7 @@ export const pageQuery = graphql`
             name
             subtitle
             buttonText
+            vimeoId
           }
           html
         }

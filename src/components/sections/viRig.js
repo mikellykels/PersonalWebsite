@@ -37,7 +37,7 @@ function ViRigDialog() {
         </li>
         <li>
           Extended the rig's functionality into Unreal Engine, establishing a robust game-engine
-          workflow (in development)
+          workflow
         </li>
       </StyledList>
       <StyledSubtitle>Assets:</StyledSubtitle>
@@ -54,79 +54,26 @@ function ViRigDialog() {
           All rigging, skinning, and technical implementation done independently.
         </li>
         <li>
-          Animation from{' '}
-          <a href="https://www.mixamo.com/" target="_blank" rel="nofollow noopener noreferrer">
-            Mixamo
+          Animations from{' '}
+          <a
+            href="https://marketplace.reallusion.com/studio-mocap-hand-to-hand-combat"
+            target="_blank"
+            rel="nofollow noopener noreferrer"
+          >
+            Reallusion 3D
+          </a>
+        </li>
+        <li>
+          Unreal Engine Animations from{' '}
+          <a
+            href="https://www.fab.com/listings/f43e7085-aa2b-43fb-b39a-90ffcaaa51dd"
+            target="_blank"
+            rel="nofollow noopener noreferrer"
+          >
+            9CG
           </a>
         </li>
       </StyledList>
-      {/* <StyledSubtitle>Additional Videos:</StyledSubtitle>
-      <figure style={{ display: 'flex', justifyContent: 'center' }}>
-        <iframe
-          title={'Guiding Light: Dynamic Footstep Audio'}
-          src={
-            'https://player.vimeo.com/video/950424366?badge=0&amp;autopause=0&amp;player_id=0&amp;app_id=58479'
-          }
-          width="640"
-          height="360"
-          allow="autoplay; fullscreen; picture-in-picture"
-          allowFullScreen></iframe>
-      </figure>
-      <figure style={{ display: 'flex', justifyContent: 'center' }}>
-        <iframe
-          title={'Guiding Light: Enemy AI Movement'}
-          src={
-            'https://player.vimeo.com/video/950425579?badge=0&amp;autopause=0&amp;player_id=0&amp;app_id=58479'
-          }
-          width="640"
-          height="360"
-          allow="autoplay; fullscreen; picture-in-picture"
-          allowFullScreen></iframe>
-      </figure>
-      <figure style={{ display: 'flex', justifyContent: 'center' }}>
-        <iframe
-          title={'Guiding Light: Niagara System Flickering Light'}
-          src={
-            'https://player.vimeo.com/video/950415740?badge=0&amp;autopause=0&amp;player_id=0&amp;app_id=58479'
-          }
-          width="640"
-          height="360"
-          allow="autoplay; fullscreen; picture-in-picture"
-          allowFullScreen></iframe>
-      </figure>
-      <figure style={{ display: 'flex', justifyContent: 'center' }}>
-        <iframe
-          title={'Guiding Light: Flickering Lantern'}
-          src={
-            'https://player.vimeo.com/video/950418723?badge=0&amp;autopause=0&amp;player_id=0&amp;app_id=58479'
-          }
-          width="640"
-          height="360"
-          allow="autoplay; fullscreen; picture-in-picture"
-          allowFullScreen></iframe>
-      </figure>
-      <figure style={{ display: 'flex', justifyContent: 'center' }}>
-        <iframe
-          title={'Guiding Light: Text-to-Speech'}
-          src={
-            'https://player.vimeo.com/video/950473265?badge=0&amp;autopause=0&amp;player_id=0&amp;app_id=58479'
-          }
-          width="640"
-          height="360"
-          allow="autoplay; fullscreen; picture-in-picture"
-          allowFullScreen></iframe>
-      </figure>
-      <figure style={{ display: 'flex', justifyContent: 'center' }}>
-        <iframe
-          title={'Guiding Light: Level Redesign'}
-          src={
-            'https://player.vimeo.com/video/950427879?badge=0&amp;autopause=0&amp;player_id=0&amp;app_id=58479'
-          }
-          width="640"
-          height="360"
-          allow="autoplay; fullscreen; picture-in-picture"
-          allowFullScreen></iframe>
-      </figure> */}
     </div>
   );
 }

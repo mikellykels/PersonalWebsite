@@ -15,6 +15,25 @@ const StyledContainer = styled(Section)`
     width: 100%;
   }
 `;
+
+const VideoWrapper = styled.div`
+  margin-top: 30px; /* Reduced from 50px */
+  width: 100%;
+  max-width: 900px;
+  position: relative;
+  padding-top: 56.25%; /* 16:9 Aspect Ratio */
+  align-self: center;
+
+  iframe {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    border-radius: 4px;
+  }
+`;
+
 const StyledOverline = styled.h1`
   color: ${colors.purple};
   margin: 0 0 20px 3px;
@@ -24,6 +43,7 @@ const StyledOverline = styled.h1`
   ${media.desktop`font-size: ${fontSizes.sm};`};
   ${media.tablet`font-size: ${fontSizes.smish};`};
 `;
+
 const StyledTitle = styled.h2`
   font-size: 80px;
   line-height: 1.1;
@@ -33,6 +53,7 @@ const StyledTitle = styled.h2`
   ${media.phablet`font-size: 50px;`};
   ${media.phone`font-size: 40px;`};
 `;
+
 const StyledSubtitle = styled.h3`
   font-size: 40px;
   line-height: 1.1;
@@ -42,20 +63,28 @@ const StyledSubtitle = styled.h3`
   ${media.phablet`font-size: 50px;`};
   ${media.phone`font-size: 40px;`};
 `;
-const StyledDescription = styled.div`
-  margin-top: 25px;
-  width: 50%;
-  max-width: 700px;
+
+const StyledBio = styled.div`
+  margin-top: 40px;
+  width: 100%;
+  max-width: 800px;
+  text-align: center;
+  font-size: ${fontSizes.lg};
+  color: ${colors.slate};
+  align-self: center;
+  line-height: 1.5;
+
   a {
     ${mixins.inlineLink};
   }
 `;
-const StyledProjetcLink = styled.a`
+
+const StyledProjectLink = styled.a`
   ${mixins.bigButton};
-  margin-top: 50px;
+  margin-top: 40px;
 `;
 
-const Hero = ({ data }) => {
+const DemoReel = ({ data }) => {
   const [isMounted, setIsMounted] = useState(false);
 
   useEffect(() => {
@@ -75,18 +104,35 @@ const Hero = ({ data }) => {
     <StyledSubtitle style={{ transitionDelay: '300ms' }}>{frontmatter.subtitle}</StyledSubtitle>
   );
   const four = () => (
-    <StyledDescription
-      style={{ transitionDelay: '400ms' }}
-      dangerouslySetInnerHTML={{ __html: html }}
-    />
+    <VideoWrapper style={{ transitionDelay: '500ms' }}>
+      <iframe
+        title="Demo Reel"
+        src={`https://player.vimeo.com/video/${frontmatter.vimeoId}`}
+        frameBorder="0"
+        allow="fullscreen"
+        allowFullScreen
+      />
+    </VideoWrapper>
   );
+
   const five = () => (
-    <div style={{ transitionDelay: '500ms' }}>
-      <StyledProjetcLink href={'/#projects'}>Projects</StyledProjetcLink>
+    <StyledBio style={{ transitionDelay: '600ms' }} dangerouslySetInnerHTML={{ __html: html }} />
+  );
+
+  const six = () => (
+    <div
+      style={{
+        transitionDelay: '700ms',
+        display: 'flex',
+        justifyContent: 'center',
+        width: '100%',
+      }}
+    >
+      <StyledProjectLink href={'/#projects'}>Projects</StyledProjectLink>
     </div>
   );
 
-  const items = [one, two, three, four, five];
+  const items = [one, two, three, four, five, six];
 
   return (
     <StyledContainer>
@@ -102,8 +148,8 @@ const Hero = ({ data }) => {
   );
 };
 
-Hero.propTypes = {
+DemoReel.propTypes = {
   data: PropTypes.array.isRequired,
 };
 
-export default Hero;
+export default DemoReel;

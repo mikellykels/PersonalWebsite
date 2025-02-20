@@ -6,7 +6,7 @@ export { default as Menu } from './menu';
 export { default as Side } from './side';
 export { default as Social } from './social';
 export { default as Footer } from './footer';
-export { default as Hero } from './sections/hero';
+export { default as DemoReel } from './sections/demoreel';
 export { default as About } from './sections/about';
 export { default as Jobs } from './sections/jobs';
 export { default as Education } from './sections/education';

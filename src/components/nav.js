@@ -248,14 +248,29 @@ const Nav = ({ isHome }) => {
   const fadeDownClass = isHome ? 'fadedown' : '';
 
   const ResumeLink = (
-    <StyledResumeButton
-      className="resume-button"
-      href="/resume.pdf"
-      target="_blank"
-      rel="noopener noreferrer"
-    >
-      Resume
-    </StyledResumeButton>
+    <>
+      <StyledResumeButton
+        className="demo-reel-button"
+        href="/"
+        onClick={e => {
+          // Only handle scroll behavior if we're already on the home page
+          if (window.location.pathname === '/') {
+            e.preventDefault();
+            window.scrollTo({ top: 0, behavior: 'smooth' });
+          }
+        }}
+      >
+        Demo Reel
+      </StyledResumeButton>
+      <StyledResumeButton
+        className="resume-button"
+        href="/resume.pdf"
+        target="_blank"
+        rel="noopener noreferrer"
+      >
+        Resume
+      </StyledResumeButton>
+    </>
   );
 
   return (
