@@ -5,15 +5,14 @@ import styled from 'styled-components';
 import { theme, mixins, media, Section } from '@styles';
 const { colors, fontSizes, fonts, navDelay, loaderDelay } = theme;
 
+import DemoReelBreakdown from './DemoReelBreakdown';
+
 const StyledContainer = styled(Section)`
   ${mixins.flexCenter};
   flex-direction: column;
   align-items: flex-start;
   min-height: 100vh;
   ${media.tablet`padding-top: 150px;`};
-  div {
-    width: 100%;
-  }
 `;
 
 const VideoWrapper = styled.div`
@@ -115,6 +114,19 @@ const DemoReel = ({ data }) => {
     </VideoWrapper>
   );
 
+  const breakdownSection = () => (
+    <div
+      style={{
+        transitionDelay: '550ms',
+        width: '100%',
+        display: 'flex',
+        justifyContent: 'center',
+      }}
+    >
+      <DemoReelBreakdown />
+    </div>
+  );
+
   const five = () => (
     <StyledBio style={{ transitionDelay: '600ms' }} dangerouslySetInnerHTML={{ __html: html }} />
   );
@@ -132,7 +144,7 @@ const DemoReel = ({ data }) => {
     </div>
   );
 
-  const items = [one, two, three, four, five, six];
+  const items = [one, two, three, four, breakdownSection, five, six];
 
   return (
     <StyledContainer>
