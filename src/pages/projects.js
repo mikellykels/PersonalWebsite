@@ -144,19 +144,56 @@ const StyledTable = styled.table`
     }
   }
 `;
+
 const StyledFilterContainer = styled.div`
   display: flex;
   gap: 8px;
+  flex-wrap: wrap;
+  margin: 25px 0;
+
+  ${media.tablet`
+    gap: 6px;
+  `};
+
+  ${media.phablet`
+    justify-content: center;
+  `};
 `;
+
 const StyledFilterTitle = styled.div`
   display: flex;
   color: ${colors.white};
   font-size: ${fontSizes.xl};
   font-weight: 600;
   align-items: end;
+  margin-right: 4px;
+
+  ${media.tablet`
+    font-size: ${fontSizes.lg};
+    width: 100%;
+    margin-bottom: 10px;
+  `};
+
+  ${media.phablet`
+    justify-content: center;
+  `};
 `;
+
 const StyledFilterButton = styled(Button)`
   padding: 8px;
+  font-size: ${fontSizes.sm};
+  position: relative;
+  transition: ${theme.transition};
+
+  &.active {
+    background-color: ${colors.purple};
+    color: ${colors.navy};
+  }
+
+  ${media.tablet`
+    padding: 6px;
+    font-size: ${fontSizes.xs};
+  `};
 `;
 
 const ArchivePage = ({ location, data }) => {
@@ -233,20 +270,65 @@ const ArchivePage = ({ location, data }) => {
         <header ref={revealTitle}>
           <h1 className="big-title">Projects</h1>
           <p className="subtitle">A big list of things I've worked on</p>
-          <StyledFilterContainer>
+          {/* <StyledFilterContainer>
             <StyledFilterTitle>Filter by Role:</StyledFilterTitle>
             <StyledFilterButton onClick={() => handleFilterChange(['Character Rigger'])}>
               Character Rigger
             </StyledFilterButton>
             <StyledFilterButton
-              onClick={() => handleFilterChange(['Technical Artist', 'Character Rigger'])}
-            >
+              onClick={() => handleFilterChange(['Technical Artist', 'Character Rigger'])}>
               Technical Artist
             </StyledFilterButton>
             <StyledFilterButton onClick={() => handleFilterChange(['Game Programmer'])}>
               Game Programmer
             </StyledFilterButton>
             <StyledFilterButton onClick={() => handleFilterChange([])}>Show All</StyledFilterButton>
+          </StyledFilterContainer> */}
+          <StyledFilterContainer>
+            <StyledFilterTitle>Filter by Role:</StyledFilterTitle>
+
+            {/* Button approach - will wrap on smaller screens */}
+            <StyledFilterButton
+              onClick={() => handleFilterChange(['Character Rigger'])}
+              className={selectedRoles.includes('Character Rigger') ? 'active' : ''}
+            >
+              Character Rigger
+            </StyledFilterButton>
+
+            <StyledFilterButton
+              onClick={() => handleFilterChange(['Technical Artist', 'Character Rigger'])}
+              className={selectedRoles.includes('Technical Artist') ? 'active' : ''}
+            >
+              Technical Artist
+            </StyledFilterButton>
+
+            <StyledFilterButton
+              onClick={() => handleFilterChange(['Game Programmer'])}
+              className={selectedRoles.includes('Game Programmer') ? 'active' : ''}
+            >
+              Game Programmer
+            </StyledFilterButton>
+
+            <StyledFilterButton
+              onClick={() => handleFilterChange([])}
+              className={selectedRoles.length === 0 ? 'active' : ''}
+            >
+              Show All
+            </StyledFilterButton>
+
+            {/* Optional: Dropdown for very small screens */}
+            {/* 
+            <StyledFilterDropdown onChange={handleDropdownChange} value={
+              selectedRoles.length === 0 ? 'all' : 
+              (selectedRoles.includes('Technical Artist') && selectedRoles.includes('Character Rigger')) ? 
+              'technical-and-character' : selectedRoles[0]
+            }>
+              <option value="all">Show All</option>
+              <option value="Character Rigger">Character Rigger</option>
+              <option value="technical-and-character">Technical Artist</option>
+              <option value="Game Programmer">Game Programmer</option>
+            </StyledFilterDropdown>
+            */}
           </StyledFilterContainer>
         </header>
 

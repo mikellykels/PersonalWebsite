@@ -129,6 +129,7 @@ const StyledHamburgerInner = styled.div`
 const StyledLink = styled.div`
   display: flex;
   align-items: center;
+
   ${media.tablet`display: none;`};
 `;
 const StyledList = styled.ol`
@@ -136,26 +137,59 @@ const StyledList = styled.ol`
   padding: 0;
   margin: 0;
   list-style: none;
+
+  ${media.desktop`
+    padding-right: 5px;
+  `};
 `;
 const StyledListItem = styled.li`
   margin: 0 10px;
   position: relative;
   font-size: ${fontSizes.smish};
   counter-increment: item 1;
+
   &:before {
     content: '0' counter(item) '.';
     text-align: right;
     color: ${colors.purple};
     font-size: ${fontSizes.xs};
+    margin-right: 5px;
   }
+
+  ${media.desktop`
+    margin: 0 7px;
+    font-size: ${fontSizes.xs};
+  `};
 `;
 const StyledListLink = styled(Link)`
-  padding: 12px 10px;
+  padding: 10px 5px;
+  display: inline-block;
+
+  ${media.desktop`
+    padding: 8px 5px;
+  `};
 `;
+
 const StyledResumeButton = styled.a`
   ${mixins.smallButton};
   margin-left: 10px;
   font-size: ${fontSizes.smish};
+
+  ${media.desktop`
+    padding: 10px 10px;
+    font-size: ${fontSizes.xs};
+  `};
+`;
+
+const StyledButtonContainer = styled.div`
+  display: flex;
+  align-items: center;
+
+  ${media.desktop`
+    flex-wrap: nowrap;
+  `};
+
+  ${media.tablet`display: none;`};
 `;
 
 const DELTA = 5;
@@ -248,7 +282,7 @@ const Nav = ({ isHome }) => {
   const fadeDownClass = isHome ? 'fadedown' : '';
 
   const ResumeLink = (
-    <>
+    <StyledButtonContainer>
       <StyledResumeButton
         className="demo-reel-button"
         href="/"
@@ -270,7 +304,7 @@ const Nav = ({ isHome }) => {
       >
         Resume
       </StyledResumeButton>
-    </>
+    </StyledButtonContainer>
   );
 
   return (

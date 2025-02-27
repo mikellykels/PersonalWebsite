@@ -74,38 +74,25 @@ const NavLink = styled(Link)`
   padding: 3px 20px 20px;
   width: 100%;
 `;
+
 const StyledResumeButton = styled.a`
   ${mixins.bigButton};
   padding: 18px 50px;
-  margin: 10% auto 0;
+  margin: 10px auto 0;
   width: 100%;
-`;
+  max-width: 200px;
+  text-align: center;
 
-const ResumeLink = (
-  <>
-    <StyledResumeButton
-      className="demo-reel-button"
-      href="/"
-      onClick={e => {
-        // Only handle scroll behavior if we're already on the home page
-        if (window.location.pathname === '/') {
-          e.preventDefault();
-          window.scrollTo({ top: 0, behavior: 'smooth' });
-        }
-      }}
-    >
-      Demo Reel
-    </StyledResumeButton>
-    <StyledResumeButton
-      className="resume-button"
-      href="/resume.pdf"
-      target="_blank"
-      rel="noopener noreferrer"
-    >
-      Resume
-    </StyledResumeButton>
-  </>
-);
+  ${media.thone`
+    padding: 15px 40px;
+    font-size: ${fontSizes.sm};
+  `};
+
+  ${media.tiny`
+    padding: 10px 30px;
+    font-size: ${fontSizes.xs};
+  `};
+`;
 
 const Menu = ({ menuOpen, toggleMenu }) => {
   const handleMenuClick = e => {
@@ -131,11 +118,38 @@ const Menu = ({ menuOpen, toggleMenu }) => {
             {navLinks &&
               navLinks.map(({ url, name }, i) => (
                 <NavListItem key={i}>
-                  <NavLink to={url}>{name}</NavLink>
+                  <NavLink to={url} onClick={() => toggleMenu()}>
+                    {name}
+                  </NavLink>
                 </NavListItem>
               ))}
           </NavList>
-          {ResumeLink}
+
+          {/* Add Demo Reel button with proper spacing */}
+          <StyledResumeButton
+            className="demo-reel-button"
+            href="/"
+            onClick={e => {
+              if (window.location.pathname === '/') {
+                e.preventDefault();
+                window.scrollTo({ top: 0, behavior: 'smooth' });
+              }
+              toggleMenu();
+            }}
+          >
+            Demo Reel
+          </StyledResumeButton>
+
+          {/* Resume button */}
+          <StyledResumeButton
+            className="resume-button"
+            href="/resume.pdf"
+            target="_blank"
+            rel="noopener noreferrer"
+            onClick={toggleMenu}
+          >
+            Resume
+          </StyledResumeButton>
         </NavLinks>
       </Sidebar>
     </StyledContainer>
