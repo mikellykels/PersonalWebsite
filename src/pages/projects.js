@@ -270,33 +270,22 @@ const ArchivePage = ({ location, data }) => {
         <header ref={revealTitle}>
           <h1 className="big-title">Projects</h1>
           <p className="subtitle">A big list of things I've worked on</p>
-          {/* <StyledFilterContainer>
-            <StyledFilterTitle>Filter by Role:</StyledFilterTitle>
-            <StyledFilterButton onClick={() => handleFilterChange(['Character Rigger'])}>
-              Character Rigger
-            </StyledFilterButton>
-            <StyledFilterButton
-              onClick={() => handleFilterChange(['Technical Artist', 'Character Rigger'])}>
-              Technical Artist
-            </StyledFilterButton>
-            <StyledFilterButton onClick={() => handleFilterChange(['Game Programmer'])}>
-              Game Programmer
-            </StyledFilterButton>
-            <StyledFilterButton onClick={() => handleFilterChange([])}>Show All</StyledFilterButton>
-          </StyledFilterContainer> */}
           <StyledFilterContainer>
             <StyledFilterTitle>Filter by Role:</StyledFilterTitle>
-
-            {/* Button approach - will wrap on smaller screens */}
             <StyledFilterButton
               onClick={() => handleFilterChange(['Character Rigger'])}
-              className={selectedRoles.includes('Character Rigger') ? 'active' : ''}
+              className={
+                selectedRoles.includes('Character Rigger') &&
+                !selectedRoles.includes('Technical Artist')
+                  ? 'active'
+                  : ''
+              }
             >
               Character Rigger
             </StyledFilterButton>
 
             <StyledFilterButton
-              onClick={() => handleFilterChange(['Technical Artist', 'Character Rigger'])}
+              onClick={() => handleFilterChange(['Technical Artist'])}
               className={selectedRoles.includes('Technical Artist') ? 'active' : ''}
             >
               Technical Artist
@@ -315,20 +304,6 @@ const ArchivePage = ({ location, data }) => {
             >
               Show All
             </StyledFilterButton>
-
-            {/* Optional: Dropdown for very small screens */}
-            {/* 
-            <StyledFilterDropdown onChange={handleDropdownChange} value={
-              selectedRoles.length === 0 ? 'all' : 
-              (selectedRoles.includes('Technical Artist') && selectedRoles.includes('Character Rigger')) ? 
-              'technical-and-character' : selectedRoles[0]
-            }>
-              <option value="all">Show All</option>
-              <option value="Character Rigger">Character Rigger</option>
-              <option value="technical-and-character">Technical Artist</option>
-              <option value="Game Programmer">Game Programmer</option>
-            </StyledFilterDropdown>
-            */}
           </StyledFilterContainer>
         </header>
 
