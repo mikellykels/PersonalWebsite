@@ -1,22 +1,20 @@
 /* eslint-disable quotes */
 import React, { useState } from 'react';
 import styled from 'styled-components';
-import { theme, media, mixins } from '@styles';
+import { theme } from '@styles';
+
 const { colors, fontSizes, fonts } = theme;
 
 const BreakdownContainer = styled.div`
   margin-top: 30px;
   width: 100%;
-  max-width: 900px;
-  align-self: center;
-  display: block;
 `;
 
 const BreakdownHeader = styled.div`
   cursor: pointer;
   background-color: ${colors.darkNavy};
   border-radius: 4px;
-  padding: 15px 20px;
+  padding: 12px 15px;
   border: 1px solid ${colors.purple};
   transition: ${theme.transition};
   display: flex;
@@ -35,12 +33,19 @@ const BreakdownTitle = styled.h3`
   font-size: ${fontSizes.lg};
   font-weight: normal;
   margin: 0;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
 `;
 
 const ToggleIcon = styled.div`
   color: ${colors.purple};
   font-size: ${fontSizes.xl};
   font-weight: bold;
+  margin-left: 15px;
+  flex-shrink: 0;
+  display: flex;
+  align-items: center;
   justify-content: center;
   line-height: 1;
   align-self: flex-end;
@@ -54,45 +59,37 @@ const BreakdownContent = styled.div`
   border-radius: 0 0 4px 4px;
   border: ${props => (props.isOpen ? `1px solid ${colors.purple}` : 'none')};
   border-top: none;
-  padding: ${props => (props.isOpen ? '20px' : '0 20px')};
-
-  ${media.tablet`
-    max-height: ${props => (props.isOpen ? '6000px' : '0')};
-  `};
-
-  ${media.phablet`
-    max-height: ${props => (props.isOpen ? '400px' : '0')};
-    overflow-y: ${props => (props.isOpen ? 'auto' : 'hidden')};
-  `};
+  padding: ${props => (props.isOpen ? '15px' : '0 15px')};
+  margin-bottom: 20px;
 `;
 
 const BreakdownSection = styled.div`
-  margin-bottom: 20px;
+  margin-bottom: 15px;
 `;
 
 const SectionTitle = styled.h4`
   color: ${colors.white};
   font-family: ${fonts.SFMono};
-  font-size: ${fontSizes.xl};
+  font-size: ${fontSizes.lg};
   margin-bottom: 10px;
 `;
 
 const SectionContent = styled.div`
-  color: ${colors.slate};
+  color: ${colors.lightSlate};
   font-size: ${fontSizes.lg};
   line-height: 1.5;
 
   ul {
     padding-left: 20px;
-    ${mixins.fancyList};
   }
 
   li {
-    margin-bottom: 8px;
+    font-size: ${fontSizes.lg};
+    margin-bottom: 6px;
   }
 `;
 
-const DemoReelBreakdown = () => {
+const DemoReelBreakdownForModal = () => {
   const [isOpen, setIsOpen] = useState(false);
 
   const toggleBreakdown = () => {
@@ -295,4 +292,4 @@ const DemoReelBreakdown = () => {
   );
 };
 
-export default DemoReelBreakdown;
+export default DemoReelBreakdownForModal;

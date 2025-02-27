@@ -4,6 +4,8 @@ import styled from 'styled-components';
 
 import { theme, mixins } from '@styles';
 
+import DemoReelBreakdownForModal from './DemoReelBreakdownForModal';
+
 const { colors, fontSizes } = theme;
 
 function ViRigDialog() {
@@ -40,6 +42,9 @@ function ViRigDialog() {
           workflow
         </li>
       </StyledList>
+
+      <DemoReelBreakdownForModal />
+
       <StyledSubtitle>Assets:</StyledSubtitle>
       <StyledList>
         <li>
