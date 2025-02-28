@@ -39,7 +39,7 @@ const Skill = styled.li`
   font-size: ${fontSizes.smish};
   color: ${colors.slate};
   &:before {
-    content: '▹';
+    content: '⦿';
     position: absolute;
     left: 0;
     color: ${colors.purple};
