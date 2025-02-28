@@ -191,6 +191,36 @@ const DemoReelBreakdown = () => {
         </>
       ),
     },
+    {
+      title: 'Niagara Particle System (1:15)',
+      content: (
+        <ul>
+          <li>Developed custom flickering light dynamics for atmospheric effects</li>
+          <li>Implemented parameter-driven intensity control for runtime adjustments</li>
+          <li>Optimized emission rates and particle counts for performance efficiency</li>
+        </ul>
+      ),
+    },
+    {
+      title: 'In-Game Lantern Implementation (1:22)',
+      content: (
+        <ul>
+          <li>Integrated particle system with skeletal mesh socket attachment</li>
+          <li>Configured character attachment points for natural light source movement</li>
+          <li>Created dynamic environmental lighting effects with falloff controls</li>
+        </ul>
+      ),
+    },
+    {
+      title: 'Pixelated Shader Implementation (1:31)',
+      content: (
+        <ul>
+          <li>Combined Material Editor visual programming with custom HLSL code</li>
+          <li>Developed resolution control parameters for variable pixelation levels</li>
+          <li>Applied shader as post-process material for consistent screen-space effect</li>
+        </ul>
+      ),
+    },
   ];
 
   return (
