@@ -2,7 +2,7 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import styled from 'styled-components';
 
-import { Button, Dialog, DialogActions, DialogTitle, Slide } from '@mui/material';
+import { Dialog, DialogTitle, Slide, IconButton } from '@mui/material';
 import CloseIcon from '@mui/icons-material/Close';
 import { theme, mixins, media } from '@styles';
 
@@ -38,7 +38,13 @@ function ProjectDialog({ handleClose, open, projectDialogDetails }) {
       scroll="paper"
       TransitionComponent={Transition}
     >
-      <StyledDialogTitle>{projectDialogDetails.title}</StyledDialogTitle>
+      <StyledDialogHeader>
+        <StyledDialogTitle>{projectDialogDetails.title}</StyledDialogTitle>
+        <StyledCloseButton onClick={handleClose} aria-label="close">
+          <CloseIcon />
+        </StyledCloseButton>
+      </StyledDialogHeader>
+
       <StyledDialogDetails>
         <span>{projectDialogDetails.subtitle}</span>
       </StyledDialogDetails>
@@ -72,11 +78,6 @@ function ProjectDialog({ handleClose, open, projectDialogDetails }) {
           <ViRigDialog />
         ) : null}
       </StyledDialogContent>
-      <StyledDialogActions>
-        <Button onClick={handleClose} endIcon={<CloseIcon />}>
-          Close
-        </Button>
-      </StyledDialogActions>
     </StyledDialog>
   );
 }
@@ -112,6 +113,7 @@ const StyledDialogTitle = styled(DialogTitle)`
   font-size: ${fontSizes.xxl};
   font-weight: 500;
   margin-bottom: 5px;
+  flex: 1;
 `;
 const StyledDialogDetails = styled.h5`
   font-family: ${fonts.SFMono};
@@ -119,8 +121,15 @@ const StyledDialogDetails = styled.h5`
   font-weight: normal;
   letter-spacing: 0.05em;
   color: ${colors.lightSlate};
+  padding-left: 24px;
+  padding-right: 24px;
+  margin-top: 0;
+  background-color: ${colors.lightestNavy};
+  position: sticky;
+  top: 64px; /* Adjust based on the header height */
+  z-index: 10;
   span {
-    margin-left: 24px;
+    margin-left: 0;
   }
   svg {
     width: 15px;
@@ -133,6 +142,8 @@ const StyledDialogDescription = styled.div`
 const StyledDialog = styled(Dialog)`
   .MuiDialog-paper {
     background-color: ${colors.lightestNavy};
+    position: relative; /* Needed for absolute positioning of close button */
+    overflow-x: hidden; /* Prevent horizontal scrolling */
   }
   .MuiDialogTitle-root {
     color: ${colors.lightestSlate};
@@ -153,7 +164,25 @@ const StyledDialog = styled(Dialog)`
     }
   }
 `;
-const StyledDialogActions = styled(DialogActions)`
-  margin-top: 10px;
-  margin-bottom: 10px;
+// Footer action buttons removed
+
+const StyledDialogHeader = styled.div`
+  position: sticky;
+  top: 0;
+  z-index: 20;
+  background-color: ${colors.lightestNavy};
+  padding-top: 16px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding-right: 16px;
+`;
+
+const StyledCloseButton = styled(IconButton)`
+  color: ${colors.lightSlate} !important;
+  margin-right: 0; /* Remove the margin so it aligns with the padding of the header */
+  &:hover {
+    color: ${colors.purple} !important;
+    background-color: ${colors.darkNavy} !important;
+  }
 `;

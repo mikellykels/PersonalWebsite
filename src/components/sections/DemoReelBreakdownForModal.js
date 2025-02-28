@@ -99,164 +99,81 @@ const DemoReelBreakdownForModal = () => {
   const breakdownData = [
     {
       title: 'Original Motion Capture Data (0:00)',
-      content:
-        "The animation sequence begins with raw motion capture data from Reallusion 3D, carefully curated and sequenced using MotionBuilder's Story feature. This process involved selecting and combining five distinct animation clips to create a seamless performance that showcases the character's range of motion and personality.",
+      content: (
+        <ul>
+          <li>Curated Reallusion 3D motion capture data using MotionBuilder's Story feature</li>
+          <li>Sequenced five distinct animation clips into seamless character performance</li>
+          <li>Optimized motion data to highlight character personality and range</li>
+        </ul>
+      ),
     },
     {
       title: 'Retargeting Implementation (MotionBuilder) (0:08)',
       content: (
-        <>
-          <p>
-            I implemented a character retargeting workflow using MotionBuilder's HIK system. This
-            process involved:
-          </p>
-          <ul>
-            <li>
-              Setting up HIK characterization for my rig in Maya and characterizing the source in
-              MotionBuilder
-            </li>
-            <li>Manual bone mapping through MotionBuilder's retargeting UI</li>
-            <li>Adjusting extremities like fingers and feet to better match the source movement</li>
-            <li>
-              Spatial positioning adjustments to ensure smooth transitions between animation
-              sequences
-            </li>
-            <li>Strategic camera composition and framing to highlight the character's movements</li>
-          </ul>
-        </>
+        <ul>
+          <li>Implemented character retargeting workflow using MotionBuilder's HIK system</li>
+          <li>Configured HIK characterization across both Maya and MotionBuilder</li>
+          <li>Implemented manual bone mapping for precision character control</li>
+          <li>Optimized extremity positioning for natural movement quality</li>
+          <li>Maintained spatial continuity between animation sequences</li>
+        </ul>
       ),
     },
     {
       title: 'Advanced Deformation Systems (0:18)',
       content: (
-        <>
-          <p>
-            The character rig incorporates several deformation solutions to enhance animation
-            quality:
-          </p>
-          <ul>
-            <li>
-              Ribbon-based deformation systems on limbs to maintain volume integrity during rotation
-              and provide improved twist distribution
-            </li>
-            <li>
-              ngSkinTools implementation for precise weight painting and blending across joint
-              influences
-            </li>
-            <li>
-              RBF (Radial Basis Function) pose interpolation via PoseWrangler to automatically apply
-              corrective shapes based on specific joint positions
-            </li>
-          </ul>
-        </>
+        <ul>
+          <li>Designed advanced deformation solutions to enhance animation quality</li>
+          <li>Developed ribbon-based deformation systems for volume preservation</li>
+          <li>Utilized ngSkinTools for enhanced weight distribution</li>
+          <li>Implemented RBF-driven pose interpolation via PoseWrangler</li>
+        </ul>
       ),
     },
     {
       title: 'Dynamic Systems (0:31)',
       content: (
-        <>
-          <p>
-            Secondary motion elements were incorporated to add natural movement and physical
-            believability:
-          </p>
-          <ul>
-            <li>
-              nHair dynamic system implementation for the character's hood and hair, configured with
-              custom follicle placement
-            </li>
-            <li>
-              Fine-tuned dynamic properties (stiffness, damping) to achieve natural motion that
-              complements the primary animation
-            </li>
-          </ul>
-        </>
+        <ul>
+          <li>Incorporated dynamic secondary motion elements for natural movement</li>
+          <li>Configured nHair dynamics for character's hood and hair elements</li>
+          <li>Balanced dynamic properties for performance-optimized secondary motion</li>
+        </ul>
       ),
     },
     {
       title: 'Retargeting Implementation (Unreal Engine) (0:41)',
       content: (
         <ul>
-          <li>Maya-to-UE5 character rig export with RBF deformations baked into the model</li>
-          <li>Implementation of existing Unreal Engine animations with the imported character</li>
-          <li>Animation retargeting configuration using Unreal's built-in retargeting system</li>
+          <li>Exported Maya rig to UE5 with baked RBF deformations</li>
+          <li>Integrated character with existing Unreal animation libraries</li>
+          <li>Configured Unreal's native retargeting system for animation compatibility</li>
         </ul>
       ),
     },
     {
       title: 'Unreal Engine Technical Implementation (0:50)',
       content: (
-        <>
-          <p>
-            An animation system was implemented in Unreal Engine to showcase the character's motion
-            capabilities:
-          </p>
-          <ul>
-            <li>Custom animation blueprint with state machine implementation</li>
-            <li>Locomotion system featuring speed-based transitions between walk and run states</li>
-            <li>Basic state machine structure for idle, movement, and jump/land animations</li>
-            <li>Blended animation transitions for smooth movement between states</li>
-          </ul>
-        </>
+        <ul>
+          <li>Implemented animation system in Unreal Engine for character motion</li>
+          <li>Engineered custom animation blueprint with state machine logic</li>
+          <li>Developed speed-based locomotion system with smooth transitions</li>
+          <li>Created blended animation transitions between movement states</li>
+        </ul>
       ),
     },
     {
       title: 'Custom UI with Rigging Tools (1:04)',
       content: (
         <>
-          <p>
-            I developed a basic rigging toolkit in Maya using Python to demonstrate automation
-            capabilities:
-          </p>
-
-          <div style={{ marginTop: '15px', marginBottom: '5px' }}>
-            <strong>Base Rig Structure (1:04)</strong>
-          </div>
           <ul>
-            <li>Automated creation of named null groups to establish organizational hierarchy</li>
-            <li>Foundational structure setup for subsequent rigging components</li>
+            <li>Developed Python-based rigging toolkit in Maya for workflow automation</li>
+            <li>Automated hierarchical group generation with standardized naming</li>
+            <li>Developed joint duplication system with automated constraints</li>
+            <li>Implemented automated IK handle creation for limb control</li>
+            <li>Engineered single-attribute control system for FK/IK blending</li>
+            <li>Designed hierarchical control curve system with constraint automation</li>
+            <li>Created offset group system with automated constraint connections</li>
           </ul>
-
-          <div style={{ marginTop: '15px', marginBottom: '5px' }}>
-            <strong>FK System (1:08)</strong>
-          </div>
-          <ul>
-            <li>Joint duplication and automatic FK joint naming</li>
-            <li>Constraint system establishment between controls and joints</li>
-          </ul>
-
-          <div style={{ marginTop: '15px', marginBottom: '5px' }}>
-            <strong>IK System (1:12)</strong>
-          </div>
-          <ul>
-            <li>Joint duplication with IK-specific naming conventions</li>
-            <li>Basic IK handle creation for limb control</li>
-          </ul>
-
-          <div style={{ marginTop: '15px', marginBottom: '5px' }}>
-            <strong>FKIK Switch (1:17)</strong>
-          </div>
-          <ul>
-            <li>System for blending between FK and IK animation methods</li>
-            <li>Single-attribute control implementation for switching between systems</li>
-            <li>Constraint connections automatically linked to the FKIK switch</li>
-          </ul>
-
-          <div style={{ marginTop: '15px', marginBottom: '5px' }}>
-            <strong>FK Controls Setup (1:24)</strong>
-          </div>
-          <ul>
-            <li>Control curve creation with proper hierarchy setup</li>
-            <li>Constraint setup between controls and their corresponding joints</li>
-          </ul>
-
-          <div style={{ marginTop: '15px', marginBottom: '5px' }}>
-            <strong>IK Controls Setup (1:33)</strong>
-          </div>
-          <ul>
-            <li>Control and offset group generation with appropriate constraints</li>
-            <li>Constraint setup between controls and their corresponding joints</li>
-          </ul>
-
           <p style={{ marginTop: '15px' }}>
             The complete rigging system is available for review on GitHub:{' '}
             <a
