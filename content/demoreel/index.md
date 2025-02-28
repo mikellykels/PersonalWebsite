@@ -2,7 +2,7 @@
 title: 'Hi, my name is'
 name: 'Mikaela (Kelly) Carino'
 subtitle: 'Character Rigger / Technical Artist'
-buttonText: 'Projects'
+buttonText: 'Featured Projects'
 vimeoId: '1058559382'
 ---
 

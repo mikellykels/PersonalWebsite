@@ -15,24 +15,6 @@ const StyledContainer = styled(Section)`
   ${media.tablet`padding-top: 150px;`};
 `;
 
-const VideoWrapper = styled.div`
-  margin-top: 30px; /* Reduced from 50px */
-  width: 100%;
-  max-width: 900px;
-  position: relative;
-  padding-top: 56.25%; /* 16:9 Aspect Ratio */
-  align-self: center;
-
-  iframe {
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    border-radius: 4px;
-  }
-`;
-
 const StyledOverline = styled.h1`
   color: ${colors.purple};
   margin: 0 0 20px 3px;
@@ -83,15 +65,46 @@ const StyledProjectLink = styled.a`
   margin-top: 40px;
 `;
 
+// Ensuring consistent height during loading
+const StyledVideoContainer = styled.div`
+  position: relative;
+  width: 100%;
+  padding-bottom: 56.25%; /* 16:9 aspect ratio */
+  height: 0;
+  overflow: hidden;
+  /* Ensure this container has the same dimensions before and after video loads */
+  min-height: 300px;
+  margin-bottom: 50px;
+`;
+
+const StyledVideoIframe = styled.iframe`
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  border: 0;
+`;
+
 const DemoReel = ({ data }) => {
   const [isMounted, setIsMounted] = useState(false);
+  const [videoLoaded, setVideoLoaded] = useState(false);
+  const { frontmatter, html } = data[0].node;
+  const { vimeoId, title } = frontmatter;
 
   useEffect(() => {
     const timeout = setTimeout(() => setIsMounted(true), navDelay);
     return () => clearTimeout(timeout);
   }, []);
 
-  const { frontmatter, html } = data[0].node;
+  // Add event for video loading synchronization
+  useEffect(() => {
+    // Notify the layout that a video will be loading
+    window.dispatchEvent(new CustomEvent('vimeoLoadStarted'));
+
+    // Clean up event listeners if component unmounts
+    return () => {};
+  }, []);
 
   const one = () => (
     <StyledOverline style={{ transitionDelay: '100ms' }}>{frontmatter.title}</StyledOverline>
@@ -103,15 +116,17 @@ const DemoReel = ({ data }) => {
     <StyledSubtitle style={{ transitionDelay: '300ms' }}>{frontmatter.subtitle}</StyledSubtitle>
   );
   const four = () => (
-    <VideoWrapper style={{ transitionDelay: '500ms' }}>
-      <iframe
-        title="Demo Reel"
-        src={`https://player.vimeo.com/video/${frontmatter.vimeoId}`}
-        frameBorder="0"
-        allow="fullscreen"
+    <StyledVideoContainer>
+      <StyledVideoIframe
+        src={`https://player.vimeo.com/video/${vimeoId}?autoplay=0`}
+        title={title}
         allowFullScreen
+        onLoad={() => {
+          setVideoLoaded(true);
+          window.dispatchEvent(new CustomEvent('vimeoFrameLoaded'));
+        }}
       />
-    </VideoWrapper>
+    </StyledVideoContainer>
   );
 
   const breakdownSection = () => (
@@ -121,8 +136,7 @@ const DemoReel = ({ data }) => {
         width: '100%',
         display: 'flex',
         justifyContent: 'center',
-      }}
-    >
+      }}>
       <DemoReelBreakdown />
     </div>
   );
@@ -138,9 +152,8 @@ const DemoReel = ({ data }) => {
         display: 'flex',
         justifyContent: 'center',
         width: '100%',
-      }}
-    >
-      <StyledProjectLink href={'/#projects'}>Projects</StyledProjectLink>
+      }}>
+      <StyledProjectLink href={'/#projects'}>Featured Projects</StyledProjectLink>
     </div>
   );
 

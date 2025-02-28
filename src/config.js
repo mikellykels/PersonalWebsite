@@ -23,7 +23,7 @@ module.exports = {
 
   navLinks: [
     {
-      name: 'Projects',
+      name: 'Featured Projects',
       url: '/#projects',
     },
     {

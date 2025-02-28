@@ -51,20 +51,64 @@ const StyledContent = styled.div`
 const Layout = ({ children, location }) => {
   const isHome = location.pathname === '/';
   const [isLoading, setIsLoading] = useState(isHome);
+  const [videoLoaded, setVideoLoaded] = useState(false);
+  const [pendingScroll, setPendingScroll] = useState(null);
 
+  // Check if there's a hash in the URL that we need to scroll to
   useEffect(() => {
-    if (isLoading) {
-      return;
-    }
     if (location.hash) {
-      const id = location.hash.substring(1); // location.hash without the '#'
-      setTimeout(() => {
-        const el = document.getElementById(id);
-        if (el) {
-          el.scrollIntoView();
-          el.focus();
+      setPendingScroll(location.hash.substring(1));
+    }
+  }, [location.hash]);
+
+  // Listen for video load events
+  useEffect(() => {
+    if (!isLoading) {
+      const handleVideoStarted = () => {
+        setVideoLoaded(false);
+      };
+
+      const handleVideoLoaded = () => {
+        setVideoLoaded(true);
+
+        // If we have a pending scroll target and the video has loaded, we can scroll now
+        if (pendingScroll) {
+          setTimeout(() => {
+            const el = document.getElementById(pendingScroll);
+            if (el) {
+              el.scrollIntoView({ behavior: 'smooth' });
+              el.focus();
+              setPendingScroll(null); // Clear the pending scroll
+            }
+          }, 100); // Small delay to ensure DOM is settled
         }
-      }, 0);
+      };
+
+      // Add event listeners
+      window.addEventListener('vimeoLoadStarted', handleVideoStarted);
+      window.addEventListener('vimeoFrameLoaded', handleVideoLoaded);
+
+      // Cleanup function
+      return () => {
+        window.removeEventListener('vimeoLoadStarted', handleVideoStarted);
+        window.removeEventListener('vimeoFrameLoaded', handleVideoLoaded);
+      };
+    }
+  }, [isLoading, pendingScroll]);
+
+  // Original scroll logic - this now only runs if video is already loaded or no video exists
+  useEffect(() => {
+    if (!isLoading && !pendingScroll) {
+      if (location.hash) {
+        const id = location.hash.substring(1); // location.hash without the '#'
+        setTimeout(() => {
+          const el = document.getElementById(id);
+          if (el) {
+            el.scrollIntoView();
+            el.focus();
+          }
+        }, 0);
+      }
     }
   }, [isLoading]);
 
