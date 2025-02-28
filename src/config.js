@@ -1,6 +1,7 @@
 module.exports = {
   siteTitle: 'Mikaela Carino | Character Rigger',
-  siteDescription: 'Site description',
+  siteDescription:
+    'Portfolio of Mikaela Carino - character rigger & technical animator who connects art with code to create game character systems and motion workflows.',
   siteKeywords: 'keywords',
   siteUrl: 'https://mikaelacarino.com',
   siteLanguage: 'en_US',
