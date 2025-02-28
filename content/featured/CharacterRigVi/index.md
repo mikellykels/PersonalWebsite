@@ -2,7 +2,7 @@
 id: '4'
 date: '12-01-2024'
 year: '2024'
-role: 'Character Rigger | Technical Artist'
+role: 'Character Rigger | Technical Animator'
 title: 'Character Rig: Vi from Arcane'
 subtitle: 'December 2024'
 cover: './virig.png'

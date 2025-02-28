@@ -285,6 +285,13 @@ const ArchivePage = ({ location, data }) => {
             </StyledFilterButton>
 
             <StyledFilterButton
+              onClick={() => handleFilterChange(['Technical Animator'])}
+              className={selectedRoles.includes('Technical Animator') ? 'active' : ''}
+            >
+              Technical Animator
+            </StyledFilterButton>
+
+            <StyledFilterButton
               onClick={() => handleFilterChange(['Technical Artist'])}
               className={selectedRoles.includes('Technical Artist') ? 'active' : ''}
             >
