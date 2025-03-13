@@ -101,16 +101,6 @@ const DemoReelBreakdown = () => {
 
   const breakdownData = [
     {
-      title: 'Original Motion Capture Data (0:00)',
-      content: (
-        <ul>
-          <li>Curated Reallusion 3D motion capture data using MotionBuilder's Story feature</li>
-          <li>Sequenced five distinct animation clips into seamless character performance</li>
-          <li>Optimized motion data to highlight character personality and range</li>
-        </ul>
-      ),
-    },
-    {
       title: 'Retargeting Implementation (MotionBuilder) (0:08)',
       content: (
         <ul>
@@ -134,7 +124,7 @@ const DemoReelBreakdown = () => {
       ),
     },
     {
-      title: 'Dynamic Systems (0:31)',
+      title: 'Dynamic Systems (0:25)',
       content: (
         <ul>
           <li>Incorporated dynamic secondary motion elements for natural movement</li>
@@ -144,7 +134,7 @@ const DemoReelBreakdown = () => {
       ),
     },
     {
-      title: 'Retargeting Implementation (Unreal Engine) (0:41)',
+      title: 'Retargeting Implementation (Unreal Engine) (0:36)',
       content: (
         <ul>
           <li>Exported Maya rig to UE5 with baked RBF deformations</li>
@@ -154,7 +144,7 @@ const DemoReelBreakdown = () => {
       ),
     },
     {
-      title: 'Unreal Engine Technical Implementation (0:50)',
+      title: 'Unreal Engine Technical Implementation (0:44)',
       content: (
         <ul>
           <li>Implemented animation system in Unreal Engine for character motion</li>
@@ -165,34 +155,7 @@ const DemoReelBreakdown = () => {
       ),
     },
     {
-      title: 'Custom UI with Rigging Tools (1:04)',
-      content: (
-        <>
-          <ul>
-            <li>Developed Python-based rigging toolkit in Maya for workflow automation</li>
-            <li>Automated hierarchical group generation with standardized naming</li>
-            <li>Developed joint duplication system with automated constraints</li>
-            <li>Implemented automated IK handle creation for limb control</li>
-            <li>Engineered single-attribute control system for FK/IK blending</li>
-            <li>Designed hierarchical control curve system with constraint automation</li>
-            <li>Created offset group system with automated constraint connections</li>
-          </ul>
-          <p style={{ marginTop: '15px' }}>
-            The complete rigging system is available for review on GitHub:{' '}
-            <a
-              href="https://github.com/mikellykels/Rigging"
-              target="_blank"
-              rel="noopener noreferrer"
-              style={{ color: colors.purple }}
-            >
-              github.com/mikellykels/Rigging
-            </a>
-          </p>
-        </>
-      ),
-    },
-    {
-      title: 'Niagara Particle System (1:15)',
+      title: 'Niagara Particle System (0:57)',
       content: (
         <ul>
           <li>Developed custom flickering light dynamics for atmospheric effects</li>
@@ -202,7 +165,7 @@ const DemoReelBreakdown = () => {
       ),
     },
     {
-      title: 'In-Game Lantern Implementation (1:22)',
+      title: 'In-Game Lantern Implementation (1:05)',
       content: (
         <ul>
           <li>Integrated particle system with skeletal mesh socket attachment</li>
@@ -212,13 +175,37 @@ const DemoReelBreakdown = () => {
       ),
     },
     {
-      title: 'Pixelated Shader Implementation (1:31)',
+      title: 'Pixelated Shader Implementation (1:13)',
       content: (
         <ul>
           <li>Combined Material Editor visual programming with custom HLSL code</li>
           <li>Developed resolution control parameters for variable pixelation levels</li>
           <li>Applied shader as post-process material for consistent screen-space effect</li>
         </ul>
+      ),
+    },
+    {
+      title: 'Custom UI with Modular Rig Tool (1:20)',
+      content: (
+        <>
+          <ul>
+            <li>Developed modular auto-rigging system with stackable, reusable components</li>
+            <li>Implemented guide-based workflow with save/load functionality</li>
+            <li>Created automated mirroring system with color-coded control visualization</li>
+            <li>Engineered unified FK/IK switching with constraint-based blending</li>
+          </ul>
+          <p style={{ marginTop: '15px' }}>
+            The complete modular rig system is available for review on GitHub:{' '}
+            <a
+              href="https://github.com/mikellykels/autorig"
+              target="_blank"
+              rel="noopener noreferrer"
+              style={{ color: colors.purple }}
+            >
+              github.com/mikellykels/autorig
+            </a>
+          </p>
+        </>
       ),
     },
   ];
