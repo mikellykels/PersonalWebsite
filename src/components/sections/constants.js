@@ -6,6 +6,13 @@ export const PROJECTS = {
     DESCRIPTION:
       'A detailed character rig featuring advanced limb control systems, dynamic secondary animations, and motion capture integration. This project showcases technical rigging through custom tool development and successful mocap data processing, demonstrating versatility in both rigging and animation workflows.',
   },
+  MODULARRIGTOOL: {
+    TITLE: 'Modular Rigging Tool',
+    VIDEO:
+      'https://player.vimeo.com/video/1069119061?badge=0&amp;autopause=0&amp;player_id=0&amp;app_id=58479',
+    DESCRIPTION:
+      'A Python-based character rigging system for Maya that streamlines the rigging process through modular components and a guide-based workflow. This tool enables technical artists to create production-ready character rigs in a fraction of the time required for manual rigging.',
+  },
   GUIDINGLIGHT: {
     TITLE: 'Guiding Light',
     VIDEO:

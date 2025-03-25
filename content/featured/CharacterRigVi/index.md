@@ -6,7 +6,7 @@ role: 'Character Rigger | Technical Animator'
 title: 'Character Rig: Vi from Arcane'
 subtitle: 'December 2024'
 cover: './virig.png'
-github: 'https://github.com/mikellykels/Rigging'
+github: 'https://github.com/mikellykels/autorig'
 external: ''
 company: 'Personal project'
 tech:

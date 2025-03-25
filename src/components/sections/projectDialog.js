@@ -14,6 +14,7 @@ import { PROJECTS } from './constants';
 import GuidingLightDialog from './guidingLight';
 import InnForTheLostDialog from './innForTheLost';
 import ViRigDialog from './viRig';
+import ModularRigToolDialog from './modularRigTool';
 
 const { colors, fontSizes, fonts } = theme;
 
@@ -76,6 +77,8 @@ function ProjectDialog({ handleClose, open, projectDialogDetails }) {
           <InnForTheLostDialog />
         ) : projectDialogDetails.title === PROJECTS.VIRIG.TITLE ? (
           <ViRigDialog />
+        ) : projectDialogDetails.title === PROJECTS.MODULARRIGTOOL.TITLE ? (
+          <ModularRigToolDialog />
         ) : null}
       </StyledDialogContent>
     </StyledDialog>
