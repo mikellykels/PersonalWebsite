@@ -47,6 +47,17 @@ function ModularRigToolDialog() {
           Created a robust module manager system that handles inter-module connections and hierarchy
           management
         </li>
+        <li>
+          This project was part of my entry for the{' '}
+          <a
+            href="https://www.therookies.co/entries/35943"
+            target="_blank"
+            rel="nofollow noopener noreferrer"
+          >
+            Rookie Awards 2025
+          </a>
+          , a prestigious competition spotlighting emerging talent in the creative industry.
+        </li>
       </StyledList>
       <StyledLink
         href="https://github.com/mikellykels/autorig"
