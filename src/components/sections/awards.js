@@ -4,6 +4,8 @@ import sr from '@utils/sr';
 import { srConfig } from '@config';
 import styled from 'styled-components';
 import { theme, mixins, media, Section, Heading } from '@styles';
+import { Dialog, DialogContent, DialogActions, Button } from '@mui/material';
+import Img from 'gatsby-image';
 const { colors, fontSizes, fonts } = theme;
 
 const StyledContainer = styled(Section)`
@@ -156,14 +158,73 @@ const StyledJobDetails = styled.h5`
     width: 15px;
   }
 `;
+const StyledExternalLink = styled.a`
+  ${mixins.inlineLink};
+  cursor: pointer;
+`;
+const StyledDialog = styled(Dialog)`
+  .MuiDialog-paper {
+    background-color: ${colors.lightestNavy};
+  }
+  .MuiDialogTitle-root {
+    color: ${colors.lightestSlate};
+    font-family: ${fonts.Calibre};
+  }
+  .MuiDialogContentText-root {
+    color: ${colors.lightestSlate};
+  }
+  .MuiButton-root {
+    font-family: ${fonts.SFMono};
+    color: ${colors.lightestSlate};
+    border: 1px solid ${colors.lightestSlate};
+    margin-left: 8px;
+    margin-right: 8px;
+    &:hover,
+    &:focus {
+      border: 1px solid ${colors.purple};
+      color: ${colors.purple};
+    }
+  }
+  .MuiButton-endIcon {
+    width: 16px;
+    height: 16px;
+    display: flex;
+    align-items: center;
+  }
+`;
+const StyledDialogImg = styled(Img)`
+  width: 200px;
+`;
+const StyledRankingDialogImg = styled(Img)`
+  width: 800px;
+`;
+const StyledDialogActions = styled(DialogActions)`
+  margin-top: 10px;
+  margin-bottom: 10px;
+`;
 
 const Awards = ({ data }) => {
+  const initialModalStates = data.map(() => false);
+
+  const [modalStates, setModalStates] = useState(initialModalStates);
   const [activeTabId, setActiveTabId] = useState(0);
   const [tabFocus, setTabFocus] = useState(null);
   const tabs = useRef([]);
 
   const revealContainer = useRef(null);
   useEffect(() => sr.reveal(revealContainer.current, srConfig()), []);
+
+  const handleOpenModal = index => {
+    const newModalStates = [...modalStates];
+    newModalStates[index] = true;
+    setModalStates(newModalStates);
+  };
+
+  const handleCloseModal = index => {
+    const newModalStates = [...modalStates];
+    newModalStates[index] = false;
+    setModalStates(newModalStates);
+  };
 
   const focusTab = () => {
     if (tabs.current[tabFocus]) {
@@ -227,7 +288,7 @@ const Awards = ({ data }) => {
         {data &&
           data.map(({ node }, i) => {
             const { frontmatter, html } = node;
-            const { title, url, company, range, location } = frontmatter;
+            const { title, url, company, range, location, image, rankingImage } = frontmatter;
             return (
               <StyledTabContent
                 key={i}
@@ -250,12 +311,36 @@ const Awards = ({ data }) => {
                   {range ? (
                     <span>
                       {range} | {location}
+                      {rankingImage && (
+                        <>
+                          {' | '}
+                          <StyledExternalLink onClick={() => handleOpenModal(i)}>
+                            Certificate: Industry Ranking X
+                          </StyledExternalLink>
+                        </>
+                      )}
                     </span>
                   ) : (
                     <span>{location}</span>
                   )}
                 </StyledJobDetails>
                 <div dangerouslySetInnerHTML={{ __html: html }} />
+                {image && <StyledDialogImg fluid={image.childImageSharp.fluid} alt="award" />}
+
+                {/* Modal for ranking image */}
+                <StyledDialog maxWidth open={modalStates[i]} onClose={() => handleCloseModal(i)}>
+                  <DialogContent>
+                    {rankingImage && (
+                      <StyledRankingDialogImg
+                        fluid={rankingImage.childImageSharp.fluid}
+                        alt={`${company} ranking certificate`}
+                      />
+                    )}
+                  </DialogContent>
+                  <StyledDialogActions>
+                    <Button onClick={() => handleCloseModal(i)}>Close</Button>
+                  </StyledDialogActions>
+                </StyledDialog>
               </StyledTabContent>
             );
           })}

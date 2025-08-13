@@ -24,9 +24,9 @@ const IndexPage = ({ location, data }) => (
       <DemoReel data={data.demoreel.edges} />
       <Featured data={data.featured.edges} />
       <Jobs data={data.jobs.edges} />
+      <Awards data={data.awards.edges} />
       <Education data={data.education.edges} />
       <Certifications data={data.certifications.edges} />
-      <Awards data={data.awards.edges} />
       <About data={data.about.edges} />
     </StyledMainContainer>
   </Layout>
@@ -90,8 +90,8 @@ export const pageQuery = graphql`
         }
       }
     }
-    education: allMarkdownRemark(
-      filter: { fileAbsolutePath: { regex: "/education/" } }
+    awards: allMarkdownRemark(
+      filter: { fileAbsolutePath: { regex: "/awards/" } }
       sort: { fields: [frontmatter___date], order: DESC }
     ) {
       edges {
@@ -102,13 +102,20 @@ export const pageQuery = graphql`
             location
             range
             url
+            image {
+              childImageSharp {
+                fluid(maxWidth: 800) {
+                  ...GatsbyImageSharpFluid
+                }
+              }
+            }
           }
           html
         }
       }
     }
-    awards: allMarkdownRemark(
-      filter: { fileAbsolutePath: { regex: "/awards/" } }
+    education: allMarkdownRemark(
+      filter: { fileAbsolutePath: { regex: "/education/" } }
       sort: { fields: [frontmatter___date], order: DESC }
     ) {
       edges {

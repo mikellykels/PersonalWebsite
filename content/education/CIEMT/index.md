@@ -2,7 +2,7 @@
 date: '4'
 title: ''
 company: 'California Institute of Emergency Medical Training (CIEMT)'
-location: 'In Person'
+location: 'Hawthorne, CA'
 range: 'May 2025 - June 2025'
 url: 'https://ciemt.com/'
 ---

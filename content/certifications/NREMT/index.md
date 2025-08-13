@@ -2,7 +2,7 @@
 date: '6'
 title: 'National Registry of Emergency Medical Technicians (NREMT)'
 company: 'National Registry of Emergency Medical Technicians'
-location: 'In Person'
+location: 'Los Angeles, CA'
 range: 'June 28, 2025'
 url: 'https://www.nremt.org/'
 external: ''
