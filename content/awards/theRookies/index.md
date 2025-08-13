@@ -8,3 +8,9 @@ url: 'https://www.therookies.co/entries/35943'
 image: './draft-selection.png'
 # rankingImage: './industry-ranking.png'
 ---
+
+<!-- - Industry Ranking: Rank X
+  - Top-tier recognition for industry-ready skills and professional production quality -->
+
+- Draft Selection
+  - Recognized by industry judges from major studios like Naughty Dog, Riot Games, and Pixar during competitive evaluation
