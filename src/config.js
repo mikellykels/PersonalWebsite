@@ -20,7 +20,7 @@ module.exports = {
       url: 'https://www.linkedin.com/in/mikaelacarino',
     },
   ],
-  lastUpdated: 'August 13, 2025',
+  lastUpdated: 'August 19, 2025',
 
   navLinks: [
     {
