@@ -109,6 +109,13 @@ export const pageQuery = graphql`
                 }
               }
             }
+            rankingImage {
+              childImageSharp {
+                fluid(maxWidth: 800) {
+                  ...GatsbyImageSharpFluid
+                }
+              }
+            }
           }
           html
         }

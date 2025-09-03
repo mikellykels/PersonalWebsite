@@ -315,7 +315,7 @@ const Awards = ({ data }) => {
                         <>
                           {' | '}
                           <StyledExternalLink onClick={() => handleOpenModal(i)}>
-                            Certificate: Industry Ranking X
+                            Certificate: Industry Ranking B
                           </StyledExternalLink>
                         </>
                       )}
