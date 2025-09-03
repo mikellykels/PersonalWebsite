@@ -10,6 +10,6 @@ rankingImage: './industry-ranking.png'
 ---
 
 - Industry Ranking: Rank B
-  - Ranked as industry-ready with exceptional technical and creative proficiency
+  - Ranked for demonstrating solid technical skills and having a strong foundation
 - Draft Selection
   - Recognized by industry judges from major studios like Naughty Dog, Riot Games, and Pixar during competitive evaluation
