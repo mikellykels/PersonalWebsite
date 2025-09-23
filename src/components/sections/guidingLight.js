@@ -13,10 +13,10 @@ function GuidingLightDialog() {
       <StyledList>
         <li>Implemented all C++ code for the player character movement and enemy AI</li>
         <li>Created dynamic footstep audio system based on surface materials</li>
-        <li>Redesigning game levels for enhanced player experience</li>
-        <li>Creating a custom pixelated shader for a unique visual style</li>
-        <li>Developing a dynamic flickering lantern effect to add atmosphere</li>
-        <li>Integrating Google Text-to-Speech technology for dialogue and button audio</li>
+        <li>Redesigned game levels for enhanced player experience</li>
+        <li>Created a custom pixelated shader for a unique visual style</li>
+        <li>Developed a dynamic flickering lantern effect to add atmosphere</li>
+        <li>Integrated Google Text-to-Speech technology for dialogue and button audio</li>
         <li>
           This project was part of my entry for the{' '}
           <a
