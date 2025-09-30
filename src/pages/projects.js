@@ -254,6 +254,29 @@ const ArchivePage = ({ location, data }) => {
     });
   };
 
+  const getYear = dateString => {
+    if (!dateString) {
+      return '—';
+    }
+
+    // Try parsing as a proper date first
+    const parsedDate = new Date(dateString);
+    const year = parsedDate.getFullYear();
+
+    // If valid year from Date object, use it
+    if (!isNaN(year) && year > 1900 && year < 2100) {
+      return year;
+    }
+
+    // Fallback: extract first 4-digit number (likely the year)
+    const yearMatch = dateString.toString().match(/\d{4}/);
+    if (yearMatch) {
+      return yearMatch[0];
+    }
+
+    return '—';
+  };
+
   const filteredProjects = filterProjectsByRole(combinedProjects, selectedRoles);
 
   return (
@@ -355,7 +378,7 @@ const ArchivePage = ({ location, data }) => {
                       }
                     }}
                   >
-                    <td className="overline year">{`${new Date(date).getFullYear()}`}</td>
+                    <td className="overline year">{getYear(date)}</td>
 
                     <td className="title">{title}</td>
 
