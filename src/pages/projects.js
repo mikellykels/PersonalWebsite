@@ -218,9 +218,35 @@ const ArchivePage = ({ location, data }) => {
   }, []);
 
   const combinedProjects = [...featured, ...projectStudiesChallenges, ...projects].sort((a, b) => {
-    const dateA = new Date(a.node.frontmatter.date);
-    const dateB = new Date(b.node.frontmatter.date);
-    return dateB - dateA; // For descending order (most recent first)
+    const dateA = a.node.frontmatter.date;
+    const dateB = b.node.frontmatter.date;
+
+    // Try parsing as full dates first
+    const parsedDateA = new Date(dateA);
+    const parsedDateB = new Date(dateB);
+
+    // Check if dates are valid
+    const isValidA = !isNaN(parsedDateA.getTime());
+    const isValidB = !isNaN(parsedDateB.getTime());
+
+    // If both are valid dates, sort by date
+    if (isValidA && isValidB) {
+      return parsedDateB - parsedDateA;
+    }
+
+    // Fallback: extract years and compare
+    const getYearForSort = dateString => {
+      if (!dateString) {
+        return 0;
+      }
+      const yearMatch = dateString.toString().match(/\d{4}/);
+      return yearMatch ? parseInt(yearMatch[0]) : 0;
+    };
+
+    const yearA = isValidA ? parsedDateA.getFullYear() : getYearForSort(dateA);
+    const yearB = isValidB ? parsedDateB.getFullYear() : getYearForSort(dateB);
+
+    return yearB - yearA; // Descending order (most recent first)
   });
 
   const handleClickOpen = (subtitle, title) => {
