@@ -27,6 +27,6 @@ Finally, the gameplay itself is a key factor in my love for these games. The mec
 
 After studying art and design at SJSU, I shifted gears into software engineering, specializing in frontend development. I'm a passionate explorer of new technologies and programming languages within the gaming industry and I firmly believe that there's always room for growth and learning in a developer's journey. I'm excited to keep delving into the world of video games, eagerly anticipating the challenges and opportunities ahead.
 
-Currently, I'm expanding my horizons by delving into game development through courses in C++, Unreal Engine, 3D Modeling, Real-Time 3D, and Character Rigging at CG Spectrum.
+I'm currently working at Naughty Dog as an Associate Game Designer (Technical), combining my software engineering background with game development to prototype gameplay and build technical solutions.
 
 Here are the technologies I've been working with recently:
