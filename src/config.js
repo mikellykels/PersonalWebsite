@@ -1,7 +1,7 @@
 module.exports = {
-  siteTitle: 'Mikaela Carino | Character Rigger',
+  siteTitle: 'Mikaela Carino | Technical Game Designer',
   siteDescription:
-    'Portfolio of Mikaela Carino - character rigger & technical animator who connects art with code to create game character systems and motion workflows.',
+    'Portfolio of Mikaela Carino - Technical Game Designer & Technical Animator who connects art with code to create game character systems and motion workflows.',
   siteKeywords: 'keywords',
   siteUrl: 'https://mikaelacarino.com',
   siteLanguage: 'en_US',
@@ -20,7 +20,7 @@ module.exports = {
       url: 'https://www.linkedin.com/in/mikaelacarino',
     },
   ],
-  lastUpdated: 'November 6, 2025',
+  lastUpdated: 'December 30, 2025',
 
   navLinks: [
     {

@@ -5,7 +5,7 @@ title: 'Locking Doors Challenge'
 role: 'Game Programmer'
 subtitle: 'May 2023'
 cover: './lockingDoors.png'
-github: 'https://github.com/mikellykels/LockingDoorChallenge'
+github: ''
 external: ''
 company: 'CG Spectrum'
 tech:
