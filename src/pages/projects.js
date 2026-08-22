@@ -308,7 +308,7 @@ const ArchivePage = ({ location, data }) => {
   return (
     <Layout location={location}>
       <Helmet>
-        <title>All Projects | Mikaela Carino</title>
+        <title>All Projects | Kelly Seril-Carino</title>
         <link rel="canonical" href="https://mikaelacarino.com/archive" />
         <meta httpEquiv="cache-control" content="no-cache" />
         <meta httpEquiv="expires" content="0" />

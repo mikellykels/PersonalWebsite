@@ -1,6 +1,6 @@
 ---
 title: 'Hi, my name is'
-name: 'Mikaela (Kelly) Carino'
+name: 'Kelly Seril-Carino'
 subtitle: 'Technical Game Designer / Technical Animator'
 buttonText: 'Featured Projects'
 vimeoId: '1058559382'

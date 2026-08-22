@@ -1,11 +1,11 @@
 module.exports = {
-  siteTitle: 'Mikaela Carino | Technical Game Designer',
+  siteTitle: 'Kelly Seril-Carino | Technical Game Designer',
   siteDescription:
-    'Portfolio of Mikaela Carino - Technical Game Designer & Technical Animator who connects art with code to create game character systems and motion workflows.',
+    'Portfolio of Kelly Seril-Carino - Technical Game Designer & Technical Animator who connects art with code to create game character systems and motion workflows.',
   siteKeywords: 'keywords',
   siteUrl: 'https://mikaelacarino.com',
   siteLanguage: 'en_US',
-  name: 'Mikaela Carino',
+  name: 'Kelly Seril-Carino',
   location: 'California, USA',
   // email: 'mikaela.carino@gmail.com',
   github: 'https://github.com/mikellykels',
@@ -20,7 +20,7 @@ module.exports = {
       url: 'https://www.linkedin.com/in/mikaelacarino',
     },
   ],
-  lastUpdated: 'December 30, 2025',
+  lastUpdated: 'August 22, 2026',
 
   navLinks: [
     {

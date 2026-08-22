@@ -6,3 +6,6 @@ location: 'Santa Monica, CA'
 range: 'November 2025 - Present'
 url: 'https://www.naughtydog.com/'
 ---
+
+- Level Scripter
+- Systems Scripter

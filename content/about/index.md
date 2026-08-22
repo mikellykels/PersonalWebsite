@@ -13,7 +13,7 @@ skills:
   - ReactJS
 ---
 
-Hello there! I'm Mikaela, but you can call me Kelly. I'm a self-taught frontend software engineer with a deep passion for video games. My journey into the world of gaming began with classics like Hexen and Doom during family LAN parties and the original Nintendo console.
+Hello there! I'm Kelly and I'm a self-taught frontend software engineer with a deep passion for video games. My journey into the world of gaming began with classics like Hexen and Doom during family LAN parties and the original Nintendo console.
 
 As I reflect on titles like The Last of Us Part I & II, Horizon Zero Dawn, Horizon Forbidden West, the Zelda series, and the Halo series, it becomes clear why they are my top picks. It's all about the immersive experiences and alternate realities they offer.
 
